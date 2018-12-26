@@ -1,0 +1,542 @@
+﻿body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
+}
+
+p {
+    margin: 10px 0px 10px 0px;
+}
+
+.navbar-vertical {
+    list-style: none;
+    margin-top: 10px;
+    padding: 0px;
+}
+
+    .navbar-vertical li {
+        clear: both;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 20px;
+    }
+
+        .navbar-vertical li a {
+            /*background-color: #a7a7a7;*/
+            font-weight: 700;
+            padding: 10px;
+        }
+
+ul .inner-list {
+    list-style: none;
+    padding: 0px;
+}
+
+    ul .inner-list .divider {
+        height: 1px;
+        margin: 9px 0;
+        overflow: hidden;
+        background-color: #e5e5e5;
+    }
+
+    ul .inner-list li {
+        font-size: 12px;
+        padding-left: 10px;
+    }
+
+        ul .inner-list li a {
+            /*background-color: #ebebeb;*/
+            font-weight: 400;
+        }
+
+footer {
+    background-color: #a7a7a7;
+    color: #ebebeb;
+    min-height: 300px;
+}
+
+footer a {
+    color: #F5F5F5;
+}
+
+.alert {
+    font-size: 12pt;
+    padding: 0px;
+    margin: 10px 0px 10px 0px;
+    border: 0px;
+    box-shadow: none;
+}
+
+.alert-success {
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+}
+
+.breadcrumb {
+    clear: both;
+}
+
+.copyright {
+    height: 50px;
+    line-height: 50px;
+    background-color: #808080;
+}
+
+div.adsense {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #F5F5F5;
+}
+
+.dropdown .dropdown-menu {
+    /*
+        width: 260px;
+    */
+}
+
+    .dropdown .dropdown-menu li a {
+        white-space: normal;
+        line-height: 30px;
+    }
+
+.dropdown .text-aligh-right {
+    text-align: right;
+}
+
+.error {
+    color: #ff006e;
+}
+
+.field-validation-error {
+    color: #ff006e;
+    font-size: 10pt;
+}
+
+.footer-heading {
+    color: #ebebeb;
+}
+
+.form-horizontal .control-label-left {
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.help-text {
+    font-size: 10pt;
+}
+
+.helpline {
+    background-color: #dcdcdc;
+    color: #333333;
+    min-height: 96px;
+    line-height: 72pt;
+}
+
+    .helpline .caption {
+        font-size: 24pt;
+        margin: 0px 10px 0px 10px;
+    }
+
+.hint {
+    font-size: 10pt;
+    color: #0094ff;
+}
+
+.navbar-logo-image {
+    height: 40px;
+    margin-top: 5px;
+}
+
+.page-header {
+    margin: 0px 0px 20px 0px;
+    padding: 0px;
+}
+
+.navbar-nav .pull-menu-right {
+    float: right;
+}
+
+.news-item {
+}
+
+    .news-item .latest {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+        .news-item .latest .subject {
+        }
+
+        .news-item .latest .detail {
+        }
+
+    .news-item .normal {
+    }
+
+        .news-item .normal .subject {
+        }
+
+        .news-item .normal .detail {
+            font-size: 9pt;
+        }
+
+.news-item-image {
+    width: 120px;
+}
+
+.products {
+    margin-top: 20px;
+    margin-left: -30px;
+    list-style-type: none;
+    font-size: 9pt;
+}
+
+    .products .detail {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .products li {
+        display: inline-block;
+        position: relative;
+        padding-right: 20px;
+        padding-bottom: 20px;
+    }
+
+        .products li .productname {
+            font-weight: bold;
+        }
+
+        .products li a {
+        }
+
+            .products li a img {
+                max-width: 160px;
+                height: auto;
+            }
+
+        .products li img {
+        }
+
+.rtl-input {
+    border-radius: 0px;
+}
+
+.rtl-input-btn {
+    border-radius: 0px;
+}
+
+.rtl-input-selection {
+    border-radius: 0px;
+}
+
+.summary {
+    font-size: 10px;
+}
+
+    .summary .caption-eng {
+    }
+
+    .summary .caption-urd {
+        font-size: 12px;
+    }
+
+    .summary .sale {
+        color: #0026ff;
+    }
+
+    .summary .purchase {
+        color: #ff006e;
+    }
+
+    .summary .saving {
+        color: #b200ff;
+    }
+
+    .summary .payment {
+        color: #0094ff;
+    }
+
+    .summary .remaining-payment {
+        color: #ff0000;
+    }
+
+
+.table_transactions {
+    /*font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+}
+
+    .table_transactions th {
+        font-size: 14px;
+    }
+
+    .table_transactions tbody {
+        font-size: 12px;
+    }
+
+    .table_transactions .recorditemltr {
+        width: 150px;
+        display: block;
+    }
+
+    .table_transactions .recorditemrtl {
+        width: 150px;
+        display: block;
+        text-align: left;
+    }
+
+.table_reports {
+    /*font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+}
+
+    .table_reports th {
+        font-size: 10px;
+    }
+
+    .table_reports tbody {
+        font-size: 8pt;
+    }
+
+    .table_reports .recorditemltr {
+        width: 150px;
+        display: block;
+    }
+
+    .table_reports .recorditemrtl {
+        width: 150px;
+        display: block;
+        text-align: left;
+    }
+
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.validation-summary-errors {
+    color: #ff006e;
+    font-size: 10pt;
+}
+
+.well {
+    margin-top: 10px;
+}
+
+#webpage {
+    width: 80%;
+    min-height: 600px;
+}
+
+    #webpage .maincotent {
+        width: 70%;
+        min-height: 400px;
+        padding: 10px 10px;
+        border-right: dashed 1px #CCC;
+    }
+
+    #webpage .rightside {
+        width: 29%;
+        min-height: 400px;
+        padding: 10px 10px;
+    }
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .navbar-collapse {
+        padding: 0px;
+    }
+
+        .navbar-collapse.in {
+            overflow-y: unset;
+        }
+
+    .navbar-vertical {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .navbar-vertical li {
+            clear: both;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 20px;
+        }
+
+            .navbar-vertical li a {
+                /*background-color: #a7a7a7;*/
+                padding: 10px;
+            }
+
+    ul .inner-list {
+        list-style: none;
+        padding: 0px;
+    }
+
+        ul .inner-list .divider {
+            height: 1px;
+            margin: 9px 0;
+            overflow: hidden;
+            background-color: #e5e5e5;
+        }
+
+        ul .inner-list li {
+            font-size: 12px;
+            padding-left: 10px;
+        }
+
+            ul .inner-list li a {
+                /*background-color: #ebebeb;*/
+            }
+
+    .breadcrumb {
+        display: none;
+    }
+
+
+
+    .menu_responsive {
+        clear: both;
+    }
+
+    .myaccount_menu {
+        margin-right: 10px;
+    }
+
+    .nav > li#username {
+        display: none;
+    }
+
+    .nav > li#userpic {
+        display: none;
+    }
+
+    .call-to-action {
+        text-align: center;
+    }
+
+        .call-to-action .pull-left, .call-to-action .pull-right {
+            width: 100%;
+            float: none !important;
+        }
+
+        .call-to-action .btn {
+            margin-top: 10px;
+        }
+
+        .call-to-action span {
+            top: 7px;
+        }
+
+    div#registerpanel {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    div#textpanel {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    div#resetpanel {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    div#loginpanel {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    div#webpage {
+        width: 100%;
+        min-height: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-top: 50px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .navbar {
+        margin-bottom: 0px;
+    }
+
+    .navbar-brand {
+        padding: 5px 5px;
+    }
+
+    .myaccount_menu {
+        /*margin-right: 10px;*/
+    }
+
+    .username_responsive {
+        display: block;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .call-to-action {
+        background-color: #ebebeb;
+        padding: 25px 0;
+        margin-bottom: 0;
+    }
+
+        .call-to-action .section-heading {
+            margin: 0;
+            font-size: 36px;
+            line-height: 45px;
+        }
+
+            .call-to-action .section-heading:after {
+                display: none;
+            }
+
+        .call-to-action span {
+            position: relative;
+            top: 2px;
+            font-size: 18px;
+        }
+
+    div#registerpanel {
+        width: 600px;
+        margin: auto auto;
+    }
+
+    div#loginpanel {
+        width: 450px;
+        margin: auto auto;
+    }
+
+    div#textpanel {
+        width: 600px;
+        margin: auto auto;
+    }
+
+    div#resetpanel {
+        width: 600px;
+        margin: auto auto;
+    }
+
+    div#map_canvas {
+    }
+}

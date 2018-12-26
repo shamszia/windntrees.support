@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" ptype="MONOLITH" ppkg="wtl.content" epkg="world" v="4.7" rws="_151939118002857" Pws="_151939118002857" cws="_151939118002857" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_151939117960517" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity compositePrimaryKeyClass="NavigationPK" abs="false" class="Navigation" v="true" jbn="false" xre="false" m="false" rootElement="_151939117960517" id="_151939117964618">
+        <jpa:inf e="true" n="java.io.Serializable"/>
+        <jpa:attributes>
+            <jpa:basic optional="false" attribute-type="String" v="true" xvt="" am="PROTECTED" name="text" ft="false" id="_151939117966523">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="text_" unique="false" nullable="false" insertable="true" updatable="true" table="navigation" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="localeText" ft="false" id="_151939117966824">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="locale_text" unique="false" nullable="true" insertable="true" updatable="true" table="navigation" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="title" ft="false" id="_151939117966825">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="title" unique="false" nullable="true" insertable="true" updatable="true" table="navigation" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="localeTitle" ft="false" id="_151939117966826">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="locale_title" unique="false" nullable="true" insertable="true" updatable="true" table="navigation" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="cssClass" ft="false" id="_151939117966827">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="css_class" unique="false" nullable="true" insertable="true" updatable="true" table="navigation" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="styles" ft="false" id="_151939117966928">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="styles" unique="false" nullable="true" insertable="true" updatable="true" table="navigation" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="linkUrl" ft="false" id="_151939117966929">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="link_url" unique="false" nullable="true" insertable="true" updatable="true" table="navigation" length="255"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="linkTitle" ft="false" id="_151939117966930">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="link_title" unique="false" nullable="true" insertable="true" updatable="true" table="navigation" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="linkLocaleTitle" ft="false" id="_151939117967231">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="link_locale_title" unique="false" nullable="true" insertable="true" updatable="true" table="navigation" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="linkCssClass" ft="false" id="_151939117967232">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="link_css_class" unique="false" nullable="true" insertable="true" updatable="true" table="navigation" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="linkStyles" ft="false" id="_151939117967233">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="link_styles" unique="false" nullable="true" insertable="true" updatable="true" table="navigation" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="roles" ft="false" id="_151939117967234">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="roles" unique="false" nullable="true" insertable="true" updatable="true" table="navigation" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="users" ft="false" id="_151939117967235">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="users" unique="false" nullable="true" insertable="true" updatable="true" table="navigation" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="Integer" v="true" xvt="" am="PROTECTED" name="sortOrder" ft="false" id="_151939117967336">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="sort_order" unique="false" nullable="true" insertable="true" updatable="true" table="navigation"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="Boolean" v="true" xvt="" am="PROTECTED" name="authMode" ft="false" id="_151939117967337">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="auth_mode" unique="false" nullable="true" insertable="true" updatable="true" table="navigation"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="Boolean" v="true" xvt="" am="PROTECTED" name="separator" ft="false" id="_151939117967338">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="separator_" unique="false" nullable="true" insertable="true" updatable="true" table="navigation"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="Long" v="true" xvt="" am="PROTECTED" name="navigationMenuId" ft="false" id="_151939117967339">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="navigation_menu_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="Long" v="true" xvt="" am="PROTECTED" name="parentId" ft="false" id="_151939117967340">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="parent_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_151939117972141" connected-attribute-id="_151939117972245" v="true" xvt="" am="PROTECTED" name="menu" ft="false" id="_151939117965720">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonIgnore"/>
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:join-column name="nav_menu_id" rc="menu_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_151939117964618" connected-attribute-id="_151939117965821" v="true" xvt="" am="PROTECTED" name="parentItem" ft="false" id="_151939117966522">
+                <jpa:an e="true" n="@com.fasterxml.jackson.annotation.JsonIgnore"/>
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:join-column name="nav_nav_id" rc="nav_id" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:one-to-many orp="true" own="false" collection-type="java.util.Set" connected-entity-id="_151939117964618" connected-attribute-id="_151939117966522" fetch="EAGER" v="true" xvt="" am="PROTECTED" name="items" ft="false" id="_151939117965821">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade>
+                    <jpa:cascade-all/>
+                </jpa:cascade>
+                <jpa:ob>
+                    <jpa:a c="sortOrder" o="A"/>
+                </jpa:ob>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" am="PROTECTED" name="id" ft="false" id="_151939117965619">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="nav_id" unique="false" nullable="true" insertable="true" updatable="true" table="navigation"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="navigation"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="NavigationMenuPK" abs="false" class="NavigationMenu" v="true" jbn="false" xre="false" m="false" rootElement="_151939117960517" id="_151939117972141">
+        <jpa:inf e="true" n="java.io.Serializable"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="appKey" ft="false" id="_151939117972243">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="app_key" unique="false" nullable="true" insertable="true" updatable="true" table="navigation_menu" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="relativeUrl" ft="false" id="_151939117972244">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="relative_url" unique="false" nullable="true" insertable="true" updatable="true" table="navigation_menu" length="255"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="name" ft="false" id="_151939117972846">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="name_" unique="false" nullable="false" insertable="true" updatable="true" table="navigation_menu" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="description" ft="false" id="_151939117974447">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="description" unique="false" nullable="true" insertable="true" updatable="true" table="navigation_menu" length="255"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" am="PROTECTED" name="navigationType" ft="false" id="_151939117974648">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="navigation_type" unique="false" nullable="true" insertable="true" updatable="true" table="navigation_menu"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="Integer" v="true" xvt="" am="PROTECTED" name="sortOrder" ft="false" id="_151939117974649">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="sort_order" unique="false" nullable="false" insertable="true" updatable="true" table="navigation_menu"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="roles" ft="false" id="_151939117974650">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="roles" unique="false" nullable="true" insertable="true" updatable="true" table="navigation_menu" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="users" ft="false" id="_151939117974651">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="users" unique="false" nullable="true" insertable="true" updatable="true" table="navigation_menu" length="100"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="Boolean" v="true" xvt="" am="PROTECTED" name="authMode" ft="false" id="_151939117974652">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="auth_mode" unique="false" nullable="true" insertable="true" updatable="true" table="navigation_menu"/>
+            </jpa:basic>
+            <jpa:one-to-many orp="true" own="false" collection-type="java.util.Set" connected-entity-id="_151939117964618" connected-attribute-id="_151939117965720" fetch="EAGER" v="true" xvt="" am="PROTECTED" name="items" ft="false" id="_151939117972245">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:cascade>
+                    <jpa:cascade-all/>
+                </jpa:cascade>
+                <jpa:ob>
+                    <jpa:a c="sortOrder" o="A"/>
+                </jpa:ob>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" am="PROTECTED" name="id" ft="false" id="_151939117972142">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="menu_id" unique="false" nullable="true" insertable="true" updatable="true" table="navigation_menu"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="navigation_menu"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyType="IDCLASS" compositePrimaryKeyClass="LocaleItemKey" abs="false" class="LocaleItem" v="true" jbn="false" xre="false" m="false" rootElement="_151939117960517" id="_151939117982653">
+        <jpa:inf e="true" n="java.io.Serializable"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" am="PROTECTED" name="itemValue" ft="false" id="_151939117982756">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="item_value" unique="false" nullable="false" insertable="true" updatable="true" table="locale_item" length="100"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" xvt="" am="PROTECTED" name="itemKey" ft="false" id="_151939117982754">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="item_key" unique="false" nullable="false" insertable="true" updatable="true" table="locale_item" length="100"/>
+            </jpa:id>
+            <jpa:id attribute-type="String" v="true" xvt="" am="PROTECTED" name="itemLocale" ft="false" id="_151939117982755">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="item_locale" unique="false" nullable="false" insertable="true" updatable="true" table="locale_item" length="100"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="locale_item"/>
+    </jpa:entity>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+    <jpa:c/>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_151939118002857">
+            <i ref="_151939117972141" x="260" y="594"/>
+            <i ref="_151939117964618" x="32" y="32"/>
+            <i ref="_151939117982653" x="527" y="32"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>

@@ -1,0 +1,229 @@
+﻿{
+  "authenticationMode": true,
+  "version": "4.0",
+  "cssClass": "justify-content-start",
+  "tag": "ul",
+  "attributes": [
+    {
+      "name": "class",
+      "value": "navbar-nav"
+    }
+  ],
+  "roles": [ "anonymous" ],
+  "items": [
+    {
+      "text": "$resources: Application.Navigations.Navigation, AdminGeneralSettingsT",
+      "attributes": [
+        {
+          "name": "title",
+          "value": "$resources: Application.Navigations.Navigation, AdminGeneralSettingsD"
+        }
+      ],
+      "linkUrl": "#SETTINGS",
+      "linkAttributes": [
+        {
+          "name": "class",
+          "value": "dropdown"
+        }
+      ],
+      "roles": [ "mngr_users" ],
+      "linkMenuTemplate": "<a {0} href=\"#admin-settings\" class=\"collapse-toggle\" data-toggle=\"collapse\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">{1} <span class=\"{2}\"></span></a>",
+      "subMenuTemplate": "<ul id=\"admin-settings\" class=\"inner-list collapse in\">{0}</ul>\n",
+      "subMenuTemplateLtr": "<ul id=\"admin-settings\" class=\"inner-list collapse in\">{0}</ul>\n",
+      "subMenuTemplateRtl": "<ul id=\"admin-settings\" class=\"inner-list collapse text-right in\">{0}</ul>\n",
+      "items": [
+        {
+          "text": "$resources: Application.Navigations.Navigation, AdminLoginHistoryT",
+          "attributes": [
+            {
+              "name": "title",
+              "value": "$resources: Application.Navigations.Navigation, AdminLoginHistoryD"
+            }
+          ],
+          "linkUrl": "/admin/home/index"
+        },
+        {
+          "text": "$resources: Application.Navigations.Navigation, AdminAppSettingsT",
+          "attributes": [
+            {
+              "name": "title",
+              "value": "$resources: Application.Navigations.Navigation, AdminAppSettingsD"
+            }
+          ],
+          "linkUrl": "/admin/configurations/index",
+          "roles": [ "mngr_configurations" ]
+        },
+        {
+          "text": "$resources: Application.Navigations.Navigation, MyListsT",
+          "attributes": [
+            {
+              "name": "title",
+              "value": "$resources: Application.Navigations.Navigation, MyListsD"
+            }
+          ],
+          "linkUrl": "/admin/lists/index",
+          "roles": [ "mngr_users" ]
+        },
+        {
+          "text": "$resources: Application.Navigations.Navigation, AdvertisementsT",
+          "attributes": [
+            {
+              "name": "title",
+              "value": "$resources: Application.Navigations.Navigation, AdvertisementsD"
+            }
+          ],
+          "linkUrl": "/admin/advertisement/index",
+          "roles": [ "mngr_advertisements" ]
+        },
+        {
+          "text": "$resources: Application.Navigations.Navigation, Reference",
+          "attributes": [
+            {
+              "name": "title",
+              "value": "$resources: Application.Navigations.Navigation, ReferenceD"
+            }
+          ],
+          "linkUrl": "/admin/reference/index",
+          "roles": [ "mngr_users" ]
+        },
+        {
+          "text": "$resources: Application.Navigations.Navigation, Companies",
+          "attributes": [
+            {
+              "name": "title",
+              "value": "$resources: Application.Navigations.Navigation, CompaniesD"
+            }
+          ],
+          "linkUrl": "/admin/company/index",
+          "roles": [ "mngr_users" ]
+        },
+        {
+          "text": "$resources: Application.Navigations.Navigation, AProductsT",
+          "attributes": [
+            {
+              "name": "title",
+              "value": "$resources: Application.Navigations.Navigation, AProductsD"
+            }
+          ],
+          "linkUrl": "/admin/product/index",
+          "roles": [ "mngr_users" ]
+        }
+      ]
+    },
+    {
+      "text": "$resources: Application.Navigations.Navigation, MyAccountT",
+      "attributes": [
+        {
+          "name": "title",
+          "value": "$resources: Application.Navigations.Navigation, MyAccountD"
+        }
+      ],
+      "linkUrl": "#ACCOUNTSETTINGS",
+      "linkAttributes": [
+        {
+          "name": "class",
+          "value": "dropdown"
+        }
+      ],
+      "roles": [ "mngr_users" ],
+      "linkMenuTemplate": "<a {0} href=\"#account-settings\" class=\"collapse-toggle\" data-toggle=\"collapse\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">{1} <span class=\"{2}\"></span></a>",
+      "subMenuTemplate": "<ul id=\"account-settings\" class=\"inner-list collapse in\">{0}</ul>\n",
+      "subMenuTemplateLtr": "<ul id=\"account-settings\" class=\"inner-list collapse in\">{0}</ul>\n",
+      "subMenuTemplateRtl": "<ul id=\"account-settings\" class=\"inner-list collapse text-right in\">{0}</ul>\n",
+      "items": [
+        {
+          "text": "$resources: Application.Navigations.Navigation, AdminUsersT",
+          "attributes": [
+            {
+              "name": "title",
+              "value": "$resources: Application.Navigations.Navigation, AdminUsersD"
+            }
+          ],
+          "linkUrl": "/admin/users/index"
+        }
+      ]
+    },
+    {
+      "text": "$resources: Application.Navigations.Navigation, Sdk",
+      "attributes": [
+        {
+          "name": "title",
+          "value": "$resources: Application.Navigations.Navigation, SdkD"
+        }
+      ],
+      "linkUrl": "#SDK",
+      "linkAttributes": [
+        {
+          "name": "class",
+          "value": "dropdown"
+        }
+      ],
+      "roles": [ "mngr_users" ],
+      "linkMenuTemplate": "<a {0} href=\"#sdk\" class=\"collapse-toggle\" data-toggle=\"collapse\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">{1} <span class=\"{2}\"></span></a>",
+      "subMenuTemplate": "<ul id=\"account-settings\" class=\"inner-list collapse in\">{0}</ul>\n",
+      "subMenuTemplateLtr": "<ul id=\"account-settings\" class=\"inner-list collapse in\">{0}</ul>\n",
+      "subMenuTemplateRtl": "<ul id=\"account-settings\" class=\"inner-list collapse text-right in\">{0}</ul>\n",
+      "items": [
+        {
+          "text": "$resources: Application.Navigations.Navigation, SdkComponentMemberType",
+          "attributes": [
+            {
+              "name": "title",
+              "value": "$resources: Application.Navigations.Navigation, SdkComponentMemberTypeD"
+            }
+          ],
+          "linkUrl": "/admin/sdkcomponentmembertype/index"
+        },
+        {
+          "text": "$resources: Application.Navigations.Navigation, SdkReferences",
+          "attributes": [
+            {
+              "name": "title",
+              "value": "$resources: Application.Navigations.Navigation, SdkReferences"
+            }
+          ],
+          "linkUrl": "/admin/sdk/index"
+        }
+      ]
+    },
+    {
+      "text": "$resources: Application.Navigations.Navigation, ALanguageT",
+      "attributes": [
+        {
+          "name": "title",
+          "value": "$resources: Application.Navigations.Navigation, ALanguageD"
+        }
+      ],
+      "linkUrl": "#LANGUAGE",
+      "roles": [ "mngr_users" ],
+      "linkMenuTemplate": "<a {0} href=\"#language-settings\" class=\"collapse-toggle\" data-toggle=\"collapse\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">{1} <span class=\"{2}\"></span></a>",
+      "subMenuTemplate": "<ul id=\"language-settings\" class=\"inner-list collapse in\">{0}</ul>\n",
+      "subMenuTemplateLtr": "<ul id=\"language-settings\" class=\"inner-list collapse in\">{0}</ul>\n",
+      "subMenuTemplateRtl": "<ul id=\"language-settings\" class=\"inner-list collapse text-right in\">{0}</ul>\n",
+      "items": [
+        {
+          "text": "$resources: Application.Navigations.Navigation, ALanguageEnglishT",
+          "attributes": [
+            {
+              "name": "title",
+              "value": "$resources: Application.Navigations.Navigation, ALanguageEnglishD"
+            }
+          ],
+          "linkUrl": "/admin/language/index",
+          "linkAttributes": []
+        },
+        {
+          "text": "$resources: Application.Navigations.Navigation, ALanguageUrduT",
+          "attributes": [
+            {
+              "name": "title",
+              "value": "$resources: Application.Navigations.Navigation, ALanguageUrduD"
+            }
+          ],
+          "linkUrl": "/admin/language/urdu",
+          "linkAttributes": []
+        }
+      ]
+    }
+  ]
+}

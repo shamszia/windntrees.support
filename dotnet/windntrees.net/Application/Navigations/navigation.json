@@ -1,0 +1,111 @@
+﻿{
+  "authenticationMode": true,
+  "version": "4.0",
+  "cssClass": "container-fluid d-flex justify-content-start p-0",
+  "tag": "ul",
+  "attributes": [
+    {
+      "name": "class",
+      "value": "navbar-nav"
+    }
+  ],
+  "roles": [ "anonymous" ],
+  "items": [
+    {
+      "text": "$resources: Application.Navigations.Navigation, AHomeT",
+      "attributes": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "title",
+          "value": "$resources: Application.Navigations.Navigation, AHomeD"
+        },
+        {
+          "name": "class",
+          "value": "nav-item"
+        }
+      ],
+      "linkUrl": "/home/index",
+      "linkAttributes": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "title",
+          "value": ""
+        },
+        {
+          "name": "class",
+          "value": "nav-link"
+        }
+      ],
+      "roles": [ "signin" ]
+    },
+    {
+      "text": "$resources: Application.Navigations.Navigation, AProductsT",
+      "attributes": [
+        {
+          "name": "title",
+          "value": "$resources: Application.Navigations.Navigation, AProductsD"
+        },
+        {
+          "name": "class",
+          "value": "nav-item"
+        }
+      ],
+      "linkUrl": "/product/index",
+      "linkAttributes": [
+        {
+          "name": "class",
+          "value": "nav-link"
+        }
+      ],
+      "roles": [ "signin" ]
+    },
+    {
+      "text": "$resources: Application.Navigations.Navigation, ANewsT",
+      "attributes": [
+        {
+          "name": "title",
+          "value": "$resources: Application.Navigations.Navigation, ANewsD"
+        },
+        {
+          "name": "class",
+          "value": "nav-item"
+        }
+      ],
+      "linkUrl": "/news/index",
+      "linkAttributes": [
+        {
+          "name": "class",
+          "value": "nav-link"
+        }
+      ],
+      "roles": [ "signin" ]
+    },
+    {
+      "text": "$resources: Application.Navigations.Navigation, AContactT",
+      "attributes": [
+        {
+          "name": "title",
+          "value": "$resources: Application.Navigations.Navigation, AContactD"
+        },
+        {
+          "name": "class",
+          "value": "nav-item"
+        }
+      ],
+      "linkUrl": "/home/contact",
+      "linkAttributes": [
+        {
+          "name": "class",
+          "value": "nav-link"
+        }
+      ],
+      "roles": [ "signin" ]
+    }
+  ]
+}

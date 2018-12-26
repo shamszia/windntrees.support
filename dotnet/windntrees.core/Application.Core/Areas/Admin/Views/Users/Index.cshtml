@@ -1,0 +1,350 @@
+﻿@{
+    ViewBag.Title = "Users";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section Header
+    {
+    <title>@LocaleResources.Core.Views.User.Index.Page</title>
+
+    <script type="text/html" id="headings">
+        <tr>
+            <th class="col-2 order-0" scope="col">
+                <span class="d-flex align-content-start" title="@LocaleResources.Core.Views.User.Index.TimeD">@LocaleResources.Core.Views.User.Index.Time</span>
+            </th>
+            <th class="col-4 order-1" scope="col">
+                <span class="d-flex align-content-start" title="@LocaleResources.Core.Views.User.Index.UserD">@LocaleResources.Core.Views.User.Index.User</span>
+            </th>
+            <th class="col-3 order-2" scope="col">
+                <span class="d-flex align-content-start" title="@LocaleResources.Core.Views.User.Index.RolesD">@LocaleResources.Core.Views.User.Index.Roles</span>
+            </th>
+            <th class="col-3 order-4" scope="col">
+                <span class="d-flex align-content-start" title="@LocaleResources.Core.Views.User.Index.PictureD">@LocaleResources.Core.Views.User.Index.Picture</span>
+            </th>
+        </tr>
+    </script>
+
+    <script type="text/html" id="rows">
+        <tr>
+            <td>
+                <div class="d-flex align-content-start"><span data-bind="text: moment(moment.utc(CreationDate()).toDate()).format('YYYY-MM-DD HH:mm:ss')"></span></div>
+            </td>
+            <td>
+                <div class="form-row">
+                    <div class="col-12 order-0 user"><div class="d-flex align-content-start"><span class="caption pr-2">@LocaleResources.Core.Views.User.Index.Name:</span><span class="value pr-2" data-bind="text: FirstName"></span> <span class="value pr-2" data-bind="text: LastName"></span></div></div>
+                    <div class="col-12 order-1 user"><div class="d-flex align-content-start"><span class="caption pr-2">@LocaleResources.Core.Views.User.Index.UserName:</span><span class="value" data-bind="text: UserName"></span></div></div>
+                    <div class="col-12 order-2 user"><div class="d-flex align-content-start"><span class="caption pr-2">@LocaleResources.Core.Views.User.Index.Title:</span><span class="value" data-bind="text: Title"></span></div></div>
+                    <div class="col-12 order-3 user"><div class="d-flex align-content-start"><span class="caption pr-2">@LocaleResources.Core.Views.User.Index.Package:</span><span class="value" data-bind="text: Package"></span></div></div>
+                    <div class="col-12 order-4 user"><div class="d-flex align-content-start"><span class="caption pr-2">@LocaleResources.Core.Views.User.Index.Gender:</span><span class="value" data-bind="text: Gender"></span></div></div>
+                    <div class="col-12 order-5 user"><div class="d-flex align-content-start"><span class="caption pr-2">@LocaleResources.Core.Views.User.Index.UserId:</span><span class="value" data-bind="text: Id"></span></div></div>
+                    <div class="col-12 order-6 user"><div class="d-flex align-content-start"><span class="caption pr-2">@LocaleResources.Core.Views.User.Index.Email:</span><span class="value" data-bind="text: Email"></span></div></div>
+                    <div class="col-12 order-7 user"><div class="d-flex align-content-start"><span class="caption pr-2">@LocaleResources.Core.Views.User.Index.Time:</span><span class="value" data-bind="text: moment(moment.utc(CreationDate()).toDate()).format('YYYY-MM-DD HH:mm:ss')"></span></div></div>
+                    <div class="col-12 order-8 user"><div class="d-flex align-content-start"><span class="caption pr-2">@LocaleResources.Core.Views.User.Index.Expiry:</span><span class="value" data-bind="text: moment(moment.utc(ExpiryDate()).toDate()).format('YYYY-MM-DD HH:mm:ss')"></span></div></div>
+                    <div class="col-12 order-9 user"><div class="d-flex align-content-start"><span class="caption pr-2">@LocaleResources.Core.Views.User.Index.Approved:</span><span class="value" data-bind="text: IsApproved"></span></div></div>
+                    <div class="col-12 order-10 user"><div class="d-flex align-content-start"><span class="caption pr-2">@LocaleResources.Core.Views.User.Index.ApprovedBy:</span><span class="value" data-bind="text: ApprovedBy"></span></div></div>
+                </div>
+            </td>
+            <td data-bind="foreach: { data: Roles, as: 'Role' }">
+                <div data-bind="text: Role.RoleId"></div>
+            </td>
+            <td class="d-flex align-content-start"><a href="#" data-bind="click: function(data, event) { $parent.resetFormForEditing($index); }" data-toggle="modal" data-target="#thirdForm"><img class="img-fluid d-block m-auto" data-bind="attr:{src: gridurl}" /></a></td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <div class="hidden-phone visible-desktop action-buttons d-flex align-content-start">
+                    <a class="green" href="#" data-bind="click: function(data, event) { $parent.resetFormForEditing($index); $('#__form').dialog('open'); }" title="@SharedLibrary.Core.Resources.Global.FormMessages.EditD"><i class="fa fa-edit text-success"></i>@SharedLibrary.Core.Resources.Global.FormMessages.Edit</a>
+                    <a class="green" href="#" data-bind="click: function(data, event) { $parent.resetFormForEditing($index); }" data-toggle="modal" data-target="#secondForm" title="@SharedLibrary.Core.Resources.Global.FormMessages.UploadD"><i class="fa fa-upload text-warning"></i>@SharedLibrary.Core.Resources.Global.FormMessages.Upload</a>
+                    <a class="red" href="#" data-bind="click: function(data, event) { $parent.delete({ content: $data, TimeFields: ['CreationDate', 'ExpiryDate'] }); }" title="@SharedLibrary.Core.Resources.Global.FormMessages.DeleteD"><i class="fa fa-times text-danger"></i>@SharedLibrary.Core.Resources.Global.FormMessages.Delete</a>
+                </div>
+            </td>
+        </tr>
+    </script>
+
+    <script type="text/html" id="formcontent">
+        <div class="form-group row">
+            <div class="col-4 order-0">
+                <label class="control-label d-flex align-content-start" for="UserName">
+                    @LocaleResources.Core.Views.User.Index.UserName
+                </label>
+                <input data-bind="value: $root.EditMode() ? UserName : UserName" id="UserName" type="text" title="@LocaleResources.Core.Views.User.Index.UserNameD"
+                       maxlength="32" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                         data-bind="validationMessage: UserName"></span>
+            </div>
+            <div class="col-4 order-1">
+                <!-- ko ifnot: $root.EditMode() -->
+                <label class="control-label d-flex align-content-start" for="Password">
+                    @LocaleResources.Core.Views.User.Index.Password
+                </label>
+                <input data-bind="value: $root.EditMode() ? Password : Password" id="Password" type="password" title="@LocaleResources.Core.Views.User.Index.PasswordD"
+                       maxlength="32" placeholder="" class="form-control col-12" /><span class="error" data-bind="validationMessage: Password"></span>
+                <!-- /ko -->
+            </div>
+            <div class="col-4 order-3">
+                <!-- ko ifnot: $root.EditMode() -->
+
+                <label class="control-label d-flex align-content-start" for="ConfirmPassword">
+                    @LocaleResources.Core.Views.User.Index.Confirm
+                </label>
+                <input data-bind="value: $root.EditMode() ? ConfirmPassword : ConfirmPassword" id="ConfirmPassword" title="@LocaleResources.Core.Views.User.Index.ConfirmD"
+                       type="password" maxlength="32" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                                         data-bind="validationMessage: ConfirmPassword"></span>
+
+                <!-- /ko -->
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-4 order-0">
+                <label class="control-label d-flex align-content-start" for="FirstName">
+                    @LocaleResources.Core.Views.User.Index.FirstName
+                </label>
+                <input data-bind="value: $root.EditMode() ? FirstName : FirstName" id="FirstName" title="@LocaleResources.Core.Views.User.Index.FirstNameD"
+                       type="text" maxlength="50" placeholder="" class="form-control col-12" /><span class="error" data-bind="validationMessage: FirstName"></span>
+            </div>
+            <div class="col-4 order-1">
+                <label class="control-label d-flex align-content-start" for="LastName">
+                    @LocaleResources.Core.Views.User.Index.LastName
+                </label>
+                <input data-bind="value: $root.EditMode() ? LastName : LastName" id="LastName" type="text" title="@LocaleResources.Core.Views.User.Index.LastNameD"
+                       maxlength="100" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                          data-bind="validationMessage: LastName"></span>
+            </div>
+            <div class="col-4 order-2">
+                <label class="control-label d-flex align-content-start" for="Sex">
+                    @LocaleResources.Core.Views.User.Index.Gender
+                </label>
+                <select data-bind="options: $root.Genders, optionsText: 'key', optionsValue: 'val', value: Sex, optionsCaption: '@SharedLibrary.Core.Resources.Global.FormMessages.Select'" title="@LocaleResources.Core.Views.User.Index.GenderD"
+                        id="Sex" class="form-control col-12"></select><span class="error" data-bind="validationMessage: Sex"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-4 order-0">
+                <label class="control-label d-flex align-content-start" for="Title">
+                    @LocaleResources.Core.Views.User.Index.Title
+                </label>
+                <input data-bind="value: $root.EditMode() ? Title : Title" id="Title" type="text" title="@LocaleResources.Core.Views.User.Index.TitleD"
+                       maxlength="50" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                         data-bind="validationMessage: Title"></span>
+            </div>
+
+            <div class="col-4 order-1">
+                <label class="control-label d-flex align-content-start" for="Email">
+                    @LocaleResources.Core.Views.User.Index.Email
+                </label>
+                <input data-bind="value: $root.EditMode() ? Email : Email" id="Email" type="text" title="@LocaleResources.Core.Views.User.Index.EmailD"
+                       maxlength="150" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                          data-bind="validationMessage: Email"></span>
+            </div>
+            <div class="col-4 order-2">
+                <label class="control-label d-flex align-content-start" for="Package">
+                    @LocaleResources.Core.Views.User.Index.Package
+                </label>
+                <select data-bind="options: $root.Packages, value: $root.EditMode() ? Package : Package, optionsCaption: '@SharedLibrary.Core.Resources.Global.FormMessages.Select'" title="@LocaleResources.Core.Views.User.Index.PackageD"
+                        id="Package" class="form-control col-12"></select><span class="error" data-bind="validationMessage: Package"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-4 order-0">
+                <label class="control-label d-flex align-content-start" for="dtExpiryDate">
+                    @LocaleResources.Core.Views.User.Index.Expiry
+                </label>
+                <input name="expiryDate" type="text" data-bind="dateValue: $root.EditMode() ? ExpiryDate : ExpiryDate" title="@LocaleResources.Core.Views.User.Index.ExpiryD"
+                       placeholder="" id="dtExpiryDate" class="form-control col-12" />
+            </div>
+            <div class="col-4 order-1">
+                <label class="control-label d-flex align-content-start" for="IsApproved">
+                    @LocaleResources.Core.Views.User.Index.Approved
+                </label>
+                <input data-bind="checked: $root.EditMode() ? IsApproved : IsApproved" id="IsApproved" title="@LocaleResources.Core.Views.User.Index.ApprovedD"
+                       type="checkbox" class="form-control form-check" /><span class="error" data-bind="validationMessage: IsApproved"></span>
+            </div>
+            <div class="col-4 order-2">
+                <label class="control-label d-flex align-content-start" for="EmailConfirmed">
+                    @LocaleResources.Core.Views.User.Index.EmailConfirmed
+                </label>
+                <input data-bind="checked: $root.EditMode() ? EmailConfirmed : EmailConfirmed" id="EmailConfirmed" title="@LocaleResources.Core.Views.User.Index.EmailConfirmedD"
+                       type="checkbox" class="form-control form-check" /><span class="error" data-bind="validationMessage: EmailConfirmed"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-6 order-0">
+                <h4 class="d-flex align-content-start">
+                    @LocaleResources.Core.Views.User.Index.AssignedRoles
+                </h4>
+                <div data-bind="foreach: { data: Roles, as: 'Role' }" title="@LocaleResources.Core.Views.User.Index.AssignedRolesD">
+                    <p class="d-flex align-content-start">
+                        <button type="button" data-bind="click: function() { $root.getView().removeRole($data); } " title="@SharedLibrary.Core.Resources.Global.FormMessages.DeleteD" class="btn btn-danger btn-xs">-</button>
+                        <span data-bind="text: Role.RoleId"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-6 order-1">
+                <h4 class="d-flex align-content-start">
+                    @LocaleResources.Core.Views.User.Index.AvailableRoles
+                </h4>
+                <div data-bind="foreach: { data: $root.AvailableRoles, as: 'Role' }" title="@LocaleResources.Core.Views.User.Index.AvailableRolesD">
+                    <p class="d-flex align-content-start">
+                        <button type="button" data-bind="click: function() { $root.getView().addRole($data); } " title="@SharedLibrary.Core.Resources.Global.FormMessages.AddD" class="btn btn-primary btn-xs">+</button>
+                        <span data-bind="text: Role.Id"></span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <input data-bind="value: ApprovedBy" id="ApprovedBy" type="hidden" />
+        <input data-bind="value: SecurityStamp" id="SecurityStamp" type="hidden" />
+        <div class="clear-fix">
+        </div>
+    </script>
+
+    <script type="text/html" id="uploadcontent">
+        <img class="img-fluid d-block m-auto" data-bind="attr:{src: $data.gridurl() }" />
+        <div class="form-group row">
+            <div class="col-12">
+                <label class="control-label d-flex align-content-start" for="upload">
+                    @SharedLibrary.Core.Resources.Global.FormMessages.UploadImage
+                </label>
+                <form>
+                    <input id="uploadType" name="uploadType" type="hidden" value="users" />
+                    <input class="form-control form-control-file" id="upload" name="upload" type="file" data-bind="fileUpload: { property: ImageFile }" />
+                </form>
+            </div>
+        </div>
+        <div class="clear-fix">
+        </div>
+    </script>
+
+    <script type="text/html" id="viewcontent">
+        <img class="img-fluid d-block m-auto" data-bind="attr:{src: $data.gridurl() }" />
+    </script>
+}
+
+<div class="container">
+    <h2 class="d-flex align-content-start">@LocaleResources.Core.Views.User.Index.Page</h2>
+    <p class="d-flex align-content-start">@LocaleResources.Core.Views.User.Index.PageD</p>
+</div>
+
+@Controls.Core.Grid.GridComposer.composeGrid(null, null, null, null, null, null, null, null, null, null)
+
+<section style="display: none">
+    @Controls.Core.Grid.GridComposer.composeStandardActions(null, "#__form", false, null, null, false)
+
+    @Controls.Core.Grid.GridComposer.composeStandardListing(null, "#__form", true)
+
+    @Controls.Core.Form.FormComposer.composeForm("__form", null, null, null, "<div data-bind=\"template: {name: 'formcontent' }\"></div>", null, null, "update( {\"TimeFields\": [ \"CreationDate\", \"ExpiryDate\" ] })", null, false)
+</section>
+
+@Controls.Core.Form.FormComposer.composeForm("secondForm", null, null, @SharedLibrary.Core.Resources.Global.FormMessages.ImageViewForm, "<div data-bind=\"template: {name: 'uploadcontent' }\"></div>", "upload")
+
+@Controls.Core.Form.FormComposer.composeForm("thirdForm", null, null, @SharedLibrary.Core.Resources.Global.FormMessages.ImageViewForm, "<div data-bind=\"template: {name: 'viewcontent' }\"></div>", "view")
+
+@section Scripts {
+
+    <script src="~/js/models/User.js" type="text/javascript"></script>
+    <script src="~/js/models/Role.js" type="text/javascript"></script>
+    <script src="~/js/models/UserRole.js" type="text/javascript"></script>
+    <script src="~/lib/FileUploadHandler.js" type="text/javascript"></script>
+    <script src="~/lib/DateTimeHandlers.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        var crudView = new CRUDView({
+                'uri': '/admin/users',
+                'observer': new CRUDObserver({ 'contentType': new User({}), 'messages': intialize(new MessageRepository()) })
+            });
+
+            crudView.getObserverObject().Genders = ko.observableArray([
+                new OptionItem(reformUniCodeString('@SharedLibrary.Core.Resources.Global.FormMessages.Male'), 'm'),
+                new OptionItem(reformUniCodeString('@SharedLibrary.Core.Resources.Global.FormMessages.Female'), 'f')
+            ]);
+
+            crudView.getObserverObject().Packages = ko.observableArray([]);
+            crudView.getObserverObject().AvailableRoles = ko.observableArray([]);
+
+            crudView.getObserverObject().getView().removeRole = function (role) {
+                if (crudView.getObserverObject().getEditMode()) {
+                    crudView.getObserverObject().getFormObject().Roles.remove(role);
+                }
+            };
+
+            crudView.getObserverObject().getView().addRole = function (roleToAdd) {
+                var match = false;
+                ko.utils.arrayFirst(crudView.getObserverObject().getFormObject().Roles(), function (role) {
+                    if (roleToAdd.Id === role.RoleId) {
+                        match = true;
+                    }
+                });
+
+                if (!match) {
+                    crudView.getObserverObject().getFormObject().Roles.push(new UserRole({ RoleId: roleToAdd.Id }));
+                }
+            };
+
+            crudView.getObserverObject().setListSource(crudView);
+
+            crudView.GetPackagesList = function () {
+
+                crudView.getObserverInterface().displayProcessingActivity();
+                crudView.getObserverObject().Packages([]);
+
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/users/getpackageslist",
+                    data: {},
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+
+                        crudView.getObserverInterface().displaySuccessActivity();
+                        crudView.getObserverObject().Packages(data.contents);
+                    },
+                    error: function (err) {
+
+                        crudView.getObserverInterface().displayFailureActivity();
+                    }
+                });
+            };
+
+            crudView.GetAvailableRoles = function () {
+
+                crudView.getObserverInterface().displayProcessingActivity();
+                crudView.getObserverObject().AvailableRoles([]);
+
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/users/getavailableroles",
+                    data: {},
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+
+                        crudView.getObserverInterface().displaySuccessActivity();
+                        crudView.getObserverObject().AvailableRoles(data.contents);
+                    },
+                    error: function (err) {
+
+                        crudView.getObserverInterface().displayFailureActivity();
+                    }
+                });
+            };
+
+        $(function () {
+
+            try {
+
+                ko.applyBindings(crudView.getObserverObject());
+            }
+            catch (e) {
+
+                console.log(e.message);
+            }
+
+            $('#__form').dialog({ autoOpen: false, width: "auto", maxWidth: 1000 });
+
+            crudView.GetPackagesList();
+            crudView.GetAvailableRoles();
+            crudView.find(1);
+        });
+
+    </script>
+}

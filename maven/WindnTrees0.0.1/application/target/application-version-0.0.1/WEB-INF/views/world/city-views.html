@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div th:fragment="grid-views(form,modal)">
+            <script type="text/html" id="headings_city">
+                <tr>
+                    <th class="col-sm-12 col-md-10 col-lg-10">
+                        <span th:title="#{web.city.form.field.name.text}" th:text="#{web.city.form.field.name.text}"></span>
+                    </th>
+                    <th class="col-sm-12 col-md-2 col-lg-2">
+                    </th>
+                </tr>
+            </script>
+
+            <script type="text/html" id="rows_city">
+                <tr>
+                    <td class="col-sm-12 col-md-10 col-lg-10">
+                        <span data-bind="text: (name() + ' / ' + district() + ' / ' + population()), attr: {title: name() } "></span>
+                        <span data-bind="text: (countryCapital() !== null && countryCapital() !== undefined) ? 'Capital' : ''"></span>
+                    </td>
+                    <td class="col-sm-12 col-md-2 col-lg-2">
+                        <div class="hidden-phone visible-desktop action-buttons">
+                            <a class="green" href="#" th:data-bind="${modal} ? 'click: function(data, event) { $parent.resetFormForEditing($index); }' : 'click: function(data, event) { $parent.resetFormForEditing($index); $(\'' + ${form} + '\').dialog(\'open\'); }'" th:data-toggle="${modal} ? 'modal' : ''" th:data-target="${modal} ? ${form} : ''" th:title="#{form.edit.desc}"><i class="fa fa-edit text-success"></i><span th:text="#{form.edit.desc}"></span></a>
+                            <a class="red" href="#" data-bind="click: function(data, event) { $parent.delete($data); }" th:title="#{form.delete.desc}"><i class="fa fa-times text-danger"></i><span th:text="#{form.delete.desc}"></span></a>
+                        </div>
+                    </td>
+                </tr>
+            </script>
+        </div>
+        
+        <div th:fragment="form-content">
+            <div class="form-row form-group">
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <label class="control-label" for="name">
+                        <span th:text="#{web.city.form.field.name.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? name : name" id="name" name="name" type="text" th:title="#{web.city.form.field.name.text}"
+                           maxlength="35" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: name"></span>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <label class="control-label" for="district">
+                        <span th:text="#{web.city.form.field.district.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? district : district" id="district" name="district" type="text" th:title="#{web.city.form.field.district.text}"
+                           maxlength="20" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: district"></span>
+                </div>
+                <div class="col-sm-12 col-md-2 col-lg-2">
+                    <label class="control-label" for="population">
+                        <span th:text="#{web.city.form.field.population.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? population : population" id="population" name="population" type="text" th:title="#{web.city.form.field.population.text}"
+                           maxlength="10" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: population"></span>
+                </div>
+                <div class="col-sm-12 col-md-2 col-lg-2">
+                    <label class="control-label" for="countryCapital">
+                        <span th:text="#{web.city.form.field.capital.text}"></span>
+                    </label>
+                    <input type="checkbox" data-bind="event: { change: function() { ($data.countryCapital() !== null && $data.countryCapital() !== null) ? $data.countryCapital(null) : $data.countryCapital($data.country()); } }, checked: (($data.countryCapital() !== null && $data.countryCapital() !== undefined) ? true : false)" class="checkbox" />
+                    <span class="error"
+                           data-bind="validationMessage: countryCapital"></span>
+                </div>
+            </div>
+            <div class="clear-fix">
+            </div>
+        </div>
+        
+        <div type="text/html" th:fragment="actions-cities">
+                <div data-bind="template: {name: 'actions_city'}"></div>
+        </div>
+        
+        <div type="text/html" th:fragment="headings-cities">
+                <thead data-bind="template: {name: 'headings_city'}"></thead>
+        </div>
+
+        <div type="text/html" th:fragment="rows-cities">
+                <tbody data-bind="template: {name: 'rows_city', foreach: Records}"></tbody>
+        </div>
+        
+        <div type="text/html" th:fragment="listings-cities">
+            <div data-bind="template: {name: 'listings_city'}"></div>
+        </div>
+    </body>
+</html>

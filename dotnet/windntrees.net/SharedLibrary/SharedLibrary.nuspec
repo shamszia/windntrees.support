@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>WindnTrees.SharedLibrary</id>
+    <version>1.0.4</version>
+    <title>WindnTrees.SharedLibrary</title>
+    <authors>Shams Zia</authors>
+    <owners>Invincible Technologies</owners>
+    <licenseUrl>http://invincibletec.com/windntrees/license</licenseUrl>
+    <projectUrl>http://invincibletec.com/windntrees/index</projectUrl>
+    <iconUrl>http://invincibletec.com/content/windtrees/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Shared library for WindnTrees application project.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>WindnTrees CRUD CRUDS CRUD2CRUD CRUDController CRUDControllers</tags>
+  </metadata>
+</package>

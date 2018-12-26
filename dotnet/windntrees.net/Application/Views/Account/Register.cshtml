@@ -1,0 +1,171 @@
+﻿@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Header
+{
+    <title>@LocaleResources.Views.Account.Index.Page</title>
+
+    <script type="text/html" id="formcontent">
+        <div class="form-group row">
+            <div class="col-12">
+                <input data-bind="value: UserName" id="UserName" type="text" maxlength="32" placeholder="@LocaleResources.Views.User.Index.UserName" title="@LocaleResources.Views.User.Index.UserName"
+                       class="form-control col-12" /><span class="error" data-bind="validationMessage: UserName"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-6 order-0">
+                <input data-bind="value: Password" id="Password" type="password" maxlength="32" placeholder="@LocaleResources.Views.User.Index.Password" title="@LocaleResources.Views.User.Index.Password"
+                       class="form-control col-12" /><span class="error" data-bind="validationMessage: Password"></span>
+            </div>
+            <div class="col-6 order-1">
+                <input data-bind="value: ConfirmPassword" id="ConfirmPassword" type="password" maxlength="32" placeholder="@LocaleResources.Views.User.Index.Confirm" title="@LocaleResources.Views.User.Index.Confirm"
+                       class="form-control col-12" /><span class="error" data-bind="validationMessage: ConfirmPassword"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-12">
+                <input data-bind="value: Email" id="Email" type="text" maxlength="150" placeholder="@LocaleResources.Views.User.Index.Email" title="@LocaleResources.Views.User.Index.Email"
+                       class="form-control col-12" /><span class="error" data-bind="validationMessage: Email"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-6 order-0">
+                <input data-bind="value: FirstName" id="FirstName" type="text" maxlength="50" placeholder="@LocaleResources.Views.User.Index.FirstName" title="@LocaleResources.Views.User.Index.FirstName"
+                       class="form-control col-12" /><span class="error" data-bind="validationMessage: FirstName"></span>
+            </div>
+            <div class="col-6 order-1">
+                <input data-bind="value: LastName" id="LastName" type="text" maxlength="100" placeholder="@LocaleResources.Views.User.Index.LastName" title="@LocaleResources.Views.User.Index.LastName"
+                       class="form-control col-12" /><span class="error" data-bind="validationMessage: LastName"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-6 order-0">
+                <input data-bind="value: Title" id="Title" type="text" maxlength="50" placeholder="@LocaleResources.Views.User.Index.Title" title="@LocaleResources.Views.User.Index.Title"
+                       class="form-control col-12" /><span class="error" data-bind="validationMessage: Title"></span>
+            </div>
+            <div class="col-6 order-1">
+                <select data-bind="options: $root.Genders, optionsText: 'key', optionsValue: 'val', value: Sex, optionsCaption: '@LocaleResources.Views.User.Index.Gender'" title="@LocaleResources.Views.User.Index.Gender"
+                        id="Sex" class="form-control col-12"></select><span class="error" data-bind="validationMessage: Sex"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-6 order-0">
+                <input data-bind="value: Captcha" id="Captcha" type="text" maxlength="20" class="form-control col-12" placeholder="@SharedLibrary.Resources.Global.FormMessages.Captcha" title="@SharedLibrary.Resources.Global.FormMessages.Captcha" />
+                <span class="error" data-bind="validationMessage: Captcha"></span>
+            </div>
+            <div class="col-6 order-1">
+                <img id="captchaimage" alt="@SharedLibrary.Resources.Global.FormMessages.CaptchaImageD" src="" title="@SharedLibrary.Resources.Global.FormMessages.CaptchaImageD"
+                     onclick="loadCaptcha();" style="width: 200px; height: 36px;" />
+            </div>
+        </div>
+        <div class="clear-fix">
+        </div>
+    </script>
+}
+
+<div id="webpage" class="container-fluid">
+
+    <div class="col-6 m-auto align-content-center">
+        <div class="card">
+            <div class="card-header">
+                <h3>
+                    @LocaleResources.Views.User.Index.SignUp
+                </h3>
+                <div class='form-group row'>
+                    <div class="col-6 order-0">
+                        <div class="d-flex justify-content-start">
+                            <span data-bind="template: {name: 'form_messages'}"></span>
+                        </div>
+                    </div>
+                    <div class="col-6 order-1">
+                        <div class="d-flex justify-content-start">
+                            <span data-bind="template: {name: 'form_processing'}"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <div class="d-flex justify-content-start">
+                        <div data-bind='if: Errors().length > 0'>
+                            <ul class='errorlist' data-bind="template: {name: 'list_error_messages', foreach: Errors}"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" data-bind="with: getObservableInputObject()">
+                <div data-bind="template: {name: 'formcontent' }"></div>
+            </div>
+            <div class="card-footer">
+                <button type="button" data-bind="click: function() { create({ 'content':  getObservableInputObject(), 'target': 'register' }); } " id="btnAddEditUser" class="btn btn-primary">
+                    @SharedLibrary.Resources.Global.FormMessages.Submit
+                </button>
+            </div>
+        </div>
+    </div>
+        
+    </div>
+
+@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/ViewModels/UserProfile.js")" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var newUserView = new NewView({
+            'uri': '/account',
+            'observer': new ObjectObserver({ 'contentType': new UserProfile({}), 'messages': intialize(new MessageRepository()) })
+        });
+
+        newUserView.getObserverObject().Genders = ko.observableArray([
+                new OptionItem('@SharedLibrary.Resources.Global.FormMessages.Male', 'm'),
+                new OptionItem('@SharedLibrary.Resources.Global.FormMessages.Female', 'f')
+        ]);
+
+        newUserView.getObserverObject().processRecord = function (event, eventData) {
+
+            if (eventData !== null && eventData !== undefined) {
+
+                if (eventData.errors !== null && eventData.errors !== undefined) {
+
+                    newUserView.getObserverObject().setResultMessage('@SharedLibrary.Resources.Global.StandardMessages.Err');
+                }
+                else if (eventData.result !== null && eventData.result !== undefined) {
+
+                    newUserView.getObserverObject().setResultMessage('@LocaleResources.Views.Account.ResetPending.Message');
+                    window.location = "/Account/RegisterationPending";
+                }
+                else {
+
+                    newUserView.getObserverObject().setResultMessage('@SharedLibrary.Resources.Global.StandardMessages.Err');
+                }
+            }
+        };
+
+
+        $(function () {
+
+            try {
+                ko.applyBindings(newUserView.getObserverObject());
+            }
+            catch (e) {
+            }
+
+            newUserView.subscribeEvent('record.after.rendering.view.CRUD.WindnTrees', newUserView.getObserverObject().processRecord);
+
+            loadCaptcha();
+        });
+
+    </script>
+
+    <script type="text/javascript">
+        function loadCaptcha() {
+            $.ajax({
+                type: 'GET', url: '/general/generatecaptcha',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                cache: false,
+                success: function (data) { $("#captchaimage").attr('src', '/uploads/captchas/' + data); },
+                error: function (data) { alert("Error while loading captcha image") }
+            });
+        };
+    </script>
+}

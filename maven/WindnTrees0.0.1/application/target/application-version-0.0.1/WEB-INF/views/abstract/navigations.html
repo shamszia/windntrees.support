@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <nav id="navmenu" class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" th:fragment="navigation">
+            <div class="navbar-brand">
+                <a th:href="@{/index}">
+                    <img th:src="@{/resources/images/logo.png}" class="img-fluid" alt="WindnTrees">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <span class="d-flex align-content-start" id="menutext"></span>
+        </nav>
+
+        <nav id="navmenu-databound" class="navbar navbar-default" role="navigation" th:fragment="navigation-databound(navigationForm,subNavigationForm)">
+            <div class="container-fluid" data-bind="with: getObserverObject()">
+                <div class="navbar-header" id="nbar-header-databound">
+                    <a th:href="@{/index}">
+                        <img th:src="@{/resources/images/logo.png}" class="img-responsive navbar-logo-image" alt="WindnTrees">
+                    </a>
+                    <button type="button" class="navbar-toggle collapsed d-flex align-content-start" data-toggle="collapse" data-target="#main-nav">
+                        <span class="sr-only">Toggle Navigation</span> <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <div id="main-nav" class="collapse navbar-collapse" data-bind="foreach: Records">
+                    <!-- ko if: items() != null -->
+                    <!-- ko if: items().length == 0 -->
+                    <ul data-bind="attr: { class: getNavigationTypeClass(), title: name() + ' - ' + getKey() }">
+                        <li class="menu-item-level-0">&nbsp;&nbsp;</li>
+                        <li class="menu-item-level-0"><span data-bind="text: name()"></span></li>
+                        <li class="menu-item-level-0">&nbsp;&nbsp;</li>
+                        <li class="input-group text-center menu-item-level-0">
+                            <span class="input-group-btn">
+                                <a class="btn btn-sm btn-default" href="#" data-bind="attr: {title: 'add new root menu item for menu ' + name() + ' with id = ' + getKey() }, click: function(data, event) { $root.getObserverObject().selectDetail({'record': data, 'page': 1}); $root.getDetailView().getObserverObject().resetDetailForm({ '_relatedrecordtype': 'level1-record-id', '_relatedrecordid': $data.id }); }" data-toggle="modal" th:data-target="${navigationForm}">NEW</a>
+                            </span>
+                        </li>
+                    </ul>
+                    <!-- /ko -->
+                    <!-- ko if: items().length > 0 -->
+                    <ul data-bind="attr: { class: getNavigationTypeClass(), title: name() + ' - ' + getKey() }, foreach: items" >
+
+                        <!-- ko if: items() == null -->
+                        <li data-bind="attr: {title: title()}">
+                            <a data-bind="attr: {title: linkTitle(), href: linkUrl() }">
+                                <span data-bind="text: text()"></span>
+                            </a>
+                        </li>
+                        <li class="input-group text-center menu-item-level-0">
+                            <span class="input-group-btn">
+                                <a class="btn btn-sm btn-default" href="#" data-bind="attr: {title:'edit'}, click: function(data, event) { $root.getDetailView().setMasterKeyRecord(null); $root.getDetailView().getDetailView().clearRecords(); $root.getObserverObject().selectDetail({'record': $parents[0], 'page': 1}); $root.getDetailView().getObserverObject().resetFormForEditingByRecord(data); }" data-toggle="modal" th:data-target="${navigationForm}">e</a>
+                                <a class="btn btn-sm btn-default" href="#" data-bind="attr: {title:'remove'}, click:  function(data, event) { $root.getDetailView().setMasterKeyRecord(null); $root.getDetailView().getDetailView().clearRecords(); $root.getObserverObject().selectDetail({'record': $parents[0], 'page': 1}); $root.getDetailView().getObserverObject().delete(data); $parents[0].items.remove(data);}">r</a>
+                                <a class="btn btn-sm btn-default" href="#" data-bind="attr: {title:'add new sub-item for - ' + $data.id }, click: function(data, event) { $root.getObserverObject().selectDetail({'record': $parents[0], 'page': 1}); $root.getDetailView().getObserverObject().selectDetail({'record': data, 'page': 1}); $root.getDetailView().getDetailView().getObserverObject().resetDetailForm({ '_relatedrecordtype': 'level2-record-id', '_relatedrecordid': $data.id }); }" data-toggle="modal" th:data-target="${subNavigationForm}">n</a>
+                            </span>
+                        </li>
+                        <!-- /ko -->
+
+                        <!-- ko if: items() != null -->
+                        <!-- ko if: items().length == 0 -->
+                        <li data-bind="attr: {title: title()}">
+                            <a data-bind="attr: {title: linkTitle() + ' - ' + id, href: linkUrl() }">
+                                <span data-bind="text: text()"></span>
+                            </a>
+                        </li>
+                        <li class="input-group text-center menu-item-level-0">
+                            <span class="input-group-btn">
+                                <a class="btn btn-sm btn-default" href="#" data-bind="attr: {title:'edit'}, click: function(data, event) { $root.getDetailView().setMasterKeyRecord(null); $root.getDetailView().getDetailView().clearRecords(); $root.getObserverObject().selectDetail({'record': $parents[0], 'page': 1}); $root.getDetailView().getObserverObject().resetFormForEditingByRecord(data); }" data-toggle="modal" th:data-target="${navigationForm}">e</a>
+                                <a class="btn btn-sm btn-default" href="#" data-bind="attr: {title:'remove'}, click: function(data, event) { $root.getDetailView().setMasterKeyRecord(null); $root.getDetailView().getDetailView().clearRecords(); $root.getObserverObject().selectDetail({'record': $parents[0], 'page': 1}); $root.getDetailView().getObserverObject().delete(data); $parents[0].items.remove(data);}">r</a>
+                                <a class="btn btn-sm btn-default" href="#" data-bind="attr: {title:'add new sub-item for - ' + $data.id }, click: function(data, event) { $root.getObserverObject().selectDetail({'record': $parents[0], 'page': 1}); $root.getDetailView().getObserverObject().selectDetail({'record': data, 'page': 1}); $root.getDetailView().getDetailView().getObserverObject().resetDetailForm({ '_relatedrecordtype': 'level2-record-id', '_relatedrecordid': $data.id }); }" data-toggle="modal" th:data-target="${subNavigationForm}">n</a>
+                            </span>
+                        </li>
+                        <!-- /ko -->
+
+                        <!-- ko if: items().length > 0 -->
+                        <li data-bind="attr: {title: title()}">
+                            <a data-bind="attr: {title: linkTitle() + ' - ' + id, href: linkUrl() }" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-bind="text: text()"></span> <span class="caret"></span></a> 
+                            <ul class="dropdown-menu _ltr" data-bind="foreach: items">
+
+                                <!-- ko if: separator() -->
+                                <li class="input-group">
+                                    <a href="#">
+                                        <span>---separator---</span>
+                                    </a>
+                                    <span class="input-group-btn">
+                                        <a class="btn btn-sm btn-default" href="#" data-bind="attr: {title:'edit'}, click: function(data, event) { $root.getObserverObject().selectDetail({'record': $parents[1], 'page': 1}); $root.getDetailView().getObserverObject().selectDetail({'record': $parents[0], 'page': 1, 'source': 'level2-recordid'}); $root.getDetailView().getDetailView().getObserverObject().resetFormForEditingByRecord(data); }" data-toggle="modal" th:data-target="${subNavigationForm}">e</a>
+                                        <a class="btn btn-sm btn-default" href="#" data-bind="attr: {title:'remove'}, click: function(data, event) { $root.getObserverObject().selectDetail({'record': $parents[1], 'page': 1}); $root.getDetailView().getObserverObject().selectDetail({'record': $parents[0], 'page': 1}); $root.getDetailView().getDetailView().getObserverObject().delete(data); $parents[0].items.remove(data); }">r</a>
+                                    </span>
+                                </li>
+                                <!-- /ko -->
+
+                                <!-- ko if: !separator() -->
+                                <li data-bind="attr: {title: title()}" class="input-group">
+                                    <a data-bind="attr: {title: linkTitle() + ' - ' + id, href: linkUrl() }">
+                                        <span data-bind="text: text()"></span>
+                                    </a>
+                                    <span class="input-group-btn">
+                                        <a class="btn btn-sm btn-default" href="#" data-bind="attr: {title:'edit'}, click: function(data, event) { $root.getObserverObject().selectDetail({'record': $parents[1], 'page': 1}); $root.getDetailView().getObserverObject().selectDetail({'record': $parents[0], 'page': 1, 'source': 'level2-recordid'}); $root.getDetailView().getDetailView().getObserverObject().resetFormForEditingByRecord(data); }" data-toggle="modal" th:data-target="${subNavigationForm}">e</a>
+                                        <a class="btn btn-sm btn-default" href="#" data-bind="attr: {title:'remove'}, click: function(data, event) { $root.getObserverObject().selectDetail({'record': $parents[1], 'page': 1}); $root.getDetailView().getObserverObject().selectDetail({'record': $parents[0], 'page': 1}); $root.getDetailView().getDetailView().getObserverObject().delete(data); $parents[0].items.remove(data);}">r</a>
+                                    </span>
+                                </li>
+                                <!-- /ko -->
+
+                                <!-- ko if: $index() == ($parent.items().length - 1) -->
+                                <li title="">&nbsp;&nbsp;</li>
+                                <li class="input-group text-center menu-item-level-0">
+                                    <span class="input-group-btn">
+                                        <a class="btn btn-sm btn-default" href="#" data-bind="attr: {title: 'add new sub-item for - ' + $parent.id }, click: function(data, event) { $root.getObserverObject().selectDetail({'record': $parents[1], 'page': 1}); $root.getDetailView().getObserverObject().selectDetail({'record': $parents[0], 'page': 1}); $root.getDetailView().getDetailView().getObserverObject().resetDetailForm({ '_relatedrecordtype': 'level2-record-id', '_relatedrecordid': $data.id }); }" data-toggle="modal" th:data-target="${subNavigationForm}">NEW</a>
+                                    </span>
+                                </li>
+                                <!-- /ko -->
+                            </ul>
+                        </li>
+                        <li class="input-group text-center menu-item-level-0" title="">
+                            <span class="input-group-btn">
+                                <a class="btn btn-sm btn-default" href="#" data-bind="attr: {title:'edit'}, click: function(data, event) { $root.getDetailView().setMasterKeyRecord(null); $root.getDetailView().getDetailView().clearRecords(); $root.getObserverObject().selectDetail({'record': $parents[0], 'page': 1}); $root.getDetailView().getObserverObject().resetFormForEditingByRecord(data); }" data-toggle="modal" th:data-target="${navigationForm}">e</a>
+                                <a class="btn btn-sm btn-default" href="#" data-bind="attr: {title:'remove'}, click: function(data, event) { $root.getDetailView().setMasterKeyRecord(null); $root.getDetailView().getDetailView().clearRecords(); $root.getObserverObject().selectDetail({'record': $parents[0], 'page': 1}); $root.getDetailView().getObserverObject().delete(data); $parents[0].items.remove(data);}">r</a>
+                            </span>
+                        </li>
+                        <!-- /ko -->
+                        <!-- /ko -->
+
+                        <!-- ko if: $index() == ($parent.items().length - 1) -->
+                        <li>&nbsp;&nbsp;</li>
+                        <li class="input-group text-center menu-item-level-0" title="manage navigations">
+                            <span class="input-group-btn">
+                                <a class="btn btn-sm btn-default" href="#" data-bind="attr: { title: 'add new root menu item for menu ' + $parent.name() + ' with id = ' + $parent.getKey() }, click: function(data, event) { $root.getObserverObject().selectDetail({'record': $parents[0], 'page': 1}); $root.getDetailView().getObserverObject().resetDetailForm({ '_relatedrecordtype': 'level1-record-id', '_relatedrecordid': $data.id }); }" data-toggle="modal" th:data-target="${navigationForm}">NEW</a>
+                            </span>
+                        </li>
+                        <!-- /ko -->
+                    </ul>
+                    <!-- /ko -->
+                    <!-- /ko -->
+                </div>
+            </div>
+        </nav>
+
+    </body>
+</html>

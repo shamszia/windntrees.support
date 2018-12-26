@@ -1,0 +1,24 @@
+WindnTrees .NET Application
+
+Database:
+
+1. Install / attach MSSQL database from "db" folder within WindnTrees solution, make sure database name, user id and passwords are correct in web.config.
+
+
+Development Environment:
+
+1. Visual studio community edition.
+
+
+Running / Accessing Application
+Reference application has following areas/sections.
+
+1. admin
+2. myaccount
+3. anonymous access.
+
+1. admin area can be accessed via http://localhost:port/admin
+2. myaccount area can be accessed via http://localhost:port/myaccount
+
+username: admin@domain.com
+password: Admin@123

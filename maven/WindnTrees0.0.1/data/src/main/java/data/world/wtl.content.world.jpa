@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" ptype="MONOLITH" ppkg="wtl.content" epkg="world" v="4.7" rws="_1519299195353159" Pws="_1519299195353159" cws="_1519299195353159" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_151929705581170" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity compositePrimaryKeyClass="CountryPK" abs="false" class="Country" v="true" jbn="false" xre="false" m="false" rootElement="_151929705581170" id="_151929705581171">
+        <jpa:attributes>
+            <jpa:basic optional="false" attribute-type="String" v="true" xvt="" name="name" id="_151929705581175">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="Name" unique="false" nullable="false" insertable="true" updatable="true" table="country" length="52"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="String" v="true" xvt="" name="continent" id="_151929705581176">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="Continent" unique="false" nullable="false" insertable="true" updatable="true" table="country" length="13"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="String" v="true" xvt="" name="region" id="_151929705581177">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="Region" unique="false" nullable="false" insertable="true" updatable="true" table="country" length="26"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="float" v="true" xvt="" name="surfaceArea" id="_151929705581178">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="SurfaceArea" unique="false" nullable="false" insertable="true" updatable="true" table="country"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" xvt="" name="indepYear" id="_151929705581179">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="IndepYear" unique="false" nullable="true" insertable="true" updatable="true" table="country"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="int" v="true" xvt="" name="population" id="_151929705581180">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="Population" unique="false" nullable="false" insertable="true" updatable="true" table="country"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Float" v="true" xvt="" name="lifeExpectancy" id="_151929705581181">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="LifeExpectancy" unique="false" nullable="true" insertable="true" updatable="true" table="country" precision="3" scale="1"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Float" v="true" xvt="" name="gnp" id="_151929705581182">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="GNP" unique="false" nullable="true" insertable="true" updatable="true" table="country" precision="10" scale="2"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Float" v="true" xvt="" name="gNPOld" id="_151929705581183">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="GNPOld" unique="false" nullable="true" insertable="true" updatable="true" table="country" precision="10" scale="2"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="String" v="true" xvt="" name="localName" id="_151929705581184">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="LocalName" unique="false" nullable="false" insertable="true" updatable="true" table="country" length="45"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="String" v="true" xvt="" name="governmentForm" id="_151929705581185">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="GovernmentForm" unique="false" nullable="false" insertable="true" updatable="true" table="country" length="45"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="headOfState" id="_151929705581186">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="HeadOfState" unique="false" nullable="true" insertable="true" updatable="true" table="country" length="60"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" xvt="" name="capital" id="_151929705581187">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="Capital" unique="false" nullable="true" insertable="true" updatable="true" table="country"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="String" v="true" xvt="" name="code2" id="_151929705581188">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="Code2" unique="false" nullable="false" insertable="true" updatable="true" table="country" length="2"/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" own="false" collection-type="java.util.List" connected-entity-id="_151929705581172" connected-attribute-id="_151929705581195" v="true" xvt="" name="cityCollection" id="_151929705581189">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:one-to-many orp="false" own="false" collection-type="java.util.List" connected-entity-id="_151929705581173" connected-attribute-id="_1519297055811100" v="true" xvt="" name="countrylanguageCollection" id="_151929705581190">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="String" v="true" xvt="" name="code" id="_151929705581174">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="Code" unique="false" nullable="false" insertable="true" updatable="true" table="country" length="3"/>
+                <jpa:generated-value/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="country"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="CityPK" abs="false" class="City" v="true" jbn="false" xre="false" m="false" rootElement="_151929705581170" id="_151929705581172">
+        <jpa:attributes>
+            <jpa:basic optional="false" attribute-type="String" v="true" xvt="" name="name" id="_151929705581192">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="Name" unique="false" nullable="false" insertable="true" updatable="true" table="city" length="35"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="String" v="true" xvt="" name="district" id="_151929705581193">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="District" unique="false" nullable="false" insertable="true" updatable="true" table="city" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="int" v="true" xvt="" name="population" id="_151929705581194">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="Population" unique="false" nullable="false" insertable="true" updatable="true" table="city"/>
+            </jpa:basic>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_151929705581171" connected-attribute-id="_151929705581189" v="true" xvt="" name="countryCode" id="_151929705581195">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:join-column name="COUNTRYCODE" rc="CODE" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Integer" v="true" xvt="" name="id" id="_151929705581191">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="city"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="city"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyType="D" compositePrimaryKeyClass="CountrylanguagePK" abs="false" class="Countrylanguage" v="true" jbn="false" xre="false" m="false" rootElement="_151929705581170" id="_151929705581173">
+        <jpa:attributes>
+            <jpa:basic optional="false" attribute-type="String" v="true" xvt="" name="isOfficial" id="_151929705581198">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="IsOfficial" unique="false" nullable="false" insertable="true" updatable="true" table="countrylanguage" length="2"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="float" v="true" xvt="" name="percentage" id="_151929705581199">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="Percentage" unique="false" nullable="false" insertable="true" updatable="true" table="countrylanguage"/>
+            </jpa:basic>
+            <jpa:many-to-one optional="false" primaryKey="false" connected-entity-id="_151929705581171" connected-attribute-id="_151929705581190" v="true" xvt="" name="country" id="_1519297055811100">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:join-column name="COUNTRYCODE" rc="CODE" unique="false" nullable="true" insertable="false" updatable="false"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="String" v="true" xvt="" name="countryCode" id="_151929705581196">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="CountryCode" unique="false" nullable="false" insertable="true" updatable="true" table="countrylanguage" length="3"/>
+            </jpa:id>
+            <jpa:id attribute-type="String" v="true" xvt="" name="language" id="_151929705581197">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:column name="Language" unique="false" nullable="false" insertable="true" updatable="true" table="countrylanguage" length="30"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="countrylanguage"/>
+    </jpa:entity>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+    <jpa:c/>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_1519299195353159">
+            <i ref="_151929705581173" x="32" y="516"/>
+            <i ref="_151929705581171" x="280" y="32"/>
+            <i ref="_151929705581172" x="539" y="516"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>

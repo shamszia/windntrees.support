@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="abstract/layout :: header(~{::title},~{},~{::script})">
+        <title>Web Application Title</title>
+        
+        <script th:src="@{/resources/contents/examples/Color.js}" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+            
+            /**
+             * CRUDObserver reference program implementation.
+             * 
+             * @returns {undefined}
+             */
+            function programCode() {
+                var instance = this;
+                
+                instance.ov = new ObjectView({ 'uri': "[[@{/store/color}]]", 
+                    'observer': new ObjectObserver({'content': new Color({}), 'messages': intialize(new MessageRepository())})
+                });
+
+                instance.getView = function () {
+                    return instance.ov;
+                };
+            }
+
+            $(function () {
+                var program = new programCode();
+                ko.applyBindings(program.getView());
+            });
+
+        </script>
+    </head>
+    <body>
+        <section th:replace="~{abstract/navigations :: navigation}"></section>
+        <section th:replace="~{abstract/layout :: page-path}"></section>
+        
+        <div class="container-fluid">
+            <div id="left-div" class="col-md-3">
+                <h3>Contents</h3>
+                <ul class="list-none">
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#data-members-contents" data-toggle="collapse">Fields</a>
+                        <ol id="data-members-contents" class="list collapse in">
+                            <li><a class="field" href="#data-members"></a></li>
+                            <li><a class="field" href="#data-members"></a></li>
+                            <li><a class="field" href="#data-members"></a></li>
+                            <li><a class="field" href="#data-members"></a></li>
+                            <li><a class="field" href="#data-members"></a></li>
+                            <li><a class="field" href="#data-members"></a></li>
+                            <li><a class="field" href="#data-members"></a></li>
+                            <li><a class="field" href="#data-members"></a></li>
+                            
+                        </ol>
+                    </li>
+                    <li><a href="#utility-functions-contents" data-toggle="collapse">Functions</a>
+                        <ol id="utility-functions-contents" class="list collapse in">
+                            <li><a class="function" href="#utility-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#utility-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#utility-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#utility-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#utility-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#utility-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#utility-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#utility-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#utility-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#utility-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#utility-functions"> <span class="params">()</span></a></li>
+                        </ol>
+                    </li>
+                    <li><a href="#activity-functions-contents" data-toggle="collapse">Activity Functions</a>
+                        <ol id="activity-functions-contents" class="list collapse in">
+                            <li><a class="function" href="#activity-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#activity-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#activity-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#activity-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#activity-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#activity-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#activity-functions"> <span class="params">()</span></a></li>
+                            <li><a class="function" href="#activity-functions"> <span class="params">()</span></a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#implementation">Implementation</a>
+                    </li>
+                    <li><a href="#code">Code</a></li>
+                </ul>
+            </div>
+            <div id="right-div" class="col-md-9">
+                <h1 id="introduction">
+                    Subject
+                </h1>
+                <p class="lead"><code>Subject</code> details</p>
+                
+                <h3 id="data-members">Fields</h3>
+                <p>Following is the list of fields.</p>
+                <ol class="list">
+                    <li><a class="field" href="#">Field</a> <span class="description">description.</span></li>
+                    <li><a class="field" href="#">Field</a> <span class="description">description.</span></li>
+                    <li><a class="field" href="#">Field</a> <span class="description">description.</span></li>
+                    <li><a class="field" href="#">Field</a> <span class="description">description.</span></li>
+                    <li><a class="field" href="#">Field</a> <span class="description">description.</span></li>
+                    <li><a class="field" href="#">Field</a> <span class="description">description.</span></li>
+                    <li><a class="field" href="#">Field</a> <span class="description">description.</span></li>
+                    <li><a class="field" href="#">Field</a> <span class="description">description.</span></li>
+                    <li><a class="field" href="#">Field</a> <span class="description">description.</span></li>
+                    <li><a class="field" href="#">Field</a> <span class="description">description.</span></li>
+                    <li><a class="field" href="#">Field</a> <span class="description">description.</span></li>
+                    <li><a class="field" href="#">Field</a> <span class="description">description.</span></li>
+                </ol>
+                
+                <code>Object</code> extends from <code>Object</code> and for information about extended data members refer <a href="">here</a>.
+                
+                <h3 id="utility-functions">Member Functions</h3>
+                <p>Following is the list of data-member and other processing functions.</p>
+                <ol class="list"> 
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    
+                </ol>
+                
+                
+                <h3 id="activity-functions">Activity Functions</h3>
+                <p>Following is the list of activity functions.</p>
+                <ol class="list">
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                    <li><a class="function" href="#">Function <span class="params">()</span></a> <span class="description">description.</span></li>
+                </ol>
+                
+                <code>Object</code> extends from <code>Object</code> and for information about activity functions refer <a href="">here</a>.
+                <hr />
+
+                <h2 id="implementation">Implementation</h2>
+                <p>Following section implements <code>Object</code> and demonstrates its functionality.</p>
+                
+                <section id="observer-section" class="well" data-bind="with: getObserver()">
+                    <section class="observer-section">
+                        <div class="row-fluid">
+                            <div class="form-group result-message clearfix">
+                                <span data-bind="visible: getProcessing()"><i class="fa fa-cog fa-spin fa-2x"></i></span>
+                                <span data-bind="if: getResultMessage().length > 0" class="alert"><span data-bind="text: getResultMessage()"></span></span>
+                                <div data-bind="if: getErrors().length > 0">
+                                    <ul class="errorlist" data-bind="foreach: { data: getObservableErrors(), as: 'error' }">
+                                        <li class="alert"><span data-bind="text: errField"></span> <span data-bind="text: errMessage"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="panel panel-default clearfix">
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <div class="bootstrap-table">
+                                            <div class="fixed-table-toolbar">
+                                                <div class="form-group">
+                                                    <div class="input-group-addon">
+                                                        <input data-bind="value: getObservableKeyword()" type="text" placeholder="keyword" class="form-control" />
+                                                    </div>
+                                                    <div class="input-group-addon">
+                                                        <span data-bind="text: getKeyword()"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fixed-table-container">
+                                                <div class="fixed-table-header"></div><div class="fixed-table-body">
+                                                    <table class="table table-hover grid-style-0">
+                                                        <tr>
+                                                            <th class="textright_ col-md-5">
+                                                                <span title="name">Name</span>
+                                                            </th>
+                                                            <th class="textright_ col-md-5">
+                                                                <span title="description">Description</span>
+                                                            </th>
+                                                            <th class="col-md-2">&nbsp;</th>
+                                                        </tr>
+                                                        <tbody data-bind="foreach: { data: getObservableRecords(), as: 'record' }">
+                                                            <tr>
+                                                                <td data-bind="text: name()"></td>
+                                                                <td data-bind="text: description()"></td>
+                                                                <td>
+                                                                    <div class="hidden-phone visible-desktop action-buttons">
+                                                                        <a class="green" href="#" data-bind="click: function(data, event) {  }"><i class="fa fa-edit text-success"></i><span> add </span></a>
+                                                                        <a class="red" href="#" data-bind="click: function(data, event) {  }"><i class="fa fa-times text-danger"></i><span> edit </span></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <section>
+                                                        <div class="col-md-2">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">List Size</span>
+                                                                <select class="input-group-addon" data-bind="value: getObservableListSize(), event: {change: function() { $parents[0].fillRecords(1); }}" style="width:auto;">
+                                                                    <option value="10">10</option>
+                                                                    <option value="20">20</option>
+                                                                    <option value="50">50</option>
+                                                                    <option value="100">100</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pull-right">
+                                                            <div class="input-group">
+                                                                <ul class="gridlist" data-bind="if: getListNavigator().calculateTotalPages() > 1">
+                                                                    <li class="input-group-addon" data-bind="css: {disabled: getCurrentList() === 1}"><a href="#" data-bind="click: function(){ if (getCurrentList() > 1) {$parents[0].fillRecords(getCurrentList() - 1); } }"><span>prev</span></a></li>
+                                                                    <li class="input-group-addon" data-bind="css: {disabled: getCurrentList() === getListNavigator().calculateTotalPages()}"><a href="#" data-bind="click: function(){ if (getCurrentList() < getListNavigator().calculateTotalPages()) { $parents[0].fillRecords(getCurrentList() + 1); } }"><span>next</span></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-default" type="button" data-bind="click: function(data,event) { displayProcessingActivity(); }">Display Processing Activity</button>
+                            <button class="btn btn-default" type="button" data-bind="click: function(data,event) { displayClearActivity(); }">Display Clear Activity</button>
+                            <button class="btn btn-default" type="button" data-bind="click: function(data,event) { clearListRecordsView(); }">Clear Records</button>
+                            <button class="btn btn-default" type="button" data-bind="click: function(data,event) { $parents[0].fillRecords(1); }">Fill Records</button>
+                        </div>
+                    </section>
+                </section>
+                <hr />
+                
+                <h3 id="code">Code</h3>
+                <p>Reference implementation code is mentioned below.</p>
+                <section class="well">
+<pre>
+
+Javascript:
+
+   /**
+    * CRUDObserver reference program implementation.
+    * 
+    * @returns {undefined}
+    */
+    function programCode() {
+        var instance = this;
+
+        instance.ov = new ObjectView({ 'uri': "[[@{/store/color}]]", 
+            'observer': new ObjectObserver({'content': new Color({}), 'messages': intialize(new MessageRepository())})
+        });
+
+        instance.getView = function () {
+            return instance.ov;
+        };
+    }
+
+    $(function () {
+        var program = new programCode();
+        ko.applyBindings(program.getView());
+    });
+</pre>
+
+<h4>HTML</h4>
+<div class="html-text-code">
+    <textarea rows="20" cols="200">
+<div name="HTMLCode">
+    <section id="htmlcode-section" class="well">
+        <section id="observer-section" class="well" data-bind="with: getObserver()">
+            <section class="observer-section">
+                <div class="row-fluid">
+                    <div class="form-group result-message clearfix">
+                        <span data-bind="visible: getProcessing()"><i class="fa fa-cog fa-spin fa-2x"></i></span>
+                        <span data-bind="if: getResultMessage().length > 0" class="alert"><span data-bind="text: getResultMessage()"></span></span>
+                        <div data-bind="if: getErrors().length > 0">
+                            <ul class="errorlist" data-bind="foreach: { data: getObservableErrors(), as: 'error' }">
+                                <li class="alert"><span data-bind="text: errField"></span> <span data-bind="text: errMessage"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default clearfix">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <div class="bootstrap-table">
+                                    <div class="fixed-table-toolbar">
+                                        <div class="form-group">
+                                            <div class="input-group-addon">
+                                                <input data-bind="value: getObservableKeyword()" type="text" placeholder="keyword" class="form-control" />
+                                            </div>
+                                            <div class="input-group-addon">
+                                                <span data-bind="text: getKeyword()"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fixed-table-container">
+                                        <div class="fixed-table-header"></div><div class="fixed-table-body">
+                                            <table class="table table-hover grid-style-0">
+                                                <tr>
+                                                    <th class="textright_ col-md-5">
+                                                        <span title="name">Name</span>
+                                                    </th>
+                                                    <th class="textright_ col-md-5">
+                                                        <span title="description">Description</span>
+                                                    </th>
+                                                    <th class="col-md-2">&nbsp;</th>
+                                                </tr>
+                                                <tbody data-bind="foreach: { data: getObservableRecords(), as: 'record' }">
+                                                    <tr>
+                                                        <td data-bind="text: name()"></td>
+                                                        <td data-bind="text: description()"></td>
+                                                        <td>
+                                                            <div class="hidden-phone visible-desktop action-buttons">
+                                                                <a class="green" href="#" data-bind="click: function(data, event) {  }"><i class="fa fa-edit text-success"></i><span> add </span></a>
+                                                                <a class="red" href="#" data-bind="click: function(data, event) {  }"><i class="fa fa-times text-danger"></i><span> edit </span></a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <section>
+                                                <div class="col-md-2">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">List Size</span>
+                                                        <select class="input-group-addon" data-bind="value: getObservableListSize(), event: {change: function() { $parents[0].fillRecords(1); }}" style="width:auto;">
+                                                            <option value="10">10</option>
+                                                            <option value="20">20</option>
+                                                            <option value="50">50</option>
+                                                            <option value="100">100</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="pull-right">
+                                                    <div class="input-group">
+                                                        <ul class="gridlist" data-bind="if: getListNavigator().calculateTotalPages() > 1">
+                                                            <li class="input-group-addon" data-bind="css: {disabled: getCurrentList() === 1}"><a href="#" data-bind="click: function(){ if (getCurrentList() > 1) {$parents[0].fillRecords(getCurrentList() - 1); } }"><span>prev</span></a></li>
+                                                            <li class="input-group-addon" data-bind="css: {disabled: getCurrentList() === getListNavigator().calculateTotalPages()}"><a href="#" data-bind="click: function(){ if (getCurrentList() < getListNavigator().calculateTotalPages()) { $parents[0].fillRecords(getCurrentList() + 1); } }"><span>next</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default" type="button" data-bind="click: function(data,event) { displayProcessingActivity(); }">Display Processing Activity</button>
+                    <button class="btn btn-default" type="button" data-bind="click: function(data,event) { displayClearActivity(); }">Display Clear Activity</button>
+                    <button class="btn btn-default" type="button" data-bind="click: function(data,event) { clearListRecordsView(); }">Clear Records</button>
+                    <button class="btn btn-default" type="button" data-bind="click: function(data,event) { $parents[0].fillRecords(1); }">Fill Records</button>
+                </div>
+            </section>
+        </section>
+    </section>
+</div>
+    </textarea>
+</div>
+                </section>
+            </div>
+        </div>
+
+        <section th:replace="~{abstract/layout :: content-footer}"></section>
+        <section th:replace="~{abstract/layout :: footer-script}"></section>
+        <section th:replace="~{abstract/layout :: nav-script}"></section>
+    </body>
+</html>

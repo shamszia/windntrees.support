@@ -1,0 +1,125 @@
+List problem with CRUDView and CRUDRelatedView:
+--------------------------------------------------------------------------------
+In order to achieve list functionality by sharing CRUDView and related views 
+enables invoking of same level detail items that is not desirable behavior of 
+list and its items.
+
+View 0 (CRUDView 0)         n==1/2/3
+    list-item
+    View 1 (CRUDView 0-1)           0==0/1/2/3                  Record[0]
+        View 0 (CRUDView 1-0)                   1==n                Record[0]
+        View 1 (CRUDView 1-1)                   1==n                Record[1]
+        View 2 (CRUDView 1-2)                   1==n                Record[2]
+        View 3 (CRUDView 1-3)                   1==n                Record[3]
+    View 2 (CRUDView 0-2)           0==0/1/2/3                  Record[1]
+        View 0 (CRUDView 2-0)                   2==n                Record[0]
+        View 1 (CRUDView 2-1)                   2==n                Record[1]
+        View 2 (CRUDView 2-2)                   2==n                Record[2]
+        View 3 (CRUDView 2-3)                   2==n                Record[3]
+    View 3 (CRUDView 0-3)           0==0/1/2/3                  Record[2]
+        View 0 (CRUDView 3-0)                   3==n                Record[0] (context evaluation)
+        View 1 (CRUDView 3-1)                   3==n                Record[1]
+        View 2 (CRUDView 3-2)                   3==n                Record[2]
+        View 3 (CRUDView 3-3)                   3==n                Record[3]
+
+================================================================================
+
+Solution:
+--------------------------------------------------------------------------------
+Write a SearchList that will compose a list of CRUD enabled views and/or related
+views and will resolve:
+
+1. CRUDView uniqueness at item level.
+2. List items could take the form of either a CRUDView, RelatedCRUDView or even
+another SearchList composed of further CRUDViews and RelatedCRUDViews and or lists.
+3. SearchList should be able to fetch / load view forming items data objects or
+records either through an API call or with immediate list of composed views.
+4. CRUDViews and or RelatedCURDViews within SearchList should be able to behave 
+independently and or in a related contextual manner without the effects of their 
+formation in SearchList. 
+5. SearchList should allow to search CRUDViews.
+
+--------------------------------------------------------------------------------
+Write SearchView a light weight readonly version of CRUDView that will only be able
+to find/load and or process records. 
+
+Write SearchObserver a light weight version of CRUDObserver to synchronize state 
+between observer data members and SearchView's data processor.
+
+6. SearchList will inherit SearchView and will utilize its observer to synchronize
+state between its item objects and views.
+
+7. There should be an option to delegate find view to all list views.
+
+8. All Views in SearchList should be allowed to either if they are participating in
+a search / find call instructed by the SearchList at presentation layer or view.
+
+9. Use events and notifications to synchronize data / state where possible.
+
+Example:
+--------------------------------------------------------------------------------
+SearchList(listsource,CRUDView0,SearchView1,CRUDView2,CRUDView3,SearchList(,,,,) ... viewN)
+    SearchView(Records) =  CRUDViews/CRUDRelatedViews
+    0 - SearchView(Records[0]) = CRUDView().find() = CRUD (Records) / Create, Update, Delete
+    1 - SearchView(Records[1]) = SearchView1().find() = List (Records) / Readonly
+    2 - SearchView(Records[2]) = CRUDView().find() = CRUD (Records) / Create, Update, Delete
+    3 - SearchView(Records[3]) = CRUDView().CRUDRelatedView()
+    4 - SearchView(Records[4]) = SearchView(Records) =  CRUDViews/CRUDRelatedViews
+        0 - SearchView(Records[0]) = CRUDView().find() = CRUD (Records) / Create, Update, Delete
+        1 - SearchView(Records[1]) = SearchView1().find() = List (Records) / Readonly
+        2 - SearchView(Records[2]) = CRUDView().find() = CRUD (Records) / Create, Update, Delete
+        3 - SearchView(Records[3]) = CRUDView().CRUDRelatedView()
+================================================================================
+SearchList({'uri': ,
+            SearchList({'uri', 
+                    SearchList({'uri':, 
+                                SearchView({'uri': })
+                             }) 
+                     })
+        })
+
+
+SearchList({'uri':, 'view': Find/CRUDView(), 
+            SearchList({'uri':, 'view': Find/CRUDView(), 
+                    SearchList({'uri':, 'view': Find/CRUDView()})})});
+
+SearchList({'uri':, 'view': Find/CRUDView(),
+        [
+            SearchList({'uri':,'view': Find/CRUDView(),[
+                        SearchList({'uri':,'view': Find/CRUDView(),[]}),
+                        SearchList({'uri':,'view': Find/CRUDView(),[]}),
+                        SearchList({'uri':,'view': Find/CRUDView(),[]})
+                    }),
+            SearchList({'uri':,'view': Find/CRUDView(),[]}),
+            SearchList({'uri':,'view': Find/CRUDView(),[]})
+        ])
+
+SearchList[main] / SearchView / CRUDView
+    SearchList[0] / SearchView / CRUDView
+        SearchList[0]
+        SearchList[1]
+        SearchList[2]
+    SearchList[1] / SearchView / CRUDView
+    SearchList[2] / SearchView / CRUDView
+        SearchList[0]
+        SearchList[1]
+        SearchList[2]
+
+
+
+with: SearchListView (keyword)
+    with: SearchListObject (Records - Find/CRUDView or Text)
+        with: getView
+            with: InnerListView (outerListKey,keyword)
+                with: InnerListObject (Records - Find/CRUDView or Text)
+                    with: getView
+                            with: InnerListView (outerListKey,keyword)
+                                with: InnerListObject (Records - Find/CRUDView or Text)
+
+                                    
+/  View0
+with: getObserverObject() / List0 / Records
+    with: getLists() /  View00
+        with: getObserverObject() / List00 / Records
+            with: getLists() /  View000
+                with: getObserverObject() / List000 / Records

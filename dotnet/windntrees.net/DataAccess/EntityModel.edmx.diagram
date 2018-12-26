@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="401def22e94a448d81bf3737692b87fd" Name="Diagram1" ZoomLevel="66">
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.Advertisement" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.AdvertisementLocation" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.AdvertisementPage" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.Category" Width="1.5" PointX="7.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.ChartOfAccount" Width="1.5" PointX="2.375" PointY="13.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.Color" Width="1.5" PointX="6.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.Company" Width="1.5" PointX="8.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.CompanyType" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.Configuration" Width="1.5" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.LicenseInfo" Width="1.5" PointX="10" PointY="4" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.LoginHistory" Width="1.5" PointX="11.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.Manufacturer" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.Product" Width="1.5" PointX="7.75" PointY="1.375" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.ProductFeature" Width="1.5" PointX="10" PointY="1" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.Reference" Width="1.5" PointX="4.75" PointY="12.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.Registration" Width="1.5" PointX="12.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.Role" Width="1.5" PointX="0.75" PointY="3.25" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.Transaction" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.Unit" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.User" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.UserClaim" Width="1.5" PointX="5.25" PointY="1.75" />
+        <EntityTypeShape EntityType="DataAccess.Entities.Models.UserLogin" Width="1.5" PointX="5.25" PointY="4.5" />
+        <AssociationConnector Association="DataAccess.Entities.Models.FK_LicenseInfo_Product" />
+        <AssociationConnector Association="DataAccess.Entities.Models.FK_ProductFeature_Product" />
+        <AssociationConnector Association="DataAccess.Entities.Models.FK_dbo_UserClaim_dbo_User_UserId" />
+        <AssociationConnector Association="DataAccess.Entities.Models.FK_dbo_UserLogin_dbo_User_UserId" />
+        <AssociationConnector Association="DataAccess.Entities.Models.UserRole" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

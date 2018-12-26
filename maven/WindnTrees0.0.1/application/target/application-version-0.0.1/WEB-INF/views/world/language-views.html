@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <section th:fragment="grid-views(form,modal)">
+            <script type="text/html" id="headings_language">
+                <tr>
+                    <th class="col-sm-12 col-md-4 col-lg-4">
+                        <span th:title="#{web.language.form.field.language.text}" th:text="#{web.language.form.field.language.text}"></span>
+                    </th>
+                    <th class="col-sm-12 col-md-4 col-lg-4">
+                        <span th:title="#{web.language.form.field.isOfficial.text}" th:text="#{web.language.form.field.isOfficial.text}"></span>
+                    </th>
+                    <th class="col-sm-12 col-md-2 col-lg-2">
+                        <span th:title="#{web.language.form.field.percentage.text}" th:text="#{web.language.form.field.percentage.text}"></span>
+                    </th>
+                    <th class="col-sm-12 col-md-2 col-lg-2">
+                    </th>
+                </tr>
+            </script>
+
+            <script type="text/html" id="rows_language">
+                <tr>
+                    <td class="col-sm-12 col-md-4 col-lg-4">
+                        <span data-bind="text: language()"></span>
+                    </td>
+                    <td class="col-sm-12 col-md-4 col-lg-4">
+                        <span data-bind="text: (isOfficial() === 'T' ? 'Yes' : 'No' ) "></span>
+                    </td>
+                    <td class="col-sm-12 col-md-2 col-lg-2">
+                        <span data-bind="text: percentage()"></span>
+                    </td>
+                    <td class="col-sm-12 col-md-2 col-lg-2">
+                        <div class="hidden-phone visible-desktop action-buttons">
+                            <a class="green" href="#" th:data-bind="${modal} ? 'click: function(data, event) { $parent.resetFormForEditing($index); }' : 'click: function(data, event) { $parent.resetFormForEditing($index); $(\'' + ${form} + '\').dialog(\'open\'); }'" th:data-toggle="${modal} ? 'modal' : ''" th:data-target="${modal} ? ${form} : ''" th:title="#{form.edit.desc}"><i class="fa fa-edit text-success"></i><span th:text="#{form.edit.desc}"></span></a>
+                            <a class="red" href="#" data-bind="click: function(data, event) { $parent.delete($data); }" th:title="#{form.delete.desc}"><i class="fa fa-times text-danger"></i><span th:text="#{form.delete.desc}"></span></a>
+                        </div>
+                    </td>
+                </tr>
+            </script>
+        </section>
+        
+        <section th:fragment="form-content">
+            
+            <div class="form-group form-group-sm">
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <label class="control-label" for="language">
+                        <span th:text="#{web.language.form.field.language.text}"></span>
+                    </label>
+                    <input data-bind="value: $parents[0].EditMode() ? language : language" id="language" name="language" type="text" th:title="#{web.language.form.field.language.text}"
+                           maxlength="30" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: language"></span>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <label class="control-label" for="isOfficial">
+                        <span th:text="#{web.language.form.field.isOfficial.text}"></span>
+                    </label>
+
+                    <select th:data-bind="'options: $parents[0].OfficialOptions, optionsText:\'val\', optionsValue:\'key\', optionsCaption:\'' + #{web.language.form.field.isOfficial.text} + '\', value:isOfficial'"
+                            id="isOfficial" name="isOfficial" class="form-control">
+                    </select>
+                    <span class="error"
+                           data-bind="validationMessage: isOfficial"></span>
+                </div>
+                <div class="col-sm-12 col-md-2 col-lg-2">
+                    <label class="control-label" for="percentage">
+                        <span th:text="#{web.language.form.field.percentage.text}"></span>
+                    </label>
+                    <input data-bind="value: $parents[0].EditMode() ? percentage : percentage" id="percentage" name="percentage" type="text" th:title="#{web.language.form.field.percentage.text}"
+                           maxlength="4" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: percentage"></span>
+                </div>
+            </div>
+            <!---->
+            
+            <div class="clear-fix">
+            </div>
+        </section>
+        
+        <section type="text/html" th:fragment="actions-languages">
+                <div data-bind="template: {name: 'actions_language'}"></div>
+        </section>
+        
+        <section type="text/html" th:fragment="headings-languages">
+                <thead data-bind="template: {name: 'headings_language'}"></thead>
+        </section>
+
+        <section type="text/html" th:fragment="rows-languages">
+                <tbody data-bind="template: {name: 'rows_language', foreach: Records}"></tbody>
+        </section>
+        
+        <section type="text/html" th:fragment="listings-languages">
+            <div data-bind="template: {name: 'listings_language'}"></div>
+        </section>
+    </body>
+</html>

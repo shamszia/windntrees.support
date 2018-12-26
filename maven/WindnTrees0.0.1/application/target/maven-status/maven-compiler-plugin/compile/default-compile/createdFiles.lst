@@ -1,0 +1,12 @@
+app/configuration/SessionMenuComposer.class
+app/configuration/RootConfigurator.class
+app/controllers/world/Country.class
+app/controllers/Navs.class
+app/configuration/ThymeleafConfigurator.class
+app/configuration/RootDatabaseConfigurator.class
+app/controllers/world/Language.class
+app/configuration/DispatcherServlet.class
+app/configuration/RequestInterceptor.class
+app/configuration/ServletConfigurator.class
+app/controllers/Index.class
+app/controllers/world/World.class

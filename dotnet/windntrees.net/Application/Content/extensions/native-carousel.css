@@ -1,0 +1,52 @@
+﻿/*
+    carousel styles.
+
+.carousel-caption {
+    left: 15%;
+    right: 15%;
+    padding-bottom: 120px;
+    text-shadow: none;
+    z-index: 10;
+}   
+
+.carousel-control.left {
+    background-image: linear-gradient(to right, rgba(240, 240, 240, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+}
+
+.carousel-control.right {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(240, 240, 240, 0.5) 100%);
+}*/
+
+.carousel {
+    width: 100%;
+    color: #777;
+}
+
+.carousel .carousel-inner .carousel-item {
+    
+}
+
+.carousel .carousel-inner .carousel-item .carousel-caption {
+    
+}
+
+.carousel .carousel-inner .carousel-item .carousel-caption h1, h2, h3, h4, h5, h6 {
+    color: #808080;
+}
+
+.carousel .carousel-control-prev .carousel-control-prev-icon {
+    
+}
+
+.carousel .carousel-control-next .carousel-control-next-icon {
+
+}
+
+
+.carousel-indicators li {
+    background-color: #888;
+}
+
+.carousel-indicators .active {
+    background-color: #777;
+}

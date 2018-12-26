@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <section th:fragment="basic-views(entityForm)">
+            <script type="text/html" id="actions">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button data-bind="click: function() { resetForm(); }" class="btn btn-default" data-toggle="modal" th:data-target="${entityForm}" th:title="#{form.new.desc}"><span th:text="#{form.new.text}"></span></button>
+                        </span>
+                        <input data-bind="value: Keyword" type="text" th:placeholder="#{form.keyword.text}" class="form-control" />
+                        <span class="input-group-btn">
+                            <button data-bind="click: function() { find(1); }" class="btn btn-default" type="button" th:title="#{form.search.desc}"><span th:text="#{form.search.text}"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <br />
+            </script>
+
+            <script type="text/html" id="listitem">
+                <li class="inner-item-style">
+                    <span data-bind="text: name(), attr: {title: description()}"></span>
+                    <span class="d-flex align-content-end">
+                        <span><a class="green" href="#" data-bind="click: function(data, event) { $parent.resetFormForEditing($index); }" data-toggle="modal" th:data-target="${entityForm}" th:title="#{form.edit.desc}"><i class="fa fa-edit text-success"></i></a></span>
+                        <span><a class="red" href="#" data-bind="click: function(data, event) { $parent.delete($data); }" th:title="#{form.delete.desc}"><i class="fa fa-times text-danger"></i></a></span>
+                    </span>
+                </li>
+            </script>
+
+            <script type="text/html" id="standard_listings">
+                <span class="d-flex align-content-start">
+                    <span class="input-group">
+                        <ul data-bind="if: ListNavigator().calculateTotalPages() > 1" class="list-navigator">
+                            <li data-bind="css: {disabled: CurrentList() == 1}"><a href="#" data-bind="click: function(){ if (CurrentList() > 1) {find(CurrentList() - 1); } }"><span th:text="#{form.prevPage.text}"></span></a></li>
+                            <li data-bind="css: {disabled: CurrentList() == ListNavigator().calculateTotalPages()}"><a href="#" data-bind="click: function(){ if (CurrentList() < ListNavigator().calculateTotalPages()) {find(CurrentList() + 1); } }"><span th:text="#{form.nextPage.text}"></span></a></li>
+                        </ul>
+                    </span>
+                </span>
+            </script>
+        </section>
+        
+        <!-- newDialogAttributes attribute functionality is not implemented  -->
+        <section th:fragment="standard-actions(actionId,formId,readOnly,searchAction,modalForm,newDialogAttributes)">
+            <script type="text/html" th:id="${#strings.isEmpty(actionId)} ? 'actions' : actionId">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-btn" th:insert="${readOnly} ? ~{} : (${modalForm} ? ~{::new-modal-form(${formId},${newDialogAttributes})} : ~{::new-modalless-form(${formId},${newDialogAttributes})}) "></span>
+                        <input class="form-control" data-bind="value: Keyword" type="text" th:placeholder="#{form.keyword.text}" />
+                        <span class="input-group-btn">
+                            <button th:data-bind="${#strings.isEmpty(searchAction)} ? 'click: function() { find(1); }' : ${searchAction}" class="btn btn-default" type="button" th:title="#{form.search.desc}"><span th:text="#{form.search.text}"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <br />
+            </script>
+        </section>
+        
+        <section th:fragment="standard-listing(listingId,formId,listSize,prevList,selectList,nextList)">
+            <script type="text/html" th:id="${#strings.isEmpty(listingId)} ? 'standard_listings' : listingId">
+                <div class="col-md-2 d-flex align-content-start" style="margin-top:20px;">
+                    <div class="input-group" dir="ltr">
+                        <span class="input-group-addon"><span th:text="#{form.listSize.text}"></span></span>
+                        <select class="form-control" th:data-bind="${#strings.isEmpty(listSize)} ? 'value: ListSize, event: {change: function() { find(CurrentList()); }}' : ${listSize}" id="form-field-select-1" style="width:auto;">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="d-flex align-content-end">
+                    <div class="input-group">
+                        <ul class="list-navigator" data-bind="if: ListNavigator().calculateTotalPages() > 1">
+                            <li class="input-group-addon" data-bind="css: {disabled: CurrentList() == 1}"><a href="#" th:data-bind="${#strings.isEmpty(prevList)} ? 'click: function(){ if (CurrentList() > 1) {find(CurrentList() - 1); } }' : ${prevList}"><span th:text="#{form.prevPage.text}"></span></a></li>
+                            <li class="input-group-addon"><select class="form-control" th:data-bind="${#strings.isEmpty(selectList)} ? 'value: CurrentList, options: ListNavigator().getLists(), optionsText: \'Number\', optionsValue:\'Number\', event: {change: function() { find(CurrentList()); }}' : ${selectList}" id="form-field-select-paging" style="width:auto;" /></li>
+                            <li class="input-group-addon" data-bind="css: {disabled: CurrentList() == ListNavigator().calculateTotalPages()}"><a href="#" th:data-bind="${#strings.isEmpty(nextList)} ? 'click: function(){ if (CurrentList() < ListNavigator().calculateTotalPages()) {find(CurrentList() + 1); } }' : ${nextList}"><span th:text="#{form.nextPage.text}"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </script>
+        </section>
+        
+        <section th:fragment="standard-listing-sm(listingId,prevList,nextList)">
+            <script type="text/html" th:id="${#strings.isEmpty(listingId)} ? 'standard_listings' : listingId">
+                <div class="d-flex align-content-end">
+                    <div class="input-group">
+                        <ul class="list-navigator-sm" data-bind="if: ListNavigator().calculateTotalPages() > 1">
+                            <li class="input-group-addon" data-bind="css: {disabled: CurrentList() == 1}"><a href="#" th:data-bind="${#strings.isEmpty(prevList)} ? 'click: function(){ if (CurrentList() > 1) {find(CurrentList() - 1); } }' : ${prevList}"><span th:text="#{form.prevPage.text}"></span></a></li>
+                            <li class="input-group-addon" data-bind="css: {disabled: CurrentList() == ListNavigator().calculateTotalPages()}"><a href="#" th:data-bind="${#strings.isEmpty(nextList)} ? 'click: function(){ if (CurrentList() < ListNavigator().calculateTotalPages()) {find(CurrentList() + 1); } }' : ${nextList}"><span th:text="#{form.nextPage.text}"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </script>
+        </section>
+        
+        <div th:fragment="compose-list(listid,cssClass,listCssClass,actions,list,standard_listings)">
+            <div th:class="${#strings.isEmpty(cssClass)} ? 'container' : cssClass">
+                <span class="result d-flex align-content-end" data-bind="template: {name: 'results_messages'}"></span>
+                <span class="status d-flex align-content-end" data-bind="template: {name: 'results_processing'}"></span>
+                <div data-bind="if: Errors().length > 0">
+                    <ul class="errorlist" data-bind="template: {name: 'list_error_messages', foreach: Errors}"></ul>
+                </div><div style="clear: both"></div>
+                <section th:replace="${actions}">
+                    <div data-bind="template: {name: 'actions'}"></div>
+                </section>
+                <section th:replace="${list}">
+                    <ul th:id="${listid}" th:class="${#strings.isEmpty(listCssClass)} ? '' : listCssClass" data-bind="template: {name: 'listitem', foreach: Records}"></ul>
+                    <section th:replace="${standard_listings}">
+                        <div class="outer-item-style" data-bind="template: {name: 'standard_listings'}"></div>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>

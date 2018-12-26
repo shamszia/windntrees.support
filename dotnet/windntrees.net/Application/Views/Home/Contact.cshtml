@@ -1,0 +1,188 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+@section Header
+{
+    <title>@LocaleResources.Views.Home.AContactT</title>
+    <link rel="stylesheet" href="~/Content/extensions/native-carousel.css" />
+
+    <style type="text/css">
+        #mapdiv {
+            width: 100% !important;
+            height: 400px;
+        }
+    </style>
+}
+
+@section PagePath
+{ }
+
+<section>
+    <div class="container">
+        <h2 class="d-flex align-content-start">@LocaleResources.Views.Home.AContactD</h2>
+    </div>
+</section>
+
+@section ContentHeader
+{
+
+}
+
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="panel panel-default">
+                    <div id="mapdiv"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 order-0">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>@LocaleResources.Views.Home.AContactT</h3>
+                        <p>@LocaleResources.Views.Home.AContactD</p>
+                        <div class="row">
+                            <div class='d-flex align-content-start' data-bind="template: {name: 'results_messages' }"></div>
+                            <div class='d-flex align-content-end' data-bind="template: {name: 'results_processing' }"></div>
+                            <div data-bind='if: Errors().length > 0'>
+                                <ul class='errorlist' data-bind="template: {name: 'list_error_messages' , foreach: Errors}"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body" data-bind="with: getObservableInputObject()">
+                        <div class="form-row">
+                            <div class="col-12">
+                                <label for="fromname" class="label-control">
+                                    @LocaleResources.Contents.Email.FromName
+                                </label>
+                                <input data-bind="value: FromName" id="fromname" type="text" maxlength="50" class="form-control" />
+                                <span class="error" data-bind="validationMessage: FromName"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-12">
+                                <label for="fromemail" class="label-control">
+                                    @LocaleResources.Contents.Email.FromEmail
+                                </label>
+                                <input data-bind="value: FromEmail" id="fromemail" type="email" maxlength="100" class="form-control" />
+                                <span class="error" data-bind="validationMessage: FromEmail"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-12">
+                                <label for="subject" class="label-control">
+                                    @LocaleResources.Contents.Email.Subject
+                                </label>
+                                <input data-bind="value: Subject" id="subject" type="text" maxlength="100" class="form-control" />
+                                <span class="error" data-bind="validationMessage: Subject"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-12">
+                                <label for="message" class="label-control">
+                                    @LocaleResources.Contents.Email.Message
+                                </label>
+                                <textarea data-bind="value: Message" id="message" maxlength="500" rows="3" class="form-control"></textarea>
+                                <span class="error" data-bind="validationMessage: Message"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-6">
+                                <input data-bind="value: Captcha" id="Captcha" type="text" maxlength="20" class="form-control" />
+                                <span class="error" data-bind="validationMessage: Captcha"></span>
+                            </div>
+                            <div class="col-6">
+                                <img id="captchaimage" alt="Click to change image" src="" title="Click to change image"
+                                     onclick="loadCaptcha();" style="width: 200px; height: 36px;" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button data-bind="click: function(data, event) { create({ 'content':  getObservableInputObject(), 'target': 'sendemail' }); }" id="sendmail" type="button" class="btn btn-primary">
+                            @SharedLibrary.Resources.Global.FormMessages.Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 order-1">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>@LocaleResources.Views.Contact.Index.OfficeLocation</h4>
+                        @System.Configuration.ConfigurationManager.AppSettings["AddressLine1"]<br />
+                        @System.Configuration.ConfigurationManager.AppSettings["AddressLine2"]<br />
+                        @System.Configuration.ConfigurationManager.AppSettings["AddressLine3"]<br />
+                        @SharedLibrary.Resources.Global.FormMessages.Email: <a href="mailto:@System.Configuration.ConfigurationManager.AppSettings["ContactEmail"]">@System.Configuration.ConfigurationManager.AppSettings["ContactEmail"]</a><br />
+                        @SharedLibrary.Resources.Global.FormMessages.Phone: @System.Configuration.ConfigurationManager.AppSettings["ContactPhone"], @SharedLibrary.Resources.Global.FormMessages.Cell: @System.Configuration.ConfigurationManager.AppSettings["ContactCell"]<br />
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h4>
+                            @LocaleResources.Views.Contact.Index.BusinessHours
+                        </h4>
+                        @System.Configuration.ConfigurationManager.AppSettings["BusinessHourLine1"]<br />
+                        @System.Configuration.ConfigurationManager.AppSettings["BusinessHourLine2"]<br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script type="text/javascript">
+            function loadCaptcha() {
+                $.ajax({
+                    type: 'GET', url: '/general/generatecaptcha',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    cache: false,
+                    success: function (data) { $("#captchaimage").attr('src', '/uploads/captchas/' + data); },
+                    error: function (data) { alert("Error while loading captcha image") }
+                });
+            };
+
+            function initialize() {
+                var mapCanvas = document.getElementById('mapdiv');
+                var officeLatLng = new google.maps.LatLng(32.332018, 74.346408);
+                var mapOptions = {
+                    center: officeLatLng,
+                    zoom: 16,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                var map = new google.maps.Map(mapCanvas, mapOptions)
+
+                var marker = new google.maps.Marker({
+                    position: officeLatLng,
+                    map: map,
+                    title: 'Office Address'
+                });
+            };
+            google.maps.event.addDomListener(window, 'load', initialize);
+            loadCaptcha();
+    </script>
+
+    <script src="~/Scripts/ViewModels/Email.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(function () {
+
+            var emailView = new NewView({
+                'uri': '/general',
+                'observer': new ObjectObserver({ 'contentType': new Email({}), 'messages': intialize(new MessageRepository()) })
+            });
+
+            ko.applyBindings(emailView.getObserverObject());
+
+            loadCaptcha();
+        });
+    </script>
+
+
+}

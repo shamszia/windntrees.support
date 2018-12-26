@@ -1,0 +1,125 @@
+{
+    "authenticationMode": true,
+    "version": "4.0",
+    "cssClass": "navbar-nav container-fluid d-flex justify-content-end p-0",
+    "tag": "ul",
+    "attributes": [
+        {
+            "name": "class",
+            "value": "navbar-nav"
+        }
+    ],
+    "roles": ["anonymous"],
+    "items": [{
+            "text": "nav.language.text",
+            "attributes": [{
+                    "name": "title",
+                    "value": "nav.language.desc"
+                },
+                {
+                    "name": "class",
+                    "value": "nav-item dropdown"
+                }],
+            "linkUrl": "#LANGUAGE",
+            "linkAttributes": [
+                {
+                    "name": "class",
+                    "value": "nav-link dropdown-toggle"
+                }],
+            "linkMenuTemplate": "<a %1$s href=\"#language\" class=\"nav-link dropdown-toggle\" data-toggle=\"collapse\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">%2$s <span class=\"%3$s\"></span></a>",
+            "subMenuTemplate": "<ul id=\"language\" class=\"dropdown-menu\">%1$s</ul>\n",
+            "roles": ["role1"],
+            "items": [
+                {
+                    "text": "nav.languageenglish.text",
+                    "attributes": [{
+                            "name": "title",
+                            "value": "nav.languageenglish.desc"
+                        }],
+                    "linkUrl": "?locale=en",
+                    "linkAttributes": [
+                        {
+                            "name": "class",
+                            "value": "dropdown-item d-flex align-content-start"
+                        }
+                    ]
+                },
+                {
+                    "text": "",
+                    "attributes": [{
+                            "name": "class",
+                            "value": "divider"
+                        }],
+                    "separator": true
+                },
+                {
+                    "text": "nav.languageurdu.text",
+                    "attributes": [{
+                            "name": "title",
+                            "value": "nav.languageurdu.desc"
+                        }],
+                    "linkUrl": "?locale=ur",
+                    "linkAttributes": [
+                        {
+                            "name": "class",
+                            "value": "dropdown-item d-flex align-content-start"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "nav.help.text",
+            "attributes": [{
+                    "name": "title",
+                    "value": "nav.help.desc"
+                }],
+            "linkUrl": "#HELP",
+            "linkAttributes": [
+                {
+                    "name": "class",
+                    "value": "nav-link dropdown-toggle"
+                }],
+            "linkMenuTemplate": "<a %1$s href=\"#help\" class=\"nav-link dropdown-toggle\" data-toggle=\"collapse\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">%2$s <span class=\"%3$s\"></span></a>",
+            "subMenuTemplate": "<ul id=\"help\" class=\"dropdown-menu\">%1$s</ul>\n",
+            "items": [
+                {
+                    "text": "nav.helpmanual.text",
+                    "attributes": [{
+                            "name": "title",
+                            "value": "nav.helpmanual.desc"
+                        }],
+                    "linkUrl": "/help/index",
+                    "linkAttributes": [
+                        {
+                            "name": "class",
+                            "value": "dropdown-item d-flex align-content-start"
+                        }
+                    ]
+                },
+                {
+                    "text": "",
+                    "attributes": [{
+                            "name": "class",
+                            "value": "divider"
+                        }],
+                    "separator": true
+                },
+                {
+                    "text": "nav.helpabout.text",
+                    "attributes": [{
+                            "name": "title",
+                            "value": "nav.helpabout.desc"
+                        }],
+                    "linkUrl": "/help/about",
+                    "linkAttributes": [
+                        {
+                            "name": "class",
+                            "value": "dropdown-item d-flex align-content-start"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

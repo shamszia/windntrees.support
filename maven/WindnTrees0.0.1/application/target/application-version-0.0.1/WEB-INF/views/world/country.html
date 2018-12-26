@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{abstract/layout :: header(~{::title},~{},~{::script})}">
+        <title>Web Application Title</title>
+        
+        <script th:src="@{/resources/contents/world/Country.js}" type="text/javascript"></script>
+        <script th:src="@{/resources/contents/world/City.js}" type="text/javascript"></script>
+        <script th:src="@{/resources/contents/world/CountryLanguage.js}" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            
+            var languageView = new CRUDView({
+                'key': "languageView",
+                'uri': "[[@{/world/language}]]", 
+                'observer': new CRUDObserver({'contentType': new CountryLanguage({}), 'messages': intialize(new MessageRepository())})
+            });
+            
+            languageView.getObserverObject().OfficialOptions = ko.observableArray([
+                new OptionItem("T","Yes"),
+                new OptionItem("F","No")
+            ]);
+            
+            var cityView = new CRUDView({
+                'key': "cityView",
+                'uri': "[[@{/world/city}]]", 
+                'observer': new CRUDObserver({'contentType': new City({}), 'messages': intialize(new MessageRepository())})
+            });
+    
+            var worldView = new CRUDView({
+                    'uri': "[[@{/world/country}]]", 
+                    'observer': new CRUDObserver({'contentType': new Country({}), 'messages': intialize(new MessageRepository())}),
+                    'views': new ListObserver({ object: new ObjectObserver({})})
+                });
+                
+                worldView.getObserverObject().loadCities = function(countryCode) {
+                    $('#_form_grid_city').dialog('open');
+                    
+                    cityView.setObjectKey(countryCode);
+                    cityView.load();
+                };
+                
+                worldView.getObserverObject().newCity = function(country) {
+                    
+                    $('#_form_city').dialog('open');
+                    
+                    cityView.setObjectKey(country.code());
+                    cityView.setObjects([{ 'field': 'country','object': JSON.parse(cityView.getObserverObject().getStringifiedObject(country)) }]);
+                    cityView.getObserverObject().resetForm();
+                };
+                
+                worldView.getObserverObject().loadLanguages = function(countryCode) {
+                    $('#_form_grid_language').dialog('open');
+                    
+                    languageView.setObjectKey(countryCode);
+                    languageView.setKeyField('countryCode');
+                    languageView.load();
+                };
+                
+                worldView.getObserverObject().newLanguage = function(country) {
+                    
+                    $('#_form_language').dialog('open');
+                    
+                    languageView.setObjectKey(country.code());
+                    languageView.setKeyField('countryCode');
+                    
+                    languageView.setObjects([{ 'field': 'country','object': JSON.parse(cityView.getObserverObject().getStringifiedObject(country)) }]);
+                    languageView.getObserverObject().resetForm();
+                };
+                
+                worldView.Views.newItem({ 'object': cityView });
+                worldView.Views.newItem({ 'object': languageView });
+                
+            $(function () {
+                
+                ko.applyBindings(worldView.getObserverObject());
+                
+                $('#_form').dialog({ autoOpen: false, width: 800 });
+                $('#_form_city').dialog({ autoOpen: false, width: 800 });
+                $('#_form_grid_city').dialog({ autoOpen: false, width: 800 });
+                $('#_form_language').dialog({ autoOpen: false, width: 800 });
+                $('#_form_grid_language').dialog({ autoOpen: false, width: 800 });
+                
+                worldView.load();                
+            });
+        </script>
+    </head>
+    <body>
+        <section th:replace="~{abstract/navigations :: navigation}"></section>
+        <section th:replace="~{abstract/layout :: page-path}"></section>
+        <section th:replace="~{abstract/layout :: shared-views}"></section>
+        
+        <div class="container">
+            <h2>Countries</h2>
+            <p>Following section implements <code>CRUDView, CRUDObserver</code> and demonstrates their functionalities. In this example <code>CRUDView</code> applies <code>CRUD</code> functions and allows users to process records.</p>
+        </div>
+        
+        <div th:replace="~{world/country-views :: grid-views('#_form',false)}" ></div>
+        
+        <div th:replace="~{abstract/grids :: standard-actions('','#_form',false,'',false,'')}"></div>
+        <div th:replace="~{abstract/grids :: standard-listing('','#_form','','','','')}"></div>
+        <div th:replace="~{abstract/grids :: compose-grid('','well container','','','',_,_,_,_,_)}"></div>
+        
+        <section id="country" style="display: none">
+            <div th:replace="~{abstract/forms :: compose-form('_form','','','',~{world/country-views :: form-content},_,'','','',false)}" ></div>
+        </section>
+        
+        <section id="cities" style="display: none" data-bind="with: getReferentialView('cityView').getObserverObject()">
+            <div th:replace="~{world/city-views :: grid-views('#_form_city',false)}" ></div>
+            
+            <div th:replace="~{abstract/grids :: standard-actions('actions_city','#_form_city',true,'',false,'')}"></div>
+            <div th:replace="~{abstract/grids :: standard-listing('listings_city','#_form_city','','','','')}"></div>
+            <div th:replace="~{abstract/grids :: compose-grid('_form_grid_city','container-fluid','','Cities','',~{world/city-views :: actions-cities},~{world/city-views :: headings-cities},~{world/city-views :: rows-cities},_,~{world/city-views :: listings-cities})}"></div>
+            
+            <div th:replace="~{abstract/forms :: compose-form('_form_city','','City','',~{world/city-views :: form-content},_,'','','',false)}" ></div>
+        </section>
+        
+        <section id="languages" style="display: none" data-bind="with: getReferentialView('languageView').getObserverObject()">
+            <div th:replace="~{world/language-views :: grid-views('#_form_language',false)}" ></div>
+            
+            <div th:replace="~{abstract/grids :: standard-actions('actions_language','#_form_language',true,'',false,'')}"></div>
+            <div th:replace="~{abstract/grids :: standard-listing('listings_language','#_form_language','','','','')}"></div>
+            <div th:replace="~{abstract/grids :: compose-grid('_form_grid_language','container-fluid','','Language','',~{world/language-views :: actions-languages},~{world/language-views :: headings-languages},~{world/language-views :: rows-languages},_,~{world/language-views :: listings-languages})}"></div>
+            
+            <div th:replace="~{abstract/forms :: compose-form('_form_language','','Language','',~{world/language-views :: form-content},_,'','','',false)}" ></div>
+        </section>
+        
+        <section th:replace="~{abstract/layout :: content-footer}"></section>
+        <section th:replace="~{abstract/layout :: nav-script}"></section>
+    </body>
+</html>

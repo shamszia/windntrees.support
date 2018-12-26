@@ -1,0 +1,65 @@
+﻿<!-- FOOTER -->
+<footer id="contentfooter">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 order-0">
+                <!-- COLUMN 1 -->
+                <div class="row d-flex justify-content-start pl-3 pr-3">
+                    <img class="clearfix" src="@Url.Content("~/content/images/logo.png")" title="@System.Configuration.ConfigurationManager.AppSettings["CompanyTitle"]">
+                    <div class="d-block align-content-start">@System.Configuration.ConfigurationManager.AppSettings["BreifDescription"]</div>
+                </div>
+                <address class="justify-content-start">
+                    <div class="d-flex align-content-start">@System.Configuration.ConfigurationManager.AppSettings["AddressLine1"]</div>
+                    <div class="d-flex align-content-start">@System.Configuration.ConfigurationManager.AppSettings["AddressLine2"]</div>
+                    <div class="d-flex align-content-start">@System.Configuration.ConfigurationManager.AppSettings["AddressLine3"]</div>
+                    <div class="d-flex align-content-start">@SharedLibrary.Resources.Global.FormMessages.Email: <a href="mailto:@System.Configuration.ConfigurationManager.AppSettings["ContactEmail"]">@System.Configuration.ConfigurationManager.AppSettings["ContactEmail"]</a></div>
+                    <div class="d-flex align-content-start">@SharedLibrary.Resources.Global.FormMessages.Phone: @System.Configuration.ConfigurationManager.AppSettings["ContactPhone"], @SharedLibrary.Resources.Global.FormMessages.Cell: @System.Configuration.ConfigurationManager.AppSettings["ContactCell"]</div>                    
+                </address>
+                <!-- END COLUMN 1 -->
+            </div>
+            <div class="col-md-4 order-1">
+                <!-- COLUMN 2 -->
+                <h3 class="footer-heading d-flex justify-content-start p-3" title="@SharedLibrary.Resources.Global.FormMessages.UsefulLinksD">
+                    @SharedLibrary.Resources.Global.FormMessages.UsefulLinks
+                </h3>
+                <div class="justify-content-start">
+                    <div class="d-flex align-content-start pl-3 pr-3">@Html.ActionLink(Application.Navigations.Navigation.AHomeT, "index", "home", null, new { title = Application.Navigations.Navigation.AHomeD })</div>
+                    <div class="d-flex align-content-start pl-3 pr-3">@Html.ActionLink(Application.Navigations.Navigation.AProductsT, "index", "product", null, new { title = Application.Navigations.Navigation.AProductsD })</div>
+                    <div class="d-flex align-content-start pl-3 pr-3">@Html.ActionLink(Application.Navigations.Navigation.ANewsT, "index", "news", null, new { title = Application.Navigations.Navigation.ANewsD })</div>
+                    <div class="d-flex align-content-start pl-3 pr-3">@Html.ActionLink(Application.Navigations.Navigation.AContactT, "index", "contactus", null, new { title = Application.Navigations.Navigation.AContactD })</div>
+                </div>
+                <!-- END COLUMN 2 -->
+            </div>
+            <div class="col-md-4 order-2">
+                @*<div class="social-connect">
+                        <h3 class="footer-heading">
+                            GET CONNECTED
+                        </h3>
+                        <ul class="list-inline social-icons">
+                            <li>
+                                <a href="#" class="facebook-bg">
+                                    <i class="fa fa-facebook">
+                                    </i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="linkedin-bg">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="googleplus-bg"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
+                    </div>*@
+                <!-- END COLUMN 3 -->
+            </div>
+        </div>
+    </div>
+    <!-- COPYRIGHT -->
+    <div class="text-center copyright">
+        <span>@System.Configuration.ConfigurationManager.AppSettings["CompanyTitle"]</span>
+        <span>@SharedLibrary.Resources.Global.StandardMessages.AllRights</span>
+    </div>
+    <!-- END COPYRIGHT -->
+</footer>
+<!-- END FOOTER -->

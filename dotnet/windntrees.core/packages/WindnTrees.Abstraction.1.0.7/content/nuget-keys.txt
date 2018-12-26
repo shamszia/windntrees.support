@@ -1,0 +1,121 @@
+﻿WindnTrees_1.0.0
+
+oy2dwz4lufxdr6eeaqva4e4eq4bhxilejkdg4t3aagd2gu
+
+
+nuget spec Project.csproj
+
+nuget pack
+
+nuget push WindnTrees.Abstraction.1.0.6.nupkg oy2dwz4lufxdr6eeaqva4e4eq4bhxilejkdg4t3aagd2gu -Source https://api.nuget.org/v3/index.json
+
+
+nuget push WindnTrees.SharedLibrary.1.0.4.nupkg oy2dwz4lufxdr6eeaqva4e4eq4bhxilejkdg4t3aagd2gu -Source https://api.nuget.org/v3/index.json
+
+
+nuget push WindnTrees.Controls.1.0.4.nupkg oy2dwz4lufxdr6eeaqva4e4eq4bhxilejkdg4t3aagd2gu -Source https://api.nuget.org/v3/index.json
+
+
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>WindnTrees.Abstraction</id>
+    <version>1.0.6</version>
+    <title>WindnTrees.Abstraction</title>
+    <authors>Shams Zia</authors>
+    <owners>Invincible Technologies</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>http://invincibletec.com/windntrees/index</projectUrl>
+    <iconUrl>http://invincibletec.com/content/windtrees/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Abstraction library for WindnTrees application project.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>WindnTrees CRUD CRUDS CRUD2CRUD CRUDController CRUDControllers</tags>
+       <dependencies>
+            <dependency id="WindnTrees.SharedLibrary" version="1.0.4" />
+        </dependencies>
+  </metadata>
+    <files>
+        <file src="bin\release\scripts\*.js" target="content\scripts" />
+    </files>
+</package>
+
+
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>WindnTrees.SharedLibrary</id>
+    <version>1.0.0</version>
+    <title>WindnTrees.SharedLibrary</title>
+    <authors>Shams Zia</authors>
+    <owners>Invincible Technologies</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>http://invincibletec.com/windntrees/index</projectUrl>
+    <iconUrl>http://invincibletec.com/content/windtrees/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Shared library for WindnTrees application project.</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>WindnTrees CRUD CRUDS CRUD2CRUD CRUDController CRUDControllers</tags>
+  </metadata>
+</package>
+
+
+
+
+
+<contentFiles>
+    <!-- Embed image resources -->
+    <files include="any/any/images/dnf.png" buildAction="EmbeddedResource" />
+    <files include="any/any/images/ui.png" buildAction="EmbeddedResource" />
+
+    <!-- Embed all image resources under contentFiles/cs/ -->
+    <files include="cs/**/*.png" buildAction="EmbeddedResource" />
+
+    <!-- Copy config.xml to the root of the output folder -->
+    <files include="cs/uap/config/config.xml" buildAction="None" copyToOutput="true" flatten="true" />
+
+    <!-- Copy run.cmd to the output folder and keep the directory structure -->
+    <files include="cs/commands/run.cmd" buildAction="None" copyToOutput="true" flatten="false" />
+
+    <!-- Include everything in the scripts folder except exe files -->
+    <files include="cs/net45/scripts/*" exclude="**/*.exe"  buildAction="None" copyToOutput="true" />
+</contentFiles>
+
+
+
+Adding readme or other files.
+
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+    <metadata>
+    <!-- ... -->
+    </metadata>
+    <files>
+        <!-- Add a readme -->
+        <file src="readme.txt" target="" />
+
+        <!-- Add files from an arbitrary folder that's not necessarily in the project -->
+        <file src="..\..\SomeRoot\**\*.*" target="" />
+    </files>
+</package>
+
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>sample</id>
+        <version>1.0.0</version>
+        <authors>Microsoft</authors>
+        <dependencies>
+            <dependency id="another-package" version="3.0.0" />
+            <dependency id="yet-another-package" version="1.0.0" />
+        </dependencies>
+    </metadata>
+</package>
+
+
+

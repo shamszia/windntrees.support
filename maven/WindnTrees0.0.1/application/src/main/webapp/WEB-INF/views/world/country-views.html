@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div th:fragment="grid-views(form,modal)">
+            <script type="text/html" id="headings">
+                <tr>
+                    <th class="col-sm-12 col-md-12 col-lg-12">
+                        <span th:title="#{web.country.form.field.name.text}" th:text="#{web.country.form.field.name.text}"></span>
+                    </th>
+                </tr>
+            </script>
+
+            <script type="text/html" id="rows">
+                <tr>
+                    <td>
+                        <h4 class="col-md-12 d-flex justify-content-start" data-bind="text: name() + ' / ' + indepYear(), attr: {title: localName() } "></h4>
+                        
+                        <div class="form-row">
+                            <div class="col-md-3 d-flex justify-content-start">
+                                <span th:text="#{web.country.form.field.governmentForm.text}"></span>: 
+                                <span data-bind="text: governmentForm()"></span>
+                            </div>
+                            
+                            <div class="col-md-3 d-flex justify-content-start">
+                                <span th:text="#{web.country.form.field.headOfState.text}"></span>: 
+                                <span data-bind="text: headOfState()"></span>
+                            </div>
+                            
+                            <div class="col-md-3 d-flex justify-content-start">
+                                <span th:text="#{web.country.form.field.code.text}"></span>: 
+                                <span data-bind="text: code()"></span>
+                            </div>
+                            
+                            <div class="col-md-3 d-flex justify-content-start">
+                                <span th:text="#{web.country.form.field.code2.text}"></span>: 
+                                <span data-bind="text: code2()"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="col-md-3 d-flex justify-content-start">
+                                <span th:text="#{web.country.form.field.continent.text}"></span>: 
+                                <span data-bind="text: continent()"></span>
+                            </div>
+                            
+                            <div class="col-md-3 d-flex justify-content-start">
+                                <span th:text="#{web.country.form.field.region.text}"></span>: 
+                                <span data-bind="text: region()"></span>
+                            </div>
+                            
+                            <div class="col-md-3 d-flex justify-content-start">
+                                <span th:text="#{web.country.form.field.population.text}"></span>: 
+                                <span data-bind="text: population()"></span>
+                            </div>
+                            
+                            <div class="col-md-3">
+                                <span th:text="#{web.country.form.field.lifeExpectancy.text}"></span>: 
+                                <span data-bind="text: lifeExpectancy()"></span>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="form-row">
+                            <div class="col-md-3 d-flex justify-content-start">
+                                <span data-bind="if: cityCapital() != null">
+                                    <span th:text="#{web.country.form.field.capital.text}"></span>:
+                                    <span data-bind="text: cityCapital().name + ' /' + cityCapital().district"></span>, 
+                                    <span th:text="#{web.country.form.field.population.text}"></span>: 
+                                    <span data-bind="text: cityCapital().population"></span>
+                                </span>
+                            </div>
+                            
+                            <div class="col-md-3 d-flex justify-content-start">
+                                <span th:text="#{web.country.form.field.surfaceArea.text}"></span>: 
+                                <span data-bind="text: surfaceArea()"></span>
+                            </div>
+                            
+                            <div class="col-md-3 d-flex justify-content-start">
+                                <span th:text="#{web.country.form.field.gnp.text}"></span>: 
+                                <span data-bind="text: gnp()"></span>
+                            </div>
+                            
+                            <div class="col-md-3">
+                                <span th:text="#{web.country.form.field.gnpold.text}"></span>: 
+                                <span data-bind="text: gnpold()"></span>
+                            </div>
+                        </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="d-flex justify-content-start">
+                            <a class="green" href="#" data-bind="click: function(data, event) { $parent.newCity(data); }" th:title="#{web.city.newCity.text}"><i class="fa fa-edit text-success"></i><span th:text="#{web.city.newCity.text}"></span></a>
+                            <a class="green" href="#" data-bind="click: function(data, event) { $parent.loadCities(data.code()); }" th:title="#{web.city.loadCity.text}"><i class="fa fa-edit text-success"></i><span th:text="#{web.city.loadCity.text}"></span></a>
+                            <a class="green" href="#" data-bind="click: function(data, event) { $parent.newLanguage(data); }" th:title="#{web.language.newLanguage.text}"><i class="fa fa-edit text-success"></i><span th:text="#{web.language.newLanguage.text}"></span></a>
+                            <a class="green" href="#" data-bind="click: function(data, event) { $parent.loadLanguages(data.code()); }" th:title="#{web.language.loadLanguage.text}"><i class="fa fa-edit text-success"></i><span th:text="#{web.language.loadLanguage.text}"></span></a>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <a class="green" href="#" th:data-bind="${modal} ? 'click: function(data, event) { $parent.resetFormForEditing($index); }' : 'click: function(data, event) { $parent.resetFormForEditing($index); $(\'' + ${form} + '\').dialog(\'open\'); }'" th:data-toggle="${modal} ? 'modal' : ''" th:data-target="${modal} ? ${form} : ''" th:title="#{form.edit.desc}"><i class="fa fa-edit text-success"></i><span th:text="#{form.edit.desc}"></span></a>
+                            <a class="red" href="#" data-bind="click: function(data, event) { $parent.delete($data); }" th:title="#{form.delete.desc}"><i class="fa fa-times text-danger"></i><span th:text="#{form.delete.desc}"></span></a>
+                        </div>
+                    </td>
+                </tr>
+            </script>
+        </div>
+
+        <div th:fragment="form-content">
+            <div class="form-row">
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <label class="control-label" for="code">
+                        <span th:text="#{web.country.form.field.code.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? code : code" id="code" name="code" type="text" th:title="#{web.country.form.field.code.text}"
+                           maxlength="3" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: code"></span>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <label class="control-label" for="code2">
+                        <span th:text="#{web.country.form.field.code2.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? code2 : code2" id="code2" name="code2" type="text" th:title="#{web.country.form.field.code2.text}"
+                           maxlength="2" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: code2"></span>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <label class="control-label" for="name">
+                        <span th:text="#{web.country.form.field.name.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? name : name" id="name" name="name" type="text" th:title="#{web.country.form.field.name.text}"
+                           maxlength="52" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: name"></span>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <label class="control-label" for="localName">
+                        <span th:text="#{web.country.form.field.localName.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? localName : localName" id="localName" name="localName" type="text" th:title="#{web.country.form.field.localName.text}"
+                           maxlength="45" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: localName"></span>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <label class="control-label" for="governmentForm">
+                        <span th:text="#{web.country.form.field.governmentForm.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? governmentForm : governmentForm" id="governmentForm" name="governmentForm" type="text" th:title="#{web.country.form.field.governmentForm.text}"
+                           maxlength="45" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: governmentForm"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <label class="control-label" for="headOfState">
+                        <span th:text="#{web.country.form.field.headOfState.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? headOfState : headOfState" id="headOfState" name="headOfState" type="text" th:title="#{web.country.form.field.headOfState.text}"
+                           maxlength="60" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: headOfState"></span>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <label class="control-label" for="continent">
+                        <span th:text="#{web.country.form.field.continent.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? continent : continent" id="continent" name="continent" type="text" th:title="#{web.country.form.field.continent.text}"
+                           maxlength="13" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: continent"></span>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <label class="control-label" for="region">
+                        <span th:text="#{web.country.form.field.region.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? region : region" id="region" name="region" type="text" th:title="#{web.country.form.field.region.text}"
+                           maxlength="26" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: region"></span>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <label class="control-label" for="indepYear">
+                        <span th:text="#{web.country.form.field.indepYear.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? indepYear : indepYear" id="indepYear" name="indepYear" type="text" th:title="#{web.country.form.field.indepYear.text}"
+                           maxlength="4" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: indepYear"></span>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <label class="control-label" for="surfaceArea">
+                        <span th:text="#{web.country.form.field.surfaceArea.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? surfaceArea : surfaceArea" id="surfaceArea" name="surfaceArea" type="text" th:title="#{web.country.form.field.surfaceArea.text}"
+                           maxlength="10" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: surfaceArea"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <label class="control-label" for="population">
+                        <span th:text="#{web.country.form.field.population.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? population : population" id="population" name="population" type="text" th:title="#{web.country.form.field.population.text}"
+                           maxlength="11" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: population"></span>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <label class="control-label" for="lifeExpectancy">
+                        <span th:text="#{web.country.form.field.lifeExpectancy.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? lifeExpectancy : lifeExpectancy" id="lifeExpectancy" name="lifeExpectancy" type="text" th:title="#{web.country.form.field.lifeExpectancy.text}"
+                           maxlength="5" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: lifeExpectancy"></span>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <label class="control-label" for="gnp">
+                        <span th:text="#{web.country.form.field.gnp.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? gnp : gnp" id="gnp" name="gnp" type="text" th:title="#{web.country.form.field.gnp.text}"
+                           maxlength="10" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: gnp"></span>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <label class="control-label" for="gnpold">
+                        <span th:text="#{web.country.form.field.gnpold.text}"></span>
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? gnpold : gnpold" id="gnpold" name="gnpold" type="text" th:title="#{web.country.form.field.gnpold.text}"
+                           maxlength="10" placeholder="" class="form-control" /><span class="error"
+                           data-bind="validationMessage: gnpold"></span>
+                </div>
+            </div>
+            
+            <div class="clear-fix">
+            </div>
+        </div>
+    </body>
+</html>

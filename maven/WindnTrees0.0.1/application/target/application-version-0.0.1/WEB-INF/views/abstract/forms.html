@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <div th:fragment="compose-form(formId,formObject,title,formTitle,content,actions,submitFunction,submitTitle,closeTitle,modal)">
+            <div th:class="${modal} ? 'modal fade' : ''" th:id="${formId}" th:title="${title}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div th:class="${modal} ? 'modal-dialog modal-lg' : 'container-fluid'">
+                    <div th:class="${modal} ? 'modal-content' : ''">
+                        <div th:class="${modal} ? 'modal-header' : ''">
+                            <button type="button" class="close" th:data-dismiss="${modal} ? 'modal' : ''" th:style="${modal} ? '' : 'display:none'" >
+                                <span aria-hidden="true">&times;</span><span class="sr-only" th:text="#{form.close.text}"></span>
+                            </button>
+                            <h4 th:class="${modal} ? 'modal-title' : ''" id="modalFormLabel">
+                                <div th:utext="${#strings.isEmpty(formTitle)} ? '<span data-bind=\'text: EditMode() ? EditModeCaption() : NewModeCaption()\'></span>' : ${formTitle}"></div>
+                            </h4>
+                        </div>
+                        <div th:class="${modal} ? 'modal-body form-horizontal' : 'form-horizontal'" th:data-bind="${#strings.isEmpty(formObject)} ? 'with: getObservableFormObject()' : ${formObject}">
+                            <div class="form-group form-group-sm">
+                                <span data-bind="template: {name: 'form_processing'}"></span>
+                                <span data-bind="template: {name: 'form_messages'}"></span>
+                                <div data-bind="if: $parent.Errors().length > 0">
+                                    <ul class="errorlist" data-bind="template: {name: 'list_error_messages', foreach: $parent.Errors}"></ul>
+                                </div>
+                            </div>
+
+                            <div th:replace="${content}">
+                                <div class="form-group form-group-sm">
+                                    <div class="col-md-3 d-flex align-content-start">
+                                        <label class="control-label" for="Name">
+                                            <span th:text="#{shared.entity.form.field.name.text}"></span>
+                                        </label>
+                                        <input data-bind="value: $parent.EditMode() ? name : name" id="Name" type="text" th:title="#{shared.entity.form.field.name.text}"
+                                               maxlength="50" placeholder="" class="form-control" /><span class="error"
+                                               data-bind="validationMessage: name"></span>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label class="control-label" for="Description">
+                                            <span th:text="#{shared.entity.form.field.description.text}"></span>
+                                        </label>
+                                        <input data-bind="value: $parent.EditMode() ? description : description" id="Description" type="text" th:title="#{shared.entity.form.field.description.text}"
+                                               maxlength="200" placeholder="" class="form-control" /><span class="error"
+                                               data-bind="validationMessage: description"></span>
+                                    </div>
+                                </div>
+                                <div class="clear-fix">
+                                </div>
+                            </div>
+                        </div>
+                        <div th:class="${modal} ? 'modal-footer' : ''">
+                            <div>
+                                <div th:replace="${actions}">
+                                    <button type="button" id="btnCloseAddForm" class="btn btn-default" th:data-dismiss="${modal} ? 'modal' : ''" th:onclick="${modal} ? '' : 'javascript: $(\'#' + ${formId} + '\').dialog(\'close\');' ">
+                                        <span th:text="${#strings.isEmpty(closeTitle)} ? #{form.close.text} : ${closeTitle}"></span>
+                                    </button>
+                                    <button type="button" th:data-bind="${#strings.isEmpty(submitFunction)} ? 'click: function() { EditMode() ? update() : create(); }' : ${submitFunction}"
+                                            id="btnAddEdit" class="btn btn-primary">
+                                        <span th:text="${#strings.isEmpty(submitTitle)} ? #{form.save.text} : ${submitTitle}"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

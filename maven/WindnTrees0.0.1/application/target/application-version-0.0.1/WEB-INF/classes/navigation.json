@@ -1,0 +1,97 @@
+{
+    "authenticationMode": true,
+    "version": "4.0",
+    "cssClass": "navbar-nav container-fluid d-flex justify-content-start p-0",
+    "tag": "ul",
+    "attributes": [
+        {
+            "name": "class",
+            "value": "navbar-nav"
+        }
+    ],
+    "roles": ["anonymous"],
+    "items": [ 
+        {
+            "text": "nav.home.text",
+            "attributes": [{
+                    "name": "id",
+                    "value": ""
+                }, {
+                    "name": "title",
+                    "value": "nav.home.desc"
+                }, {
+                    "name": "class",
+                    "value": "nav-item"
+                }],
+            "linkUrl": "/index",
+            "linkAttributes": [{
+                    "name": "id",
+                    "value": ""
+                }, {
+                    "name": "title",
+                    "value": "nav.home.desc"
+                }, {
+                    "name": "class",
+                    "value": "nav-link"
+                }],
+            "roles": [ "role1" ]
+        },
+        {
+            "text": "nav.products.text",
+            "attributes": [{
+                    "name": "title",
+                    "value": "nav.products.desc"
+                },
+                {
+                    "name": "class",
+                    "value": "nav-item"
+                }],
+            "linkUrl": "/products",
+            "linkAttributes": [
+                {
+                    "name": "class",
+                    "value": "nav-link"
+                }
+            ],
+            "roles": ["role2"]
+        },
+        {
+            "text": "nav.world.text",
+            "attributes": [{
+                    "name": "title",
+                    "value": "nav.world.desc"
+                },
+                {
+                    "name": "class",
+                    "value": "nav-item"
+                }],
+            "linkUrl": "/world/country",
+            "linkAttributes": [
+                {
+                    "name": "class",
+                    "value": "nav-link"
+                }
+            ],
+            "roles": ["signin"]
+        },
+        {
+            "text": "nav.country.text",
+            "attributes": [{
+                    "name": "title",
+                    "value": "nav.country.desc"
+                },
+                {
+                    "name": "class",
+                    "value": "nav-item"
+                }],
+            "linkUrl": "/world/city",
+            "linkAttributes": [
+                {
+                    "name": "class",
+                    "value": "nav-link"
+                }
+            ],
+            "roles": ["signin"]
+        }
+    ]
+}

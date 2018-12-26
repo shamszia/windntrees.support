@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="abstract/layout :: header(~{::title},~{},~{})">
+        <title>Web Application Title</title>
+    </head>
+    <body>
+        <section th:replace="~{abstract/navigations :: navigation}"></section>
+        <section th:replace="~{abstract/layout :: page-path}"></section>
+
+        <div class="container">
+            <h1>
+                <span th:text="#{home.title.text}"></span>
+            </h1>
+            <p th:text="#{home.welcome.text}"></p>
+            <form action="#" th:action="@{/index/navs}" th:object="${userInfo}"
+                  method="post">
+                <input type="text" id="authenticatedUser" name="authenticatedUser" value="" th:value="*{authenticatedUser}" />
+                <span th:if="${#fields.hasErrors('authenticatedUser')}" th:errors="*{authenticatedUser}"></span>
+                <input type="text" id="authenticatedRoles" name="authenticatedRoles" value="" th:value="*{authenticatedRoles}" />
+                <span th:if="${#fields.hasErrors('authenticatedRoles')}" th:errors="*{authenticatedRoles}"></span>
+                <input type="submit" name="submit" value="submit" th:value="#{form.submit.text}" />
+            </form>
+            <hr/>
+            
+        </div>
+
+        <section th:replace="~{abstract/layout :: content-footer}"></section>
+        <section th:replace="~{abstract/layout :: nav-script}"></section>
+    </body>
+</html>

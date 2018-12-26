@@ -1,0 +1,774 @@
+﻿@section Header
+{
+    <title>@LocaleResources.Core.Views.Company.Index.Page</title>
+
+    <script type="text/html" id="headings">
+        <tr>
+            <th class="col-1 order-0" scope="col"></th>
+            <th class="col-1 order-1" scope="col"></th>
+            <th class="col-1 order-2" scope="col"></th>
+            <th class="col-1 order-3" scope="col"></th>
+            <th class="col-1 order-4" scope="col"></th>
+            <th class="col-1 order-5" scope="col"></th>
+            <th class="col-1 order-6" scope="col"></th>
+            <th class="col-1 order-7" scope="col"></th>
+            <th class="col-1 order-8" scope="col"></th>
+            <th class="col-1 order-9" scope="col"></th>
+        </tr>
+    </script>
+
+    <script type="text/html" id="rows">
+        <tr>
+            <td colspan="10">
+                <h2 class="d-flex align-content-start" data-bind="text: LegalName()"></h2>
+            </td>
+        </tr>
+        <tr>
+            <td><span class="d-flex align-content-start">@LocaleResources.Core.Contents.Company.Company.LegalCode:</span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: LegalCode()"></span></td>
+            <td><span class="d-flex align-content-start">@LocaleResources.Core.Contents.Company.Company.NTN:</span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: Ntn()"></span></td>
+            <td><span class="d-flex align-content-start">@LocaleResources.Core.Contents.Company.Company.STRN:</span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: Strn()"></span></td>
+            <td><span class="d-flex align-content-start">@LocaleResources.Core.Contents.Company.Company.PaidUpCapital:</span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: PaidUpCapital()"></span></td>
+            <td><span class="d-flex align-content-start">@LocaleResources.Core.Contents.Company.Company.Currency:</span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: Currency()"></span></td>
+        </tr>
+        <tr>
+            <td><span class="d-flex align-content-start">@LocaleResources.Core.Contents.Company.Company.Director:</span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: Director()"></span></td>
+            <td><span class="d-flex align-content-start">@LocaleResources.Core.Contents.Company.Company.Secretary:</span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: Secretary()"></span></td>
+            <td><span class="d-flex align-content-start">@LocaleResources.Core.Contents.Company.Company.CompanyType:</span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: CompanyType()"></span></td>
+            <td><span class="d-flex align-content-start">@LocaleResources.Core.Contents.Company.Company.Phone1:</span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: Phone1()"></span></td>
+            <td><span class="d-flex align-content-start">@LocaleResources.Core.Contents.Company.Company.Phone2:</span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: Phone2()"></span></td>
+        </tr>
+        <tr>
+            <td><span class="d-flex align-content-start">@LocaleResources.Core.Contents.Company.Company.Cell1:</span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: Cell1()"></span></td>
+            <td><span class="d-flex align-content-start">@LocaleResources.Core.Contents.Company.Company.Cell2:</span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: Cell2()"></span></td>
+            <td><span class="d-flex align-content-start">@LocaleResources.Core.Contents.Company.Company.Email:</span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: Email()"></span></td>
+            <td><span class="d-flex align-content-start">@LocaleResources.Core.Contents.Company.Company.ContactPerson:</span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: ContactPerson(), attr: { title: ContactPersonDesignation() }"></span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: ContactPersonCell()"></span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: ContactPersonEmail()"></span></td>
+        </tr>
+        <tr>
+            <td class="scroll-y-50px" colspan="10">
+                <span class="d-flex align-content-start" data-bind="text: Address()"></span>
+                <span class="d-flex align-content-start" data-bind="text: City()"></span>
+                <span class="d-flex align-content-start" data-bind="text: State()"></span>
+                <span class="d-flex align-content-start" data-bind="text: Country()"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="scroll-y-100px" colspan="10">
+                <span class="d-flex align-content-start" data-bind="text: Description()"></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="10">
+                <div class="hidden-phone visible-desktop action-buttons d-flex align-content-start">
+                    <a class="green" href="#" data-bind="click: function(data, event) { $parent.setAdvertisement($data.Uid); }" title="@LocaleResources.Core.Views.Company.Index.AddAdvertisement"><i class="fa fa-edit text-success"></i>@LocaleResources.Core.Views.Company.Index.AddAdvertisement</a>
+                    <a class="green" href="#" data-bind="click: function(data, event) { $parent.findAdvertisement($data.Uid); }" title="@LocaleResources.Core.Views.Company.Index.ViewAdvertisements"><i class="fa fa-edit text-success"></i>@LocaleResources.Core.Views.Company.Index.ViewAdvertisements</a>
+                    <a class="green" href="#" data-bind="click: function(data, event) { $parent.setReference($data.Uid, LegalCode(), LegalName(), event); }" title="@LocaleResources.Core.Views.Company.Index.ViewReferences"><i class="fa fa-edit text-success"></i>@LocaleResources.Core.Views.Company.Index.AddReference</a>
+                    <a class="green" href="#" data-bind="click: function(data, event) { $parent.findReference($data.Uid, LegalCode(), LegalName(), event); }" title="@LocaleResources.Core.Views.Company.Index.ViewReferences"><i class="fa fa-edit text-success"></i>@LocaleResources.Core.Views.Company.Index.ViewReferences</a>
+                    <a class="green" href="#" data-bind="click: function(data, event) { $parent.resetFormForEditing($index); $('#__form').dialog('open'); }" title="@SharedLibrary.Core.Resources.Global.FormMessages.EditD"><i class="fa fa-edit text-success"></i>@SharedLibrary.Core.Resources.Global.FormMessages.Edit</a>
+                    <a class="red" href="#" data-bind="click: function(data, event) { $parent.delete($data); }" title="@SharedLibrary.Core.Resources.Global.FormMessages.DeleteD"><i class="fa fa-times text-danger"></i>@SharedLibrary.Core.Resources.Global.FormMessages.Delete</a>
+                </div>
+            </td>
+        </tr>
+    </script>
+
+    <script type="text/html" id="formcontent">
+
+        <div class="form-group form-row">
+            <div class="col-12">
+                <label class="control-label d-flex align-content-start" for="LegalName">
+                    @LocaleResources.Core.Contents.Company.Company.LegalName
+                </label>
+                <input class="form-control col-12" data-bind="value: $root.EditMode() ? LegalName : LegalName" id="LegalName" type="text" title="@LocaleResources.Core.Contents.Company.Company.LegalName"
+                       maxlength="255" placeholder="" /><span class="error"
+                                                                                   data-bind="validationMessage: LegalName"></span>
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            <div class="col-3 order-0">
+                <label class="control-label d-flex align-content-start" for="LegalCode">
+                    @LocaleResources.Core.Contents.Company.Company.LegalCode
+                </label>
+                <input data-bind="value: $root.EditMode() ? LegalCode : LegalCode" id="LegalCode" type="text" title="@LocaleResources.Core.Contents.Company.Company.LegalCode"
+                       maxlength="100" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                   data-bind="validationMessage: LegalCode"></span>
+            </div>
+            <div class="col-3 order-1">
+                <label class="control-label d-flex align-content-start" for="NTN">
+                    @LocaleResources.Core.Contents.Company.Company.NTN
+                </label>
+                <input data-bind="value: $root.EditMode() ? Ntn : Ntn" id="NTN" type="text" title="@LocaleResources.Core.Contents.Company.Company.NTN"
+                       maxlength="100" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                   data-bind="validationMessage: Ntn"></span>
+            </div>
+            <div class="col-3 order-2">
+                <label class="control-label d-flex align-content-start" for="STRN">
+                    @LocaleResources.Core.Contents.Company.Company.STRN
+                </label>
+                <input data-bind="value: $root.EditMode() ? Strn : Strn" id="STRN" type="text" title="@LocaleResources.Core.Contents.Company.Company.STRN"
+                       maxlength="100" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                   data-bind="validationMessage: Strn"></span>
+            </div>
+            <div class="col-3 order-3">
+                <label class="control-label d-flex align-content-start" for="CompanyType">
+                    @LocaleResources.Core.Contents.Company.Company.CompanyType
+                </label>
+                <select data-bind="options: $root.CompanyTypes, optionsText: 'val', optionsValue: 'val', value: CompanyType, optionsCaption: '@SharedLibrary.Core.Resources.Global.FormMessages.Select'" title="@LocaleResources.Core.Contents.Company.Company.CompanyType"
+                        id="CompanyType" class="form-control col-12"></select><span class="error" data-bind="validationMessage: CompanyType"></span>
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            <div class="col-3 order-0">
+                <label class="control-label d-flex align-content-start" for="Director">
+                    @LocaleResources.Core.Contents.Company.Company.Director
+                </label>
+                <input data-bind="value: $root.EditMode() ? Director : Director" id="Director" type="text" title="@LocaleResources.Core.Contents.Company.Company.Director"
+                       maxlength="100" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                   data-bind="validationMessage: Director"></span>
+            </div>
+            <div class="col-3 order-1">
+                <label class="control-label d-flex align-content-start" for="Secretary">
+                    @LocaleResources.Core.Contents.Company.Company.Secretary
+                </label>
+                <input data-bind="value: $root.EditMode() ? Secretary : Secretary" id="Secretary" type="text" title="@LocaleResources.Core.Contents.Company.Company.Secretary"
+                       maxlength="100" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                   data-bind="validationMessage: Secretary"></span>
+            </div>
+            <div class="col-3 order-2">
+                <label class="control-label d-flex align-content-start" for="PaidUpCapital">
+                    @LocaleResources.Core.Contents.Company.Company.PaidUpCapital
+                </label>
+                <input data-bind="value: $root.EditMode() ? PaidUpCapital : PaidUpCapital" id="PaidUpCapital" type="text" title="@LocaleResources.Core.Contents.Company.Company.PaidUpCapital"
+                       maxlength="10" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                  data-bind="validationMessage: PaidUpCapital"></span>
+            </div>
+            <div class="col-3 order-3">
+                <label class="control-label d-flex align-content-start" for="Currency">
+                    @LocaleResources.Core.Contents.Company.Company.Currency
+                </label>
+                <input data-bind="value: $root.EditMode() ? Currency : Currency" id="Currency" type="text" title="@LocaleResources.Core.Contents.Company.Company.Currency"
+                       maxlength="10" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                  data-bind="validationMessage: Currency"></span>
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            <div class="col-12">
+                <label class="control-label d-flex align-content-start" for="Description">
+                    @LocaleResources.Core.Contents.Company.Company.Description
+                </label>
+                <textarea data-bind="value: $root.EditMode() ? Description : Description" class="form-control col-12" title="@LocaleResources.Core.Contents.Company.Company.Description"
+                          id="Description" maxlength="1024" rows="3" placeholder=""></textarea><span class="error" data-bind="validationMessage: Description"></span>
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            <div class="col-12">
+                <label class="control-label d-flex align-content-start" for="Address">
+                    @LocaleResources.Core.Contents.Company.Company.Address
+                </label>
+                <input data-bind="value: $root.EditMode() ? Address : Address" id="Address" type="text" title="@LocaleResources.Core.Contents.Company.Company.Address"
+                       maxlength="255" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                   data-bind="validationMessage: Address"></span>
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            <div class="col-3 order-0">
+                <label class="control-label d-flex align-content-start" for="City">
+                    @LocaleResources.Core.Contents.Company.Company.City
+                </label>
+                <input data-bind="value: $root.EditMode() ? City : City" id="City" type="text" title="@LocaleResources.Core.Contents.Company.Company.City"
+                       maxlength="100" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                   data-bind="validationMessage: City"></span>
+            </div>
+            <div class="col-3 order-1">
+                <label class="control-label d-flex align-content-start" for="State">
+                    @LocaleResources.Core.Contents.Company.Company.State
+                </label>
+                <input data-bind="value: $root.EditMode() ? State : State" id="State" type="text" title="@LocaleResources.Core.Contents.Company.Company.State"
+                       maxlength="100" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                   data-bind="validationMessage: State"></span>
+            </div>
+            <div class="col-3 order-2">
+                <label class="control-label d-flex align-content-start" for="Country">
+                    @LocaleResources.Core.Contents.Company.Company.Country
+                </label>
+                <input data-bind="value: $root.EditMode() ? Country : Country" id="Country" type="text" title="@LocaleResources.Core.Contents.Company.Company.Country"
+                       maxlength="100" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                   data-bind="validationMessage: Country"></span>
+            </div>
+            <div class="col-3 order-3">
+                <label class="control-label d-flex align-content-start" for="Email">
+                    @LocaleResources.Core.Contents.Company.Company.Email
+                </label>
+                <input data-bind="value: $root.EditMode() ? Email : Email" id="Email" type="text" title="@LocaleResources.Core.Contents.Company.Company.Email"
+                       maxlength="128" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                   data-bind="validationMessage: Email"></span>
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            <div class="col-3 order-0">
+                <label class="control-label d-flex align-content-start" for="Phone1">
+                    @LocaleResources.Core.Contents.Company.Company.Phone1
+                </label>
+                <input data-bind="value: $root.EditMode() ? Phone1 : Phone1" id="Phone1" type="text" title="@LocaleResources.Core.Contents.Company.Company.Phone1"
+                       maxlength="20" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                  data-bind="validationMessage: Phone1"></span>
+            </div>
+            <div class="col-3 order-1">
+                <label class="control-label d-flex align-content-start" for="Phone2">
+                    @LocaleResources.Core.Contents.Company.Company.Phone2
+                </label>
+                <input data-bind="value: $root.EditMode() ? Phone2 : Phone2" id="Phone2" type="text" title="@LocaleResources.Core.Contents.Company.Company.Phone2"
+                       maxlength="20" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                  data-bind="validationMessage: Phone2"></span>
+            </div>
+            <div class="col-3 order-2">
+                <label class="control-label d-flex align-content-start" for="Cell1">
+                    @LocaleResources.Core.Contents.Company.Company.Cell1
+                </label>
+                <input data-bind="value: $root.EditMode() ? Cell1 : Cell1" id="Cell1" type="text" title="@LocaleResources.Core.Contents.Company.Company.Cell1"
+                       maxlength="20" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                  data-bind="validationMessage: Cell1"></span>
+            </div>
+            <div class="col-3 order-3">
+                <label class="control-label d-flex align-content-start" for="Cell2">
+                    @LocaleResources.Core.Contents.Company.Company.Cell2
+                </label>
+                <input data-bind="value: $root.EditMode() ? Cell2 : Cell2" id="Cell2" type="text" title="@LocaleResources.Core.Contents.Company.Company.Cell2"
+                       maxlength="20" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                  data-bind="validationMessage: Cell2"></span>
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            <div class="col-6 order-0">
+                <label class="control-label d-flex align-content-start" for="ContactPerson">
+                    @LocaleResources.Core.Contents.Company.Company.ContactPerson
+                </label>
+                <input data-bind="value: $root.EditMode() ? ContactPerson : ContactPerson" id="ContactPerson" type="text" title="@LocaleResources.Core.Contents.Company.Company.ContactPerson"
+                       maxlength="100" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                   data-bind="validationMessage: ContactPerson"></span>
+            </div>
+            <div class="col-6 order-1">
+                <label class="control-label d-flex align-content-start" for="ContactPersonDesignation">
+                    @LocaleResources.Core.Contents.Company.Company.ContactPersonDesignation
+                </label>
+                <input data-bind="value: $root.EditMode() ? ContactPersonDesignation : ContactPersonDesignation" id="ContactPersonDesignation" type="text" title="@LocaleResources.Core.Contents.Company.Company.ContactPersonDesignation"
+                       maxlength="100" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                   data-bind="validationMessage: ContactPersonDesignation"></span>
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            <div class="col-3 order-0">
+                <label class="control-label d-flex align-content-start" for="ContactPersonPhone">
+                    @LocaleResources.Core.Contents.Company.Company.ContactPersonPhone
+                </label>
+                <input data-bind="value: $root.EditMode() ? ContactPersonPhone : ContactPersonPhone" id="ContactPersonPhone" type="text" title="@LocaleResources.Core.Contents.Company.Company.ContactPersonPhone"
+                       maxlength="20" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                  data-bind="validationMessage: ContactPersonPhone"></span>
+            </div>
+            <div class="col-3 order-1">
+                <label class="control-label d-flex align-content-start" for="ContactPersonCell">
+                    @LocaleResources.Core.Contents.Company.Company.ContactPersonCell
+                </label>
+                <input data-bind="value: $root.EditMode() ? ContactPersonCell : ContactPersonCell" id="ContactPersonCell" type="text" title="@LocaleResources.Core.Contents.Company.Company.ContactPersonCell"
+                       maxlength="20" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                  data-bind="validationMessage: ContactPersonCell"></span>
+            </div>
+            <div class="col-6 order-2">
+                <label class="control-label d-flex align-content-start" for="ContactPersonEmail">
+                    @LocaleResources.Core.Contents.Company.Company.ContactPersonEmail
+                </label>
+                <input data-bind="value: $root.EditMode() ? ContactPersonEmail : ContactPersonEmail" id="ContactPersonEmail" type="text" title="@LocaleResources.Core.Contents.Company.Company.ContactPersonEmail"
+                       maxlength="128" placeholder="" class="form-control col-12" /><span class="error"
+                                                                                          data-bind="validationMessage: ContactPersonEmail"></span>
+            </div>
+        </div>
+        <div class="clear-fix">
+        </div>
+    </script>
+
+    <script type="text/html" id="headings_references">
+        <tr>
+            <th class="col-2 order-0">
+                <span class="d-flex align-content-start" title="@LocaleResources.Core.Contents.Reference.Name">@LocaleResources.Core.Contents.Reference.Name</span>
+            </th>
+            <th class="col-4 order-1">
+                <span class="d-flex align-content-start" title="@LocaleResources.Core.Contents.Reference.Description">@LocaleResources.Core.Contents.Reference.Description</span>
+            </th>
+            <th class="col-2 order-2">
+                <span class="d-flex align-content-start" title="@LocaleResources.Core.Contents.Reference.ContentFile">@LocaleResources.Core.Contents.Reference.ContentFile</span>
+            </th>
+            <th class="col-2 order-3"></th>
+            <th class="col-2 order-4">&nbsp;</th>
+        </tr>
+    </script>
+
+    <script type="text/html" id="rows_references">
+        <tr>
+            <td>
+                <span class="d-flex align-content-start" data-bind="text: Name()"></span>
+            </td>
+            <td><span class="d-flex align-content-start" data-bind="text: Description()"></span></td>
+            <td><span class="d-flex align-content-start" data-bind="text: ContentFile()"></span></td>
+            <td><p class="paragraph-normal-text d-flex align-content-start">@LocaleResources.Core.Contents.Reference.Readable <input data-bind="checked: Readable(), disable: true" type="checkbox" /> @LocaleResources.Core.Contents.Reference.Picture <input data-bind="checked: Picture(), disable: true" type="checkbox" /> @LocaleResources.Core.Contents.Reference.AudioVideo <input data-bind="checked: AudioVideo(), disable: true" type="checkbox" /> @LocaleResources.Core.Contents.Reference.Download <input data-bind="checked: Download(), disable: true" type="checkbox" /></p></td>
+            <td>
+                <div class="hidden-phone visible-desktop action-buttons d-flex align-content-start">
+                    <a class="green" href="#" data-bind="attr: { href: DownloadLink() }" title="@SharedLibrary.Core.Resources.Global.FormMessages.DownloadD"><i class="fa fa-edit text-success"></i>@SharedLibrary.Core.Resources.Global.FormMessages.Download</a>
+                    <a class="green" href="#" data-bind="click: function(data, event) { $parent.resetFormForEditing($index); $('#__form_reference').dialog('open'); }" title="@SharedLibrary.Core.Resources.Global.FormMessages.EditD"><i class="fa fa-edit text-success"></i>@SharedLibrary.Core.Resources.Global.FormMessages.Edit</a>
+                    <a class="red" href="#" data-bind="click: function(data, event) { $parent.delete($data); }" title="@SharedLibrary.Core.Resources.Global.FormMessages.DeleteD"><i class="fa fa-times text-danger"></i>@SharedLibrary.Core.Resources.Global.FormMessages.Delete</a>
+                </div>
+            </td>
+        </tr>
+    </script>
+
+    <script type="text/html" id="formcontent_references">
+        <form id="__uploadform">
+            <div class="form-group form-row">
+                <div class="col-12">
+                    <label class="control-label d-flex align-content-start" for="Name">
+                        @LocaleResources.Core.Contents.Reference.Name
+                    </label>
+                    <input class="form-control col-12" data-bind="value: $root.EditMode() ? Name : Name" id="Name" name="Name" type="text" title="@LocaleResources.Core.Contents.Reference.Name"
+                           maxlength="100" placeholder="" /><span class="error"
+                                                                  data-bind="validationMessage: Name"></span>
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <div class="col-12">
+                    <label class="control-label d-flex align-content-start" for="Description">
+                        @LocaleResources.Core.Contents.Reference.Description
+                    </label>
+                    <textarea data-bind="value: $root.EditMode() ? Description : Description" class="form-control col-12" title="@LocaleResources.Core.Contents.Reference.Description"
+                              id="Description" name="Description" maxlength="1024" rows="3" placeholder=""></textarea><span class="error" data-bind="validationMessage: Description"></span>
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <div class="col-12">
+                    <label class="control-label d-flex align-content-start" for="upload">
+                        @SharedLibrary.Core.Resources.Global.FormMessages.Upload
+                    </label>
+                    <div class="input-group d-flex align-content-start">
+                        <select class="col-2 form-control order-first" id="uploadType" name="uploadType">
+                            <option value="readable" selected>readable</option>
+                            <option value="image">image</option>
+                            <option value="video">video</option>
+                        </select>
+                        <input class="col-10 form-control form-control-file order-last" id="upload" name="upload" type="file" />
+                    </div>
+                    <input id="recordid" name="recordid" type="hidden" data-bind="value: $data.getKey()" />
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <div class="col-4 order-0">
+                    <label class="control-label d-flex align-content-start" for="">
+                        @LocaleResources.Core.Contents.Reference.Download
+                    </label>
+                    <input class="form-check d-flex align-content-start" data-bind="checked: $root.EditMode() ? Download : Download" id="Download" name="Download" title="@LocaleResources.Core.Contents.Reference.Download"
+                           type="checkbox" /><span class="error" data-bind="validationMessage: Download"></span>
+                </div>
+            </div>
+            <input id="Uid" name="Uid" type="hidden" data-bind="value: Uid" />
+            <input id="ReferenceId" name="ReferenceId" type="hidden" value='@ViewData["TransactionID"]' />
+            <input id="ContentFile" name="ContentFile" type="hidden" data-bind="value: ContentFile" />
+            <input id="Size" name="Size" type="hidden" data-bind="value: ((Size === null || Size === undefined) ? 0 : Size)" />
+            <input id="Readable" name="Readable" type="hidden" data-bind="value: Readable" />
+            <input id="Picture" name="Picture" type="hidden" data-bind="value: Picture" />
+            <input id="AudioVideo" name="AudioVideo" type="hidden" data-bind="value: AudioVideo" />
+        </form>
+        <div class="clear-fix">
+        </div>
+    </script>
+
+
+    <!-- Advertisement Referential View Section -->
+
+    <script type="text/html" id="headings_advertisement">
+        <tr>
+            <th class="col-8 order-0">
+                <span class="d-flex align-content-start" title="@LocaleResources.Core.Contents.Advertisement.Heading">@LocaleResources.Core.Contents.Advertisement.Heading</span>
+            </th>
+            <th class="col-4 order-1">
+                <span class="d-flex align-content-start" title="@LocaleResources.Core.Contents.Advertisement.Picture">@LocaleResources.Core.Contents.Advertisement.Picture</span>, <span title="@LocaleResources.Core.Contents.Advertisement.Video">@LocaleResources.Core.Contents.Advertisement.Video</span>
+            </th>
+        </tr>
+    </script>
+
+    <script type="text/html" id="rows_advertisement">
+        <tr>
+            <td>
+                <h3><span class="d-flex align-content-start" data-bind="text: Heading()"></span> </h3>
+                <h4><span class="d-flex align-content-start" data-bind="html: SubHeading()"></span> </h4>
+                <p class="paragraph-normal-text d-flex align-content-start" data-bind="html: Detail()"></p>
+                <p class="paragraph-normal-text d-flex align-content-start">
+                    <span class="form-label">@LocaleResources.Core.Contents.Advertisement.Page: <span class="field-value" data-bind="text: Page()"></span></span>,
+                    <span class="form-label">@LocaleResources.Core.Contents.Advertisement.Location: <span class="field-value" data-bind="text: Location()"></span></span>,
+                    <span class="form-label">@LocaleResources.Core.Contents.Advertisement.SortOrder: <span class="field-value" data-bind="text: SortOrder()"></span></span>
+
+                </p>
+                <p class="paragraph-normal-text d-flex align-content-start">
+                    <span class="form-label">@LocaleResources.Core.Contents.Advertisement.Source: <span class="field-value" data-bind="text: Source()"></span></span>,
+                    <span class="form-label">@LocaleResources.Core.Contents.Advertisement.News: <span class="field-value" data-bind="text: News()"></span></span>,
+                    <span class="form-label">@LocaleResources.Core.Contents.Advertisement.Enabled: <span class="field-value" data-bind="text: Enabled()"></span></span>
+                </p>
+                <p class="paragraph-normal-text d-flex align-content-start">
+                    <a class="form-link-small" href="#" data-bind="attr: { href: Link1() } ">@LocaleResources.Core.Contents.Advertisement.Link1</a>
+                    <a class="form-link-small" href="#" data-bind="attr: { href: Link2() } ">@LocaleResources.Core.Contents.Advertisement.Link2</a>
+                </p>
+            </td>
+            <td>
+                <p><a href="#" data-bind="click: function(data, event) { $parent.resetFormForEditing($index); $('#__form_advertisement_image').dialog('open');}"><img class="img-fluid d-block m-auto" data-bind="attr: { src: PictureLink() }" /></a></p>
+                <p class="paragraph-normal-text d-flex align-content-end">
+                    <span class="d-flex align-content-end"><a class="form-link-small" href="#" data-bind="click: function(data, event) { $parent.resetFormForEditing($index); $('#__form_advertisement_video').dialog('open'); }">@SharedLibrary.Core.Resources.Global.FormMessages.ViewVideo</a></span>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="hidden-phone visible-desktop action-buttons d-flex align-content-start">
+                    <a class="green" href="#" data-bind="click: function(data, event) { $parent.resetFormForEditing($index); $('#__form_advertisement').dialog('open'); }" title="@SharedLibrary.Core.Resources.Global.FormMessages.EditD"><i class="fa fa-edit text-success"></i>@SharedLibrary.Core.Resources.Global.FormMessages.Edit</a>
+                    <a class="red" href="#" data-bind="click: function(data, event) { $parent.delete( { content: $data, TimeFields: [ 'RecordTime', 'UpdateTime' ] } ); }" title="@SharedLibrary.Core.Resources.Global.FormMessages.DeleteD"><i class="fa fa-times text-danger"></i>@SharedLibrary.Core.Resources.Global.FormMessages.Delete</a>
+                </div>
+            </td>
+        </tr>
+    </script>
+
+    <script type="text/html" id="formcontent_advertisement">
+        <form id="__uploadform_advertisement">
+            <div class="form-group form-row">
+                <div class="col-12">
+                    <label class="control-label d-flex align-content-start" for="Heading">
+                        @LocaleResources.Core.Contents.Advertisement.Heading
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? Heading : Heading" id="Heading" name="Heading" type="text" title="@LocaleResources.Core.Contents.Advertisement.Heading"
+                           maxlength="100" placeholder="" class="form-control" /><span class="error"
+                                                                                       data-bind="validationMessage: Heading"></span>
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <div class="col-12">
+                    <label class="control-label d-flex align-content-start" for="SubHeading">
+                        @LocaleResources.Core.Contents.Advertisement.SubHeading
+                    </label>
+                    <div class="controls">
+                        <input data-bind="value: $root.EditMode() ? SubHeading : SubHeading" id="SubHeading" name="SubHeading" title="@LocaleResources.Core.Contents.Advertisement.SubHeading"
+                               type="text" maxlength="100" placeholder="" class="form-control" /><span class="error" data-bind="validationMessage: SubHeading"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <div class="col-12">
+                    <label class="control-label d-flex align-content-start" for="Detail">
+                        @LocaleResources.Core.Contents.Advertisement.Detail
+                    </label>
+                    <textarea data-bind="value: $root.EditMode() ? Detail : Detail" class="form-control" title="@LocaleResources.Core.Contents.Advertisement.Detail"
+                              id="Detail" name="Detail" maxlength="1024" rows="3" placeholder=""></textarea><span class="error" data-bind="validationMessage: Detail"></span>
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <div class="col-12">
+                    <label class="control-label d-flex align-content-start" for="Link1">
+                        @LocaleResources.Core.Contents.Advertisement.Link1
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? Link1 : Link1" id="Link1" name="Link1" type="text" title="@LocaleResources.Core.Contents.Advertisement.Link1"
+                           maxlength="512" placeholder="" class="form-control" /><span class="error" data-bind="validationMessage: Link1"></span>
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <div class="col-12">
+                    <label class="control-label d-flex align-content-start" for="Link2">
+                        @LocaleResources.Core.Contents.Advertisement.Link2
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? Link2 : Link2" id="Link2" name="Link2" type="text" title="@LocaleResources.Core.Contents.Advertisement.Link2"
+                           maxlength="512" placeholder="" class="form-control" /><span class="error" data-bind="validationMessage: Link2"></span>
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <div class="col-2 order-0">
+                    <label class="control-label d-flex align-content-start" for="Source">
+                        @LocaleResources.Core.Contents.Advertisement.Source
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? Source : Source" id="Source" name="Source" type="text" title="@LocaleResources.Core.Contents.Advertisement.Source"
+                           maxlength="100" placeholder="" class="form-control" /><span class="error" data-bind="validationMessage: Source"></span>
+                </div>
+
+                <div class="col-4 order-1">
+                    <label class="control-label d-flex align-content-start" for="Page">
+                        @LocaleResources.Core.Contents.Advertisement.Page
+                    </label>
+                    <select data-bind="options: $root.Pages, optionsText: 'val', optionsValue: 'val', value: Page, optionsCaption: '@SharedLibrary.Core.Resources.Global.FormMessages.Select'" title="@LocaleResources.Core.Contents.Advertisement.Page"
+                            id="Page" name="Page" class="form-control"></select><span class="error" data-bind="validationMessage: Page"></span>
+                </div>
+                <div class="col-4 order-2">
+                    <label class="control-label d-flex align-content-start" for="Location">
+                        @LocaleResources.Core.Contents.Advertisement.Location
+                    </label>
+                    <select data-bind="options: $root.Locations, optionsText: 'val', optionsValue: 'val', value: Location, optionsCaption: '@SharedLibrary.Core.Resources.Global.FormMessages.Select'" title="@LocaleResources.Core.Contents.Advertisement.Location"
+                            id="Location" name="Location" class="form-control"></select><span class="error" data-bind="validationMessage: Location"></span>
+                </div>
+                <div class="col-2 order-4">
+                    <label class="control-label d-flex align-content-start" for="SortOrder">
+                        @LocaleResources.Core.Contents.Advertisement.SortOrder
+                    </label>
+                    <input data-bind="value: $root.EditMode() ? SortOrder : SortOrder" id="SortOrder" name="SortOrder" type="text" title="@LocaleResources.Core.Contents.Advertisement.SortOrder"
+                           maxlength="4" placeholder="" class="form-control" /><span class="error" data-bind="validationMessage: SortOrder"></span>
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <div class="col-12">
+                    <label class="control-label d-flex align-content-start" for="upload">
+                        @SharedLibrary.Core.Resources.Global.FormMessages.Upload
+                    </label>
+                    <div class="input-group d-flex align-content-start">
+                        <select class="col-2 form-control order-first" id="uploadType" name="uploadType">
+                            <option value="image">image</option>
+                            <option value="video">video</option>
+                        </select>
+                        <input class="col-10 form-control form-control-file order-last" id="upload" name="upload" type="file" />
+                    </div>
+                    <input id="recordid" name="recordid" type="hidden" data-bind="value: $data.getKey()" />
+                </div>
+            </div>
+            <div class="form-group form-row">
+                <div class="col-4 order-0">
+                    <label class="control-label d-flex align-content-start" for="News">
+                        @LocaleResources.Core.Contents.Advertisement.News
+                    </label>
+                    <input class="form-check d-flex align-content-start" data-bind="checked: $root.EditMode() ? News : News" id="News" name="News" title="@LocaleResources.Core.Contents.Advertisement.News"
+                           type="checkbox" /><span class="error" data-bind="validationMessage: News"></span>
+                </div>
+                <div class="col-4 order-1">
+                    <label class="control-label d-flex align-content-start" for="Enabled">
+                        @LocaleResources.Core.Contents.Advertisement.Enabled
+                    </label>
+                    <input class="form-check d-flex align-content-start" data-bind="checked: $root.EditMode() ? Enabled : Enabled" id="Enabled" name="Enabled" title="@LocaleResources.Core.Contents.Advertisement.Enabled"
+                           type="checkbox" /><span class="error" data-bind="validationMessage: Enabled"></span>
+                </div>
+                <div class="col-4 order-2">
+
+                </div>
+            </div>
+            <input id="Uid" name="Uid" type="hidden" data-bind="value: Uid" />
+            <input id="ReferenceId" name="ReferenceId" type="hidden" data-bind="value: ReferenceId" />
+            <input id="RecordTime" name="RecordTime" type="hidden" data-bind="value: RecordTime" />
+            <input id="UpdateTime" name="UpdateTime" type="hidden" data-bind="value: UpdateTime" />
+
+            <input id="Picture" name="Picture" type="hidden" data-bind="value: Picture" />
+            <input id="Video" name="Video" type="hidden" data-bind="value: Video" />
+        </form>
+        <div class="clear-fix">
+        </div>
+    </script>
+
+    <script type="text/html" id="viewimage_advertisement">
+        <img class="img-fluid d-block m-auto" data-bind="attr: { src: $data.PictureLink() }" />
+    </script>
+
+    <script type="text/html" id="viewvideo_advertisement">
+        <p>
+            <video src="#" data-bind="attr: { src: $data.VideoLink() }" controls width="500" class="center-content"></video>
+        </p>
+    </script>
+
+    <!-- Advertisement Referential View Section - END -->
+}
+
+<section id="companies">
+    <div class="container">
+        <h2 class="d-flex align-content-start">@LocaleResources.Core.Views.Company.Index.Page</h2>
+        <p class="d-flex align-content-start">@LocaleResources.Core.Views.Company.Index.PageD</p>
+        <div id="status"></div>
+    </div>
+
+    @Controls.Core.Grid.GridComposer.composeGrid(null, null, "table table-hover grid-style-0 grid-border-0", null, null, null, null, null, null, null)
+
+    <section style="display: none">
+        @Controls.Core.Grid.GridComposer.composeStandardActions(null, "#__form", false, null, null, false)
+
+        @Controls.Core.Grid.GridComposer.composeStandardListing(null, "#__form", true)
+
+        @Controls.Core.Form.FormComposer.composeForm("__form", null, null, null, "<div data-bind=\"template: {name: 'formcontent' }\"></div>", null, null, null, null, false)
+    </section>
+</section>
+
+<section id="references" style="display: none">
+
+    @Controls.Core.Grid.GridComposer.composeStandardActions("actions_reference", "#__form_reference", true, null, null, false)
+
+    @Controls.Core.Grid.GridComposer.composeStandardListing("listings_reference", "#__form_reference", true)
+
+    @Controls.Core.Form.FormComposer.composeForm("__form_reference", null, null, null, "<div data-bind=\"template: {name: 'formcontent_references' }\"></div>", null, "create({\"target\": \"CreateContent\", \"UploadField\": \"ContentFile\" })", "update({\"target\": \"UpdateContent\", \"UploadField\": \"ContentFile\" })", null, false)
+
+    @Controls.Core.Grid.GridComposer.composeGrid("__grid_reference", "container-fluid", null, LocaleResources.Core.Views.Reference.Index.Page, null, "<div data-bind=\"template: {name: 'actions_reference' }\"></div>", "<thead data-bind=\"template: {name: 'headings_references' }\"></thead>", "<tbody data-bind=\"template: {name: 'rows_references' , foreach: Records }\"></tbody>", null, "<div data-bind=\"template: {name: 'listings_reference' }\"></div>")
+
+</section>
+
+<section id="advertisements" style="display: none">
+
+    @Controls.Core.Grid.GridComposer.composeStandardActions("actions_advertisement", "#__form_advertisement", true, null, null, false)
+
+    @Controls.Core.Grid.GridComposer.composeStandardListing("listings_advertisement", "#__form_advertisement", true)
+
+    @Controls.Core.Form.FormComposer.composeForm("__form_advertisement", null, null, null, "<div data-bind=\"template: {name: 'formcontent_advertisement' }\"></div>", null, "create( { \"target\": \"CreateContent\", \"form\":\"__uploadform_advertisement\" })", "update( {\"target\": \"UpdateContent\", \"form\":\"__uploadform_advertisement\", \"TimeFields\": [ \"RecordTime\", \"UpdateTime\" ] })", null, false)
+
+    @Controls.Core.Form.FormComposer.composeForm("__form_advertisement_image", null, null, @SharedLibrary.Core.Resources.Global.FormMessages.ImageViewForm, "<div data-bind=\"template: {name: 'viewimage_advertisement' }\"></div>", "view", null, null, null, false)
+
+    @Controls.Core.Form.FormComposer.composeForm("__form_advertisement_video", null, null, @SharedLibrary.Core.Resources.Global.FormMessages.VideoViewForm, "<div data-bind=\"template: {name: 'viewvideo_advertisement' }\"></div>", "view", null, null, null, false)
+
+    @Controls.Core.Grid.GridComposer.composeGrid("__grid_advertisement", "container-fluid", null, LocaleResources.Core.Views.Advertisement.Index.Page, null, "<div data-bind=\"template: {name: 'actions_advertisement' }\"></div>", "<thead data-bind=\"template: {name: 'headings_advertisement' }\"></thead>", "<tbody data-bind=\"template: {name: 'rows_advertisement' , foreach: Records }\"></tbody>", null, "<div data-bind=\"template: {name: 'listings_advertisement' }\"></div>")
+
+</section>
+
+@section Scripts {
+    <script src="~/js/models/Company.js" type="text/javascript"></script>
+    <script src="~/js/models/Reference.js" type="text/javascript"></script>
+    <script src="~/js/models/Advertisement.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        var referenceView = new CRUDView({
+            'uri': '/admin/reference',
+            'observer': new CRUDObserver({ 'contentType': new Reference({}), 'messages': intialize(new MessageRepository()) }),
+            'progressEvent': true
+        });
+
+        referenceView.getObserverObject().setListSource(referenceView);
+
+        var advertisementView = new CRUDView({
+            'uri': '/admin/advertisement',
+            'observer': new CRUDObserver({ 'contentType': new Advertisement({}), 'messages': intialize(new MessageRepository()) }),
+            'progressEvent': true,
+            'fields': [
+                {
+                    'field': 'Pages',
+                    'key': 'Uid',
+                    'value': 'Name',
+                    'uri': '/admin/advertisementpage',
+                    'target': 'ListAll'
+                },
+                {
+                    'field': 'Locations',
+                    'key': 'Uid',
+                    'value': 'Name',
+                    'uri': '/admin/advertisementlocation',
+                    'target': 'ListAll'
+                }
+            ]
+        });
+
+        advertisementView.getObserverObject().setListSource(advertisementView);
+
+        var companyView = new CRUDView({
+                'uri': '/admin/company',
+                'observer': new CRUDObserver({ 'contentType': new Company({}), 'messages': intialize(new MessageRepository()) }),
+                'fields': [
+                    {
+                        'field': 'CompanyTypes',
+                        'key': 'Uid',
+                        'value': 'Name',
+                        'uri': '/admin/companytype',
+                        'target': 'ListAll'
+                    }
+                ]
+        });
+
+        companyView.getObserverObject().delete = function (data) {
+
+            if (confirm("@SharedLibrary.Core.Resources.Global.StandardMessages.AlertSure")) {
+
+                companyView.delete({ content: data });
+            }
+        };
+
+        companyView.getObserverObject().setReference = function (id, code, name) {
+
+            $("#__form_reference").dialog("open");
+
+            referenceView.setObjectKey(id);
+            referenceView.setKeyField("ReferenceId");
+            referenceView.getObserverObject().resetForm();
+
+        };
+
+        companyView.getObserverObject().findReference = function (id, code, name) {
+
+            $("#__grid_reference").dialog("open");
+
+            referenceView.setObjectKey(id);
+            referenceView.setKeyField("ReferenceId");
+            referenceView.find(1);
+        };
+
+        companyView.getObserverObject().setAdvertisement = function (id) {
+
+            $("#__form_advertisement").dialog("open");
+
+            advertisementView.setObjectKey(id);
+            advertisementView.setKeyField("ReferenceId");
+            advertisementView.getObserverObject().resetForm({ form: '__uploadform_advertisement' });
+
+        };
+
+        companyView.getObserverObject().findAdvertisement = function (id) {
+
+            $("#__grid_advertisement").dialog("open");
+
+            advertisementView.setObjectKey(id);
+            advertisementView.setKeyField("ReferenceId");
+            advertisementView.find(1);
+        };
+
+        companyView.getObserverObject().setListSource(companyView);
+
+        $(function () {
+
+            try {
+                ko.applyBindings(companyView.getObserverObject(), document.getElementById("companies"));
+                companyView.load();
+            }
+            catch (e) { }
+
+            try {
+                ko.applyBindings(referenceView.getObserverObject(), document.getElementById("references"));
+            }
+            catch (e) { }
+
+            try {
+                ko.applyBindings(advertisementView.getObserverObject(), document.getElementById("advertisements"));
+                advertisementView.LoadFields();
+            }
+            catch (e) {
+            }
+
+            $('#__form').dialog({ autoOpen: false, width: "auto", maxWidth: 1000 });
+            $('#__form_reference').dialog({ autoOpen: false, width: "auto", maxWidth: 1000 });
+            $('#__form_advertisement').dialog({ autoOpen: false, width: "auto", maxWidth: 1000 });
+            $('#__form_advertisement_image').dialog({ autoOpen: false, width: "auto", maxWidth: 1000 });
+            $('#__form_advertisement_video').dialog({ autoOpen: false, width: "auto", maxWidth: 1000 });
+
+            $('#__grid_reference').dialog({ autoOpen: false, width: "auto", maxWidth: 1000, height: 600 });
+            $('#__grid_advertisement').dialog({ autoOpen: false, width: "auto", maxWidth: 1000, height: 600 });
+        });
+
+    </script>
+}

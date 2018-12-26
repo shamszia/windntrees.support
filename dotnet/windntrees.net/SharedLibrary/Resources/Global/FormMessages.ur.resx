@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddD" xml:space="preserve">
+    <value>جمع کریں</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>جمع کریں</value>
+  </data>
+  <data name="AscendingD" xml:space="preserve">
+    <value>کھاتے بالترتیب دیکھیں۔ پہلےسےآخری درجہ کی جانب</value>
+  </data>
+  <data name="Ascending" xml:space="preserve">
+    <value>ترتیب ابتدائیہ</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>کینسل کریں</value>
+  </data>
+  <data name="CaptchaD" xml:space="preserve">
+    <value>تصویری الفاظ یہاں پر لکھیں</value>
+  </data>
+  <data name="CaptchaErrorD" xml:space="preserve">
+    <value>درج شدہ الفاظ، تصویری الفاظ سے نہیں ملتے۔ تصحیح کر کے دوبارہ بھیجیں۔</value>
+  </data>
+  <data name="CaptchaImageD" xml:space="preserve">
+    <value>تصویری الفاظ - تبدیل کرنے کے لئے کلک کریں</value>
+  </data>
+  <data name="Captcha" xml:space="preserve">
+    <value>تصویری الفاظ</value>
+  </data>
+  <data name="Cell" xml:space="preserve">
+    <value>موبائل</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>بند کریں</value>
+  </data>
+  <data name="DeleteD" xml:space="preserve">
+    <value>ختم کریں</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>نفی کریں</value>
+  </data>
+  <data name="DescendingD" xml:space="preserve">
+    <value>کھاتے اخروی ترتیب میں دیکھیں۔ آخری سے پہلے درجہ کی جانب</value>
+  </data>
+  <data name="Descending" xml:space="preserve">
+    <value>ترتیب اخرویہ</value>
+  </data>
+  <data name="DisplayingPage" xml:space="preserve">
+    <value>آپ صفحہ نمبر</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>ٹھیک ہے</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>محفوظ کریں</value>
+  </data>
+  <data name="DownloadD" xml:space="preserve">
+    <value>اسےمحفوظ کریں</value>
+  </data>
+  <data name="EditD" xml:space="preserve">
+    <value>تبدیل کریں</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تبدیل کریں</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ای میل</value>
+  </data>
+  <data name="EndDateD" xml:space="preserve">
+    <value>آخری تاریخ</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>آخری تاریخ</value>
+  </data>
+  <data name="EndTimeD" xml:space="preserve">
+    <value>آخری وقت</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>آخری وقت</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>فیل</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>عورت</value>
+  </data>
+  <data name="FieldDescriptionD" xml:space="preserve">
+    <value>تفصیل درج کریں</value>
+  </data>
+  <data name="FieldDescription" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="FieldNameD" xml:space="preserve">
+    <value>نام درج کریں</value>
+  </data>
+  <data name="FieldName" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="FieldNewDetailD" xml:space="preserve">
+    <value>نئی تفصیل درج کریں</value>
+  </data>
+  <data name="FieldNewDetail" xml:space="preserve">
+    <value>نئی تفصیل</value>
+  </data>
+  <data name="Found" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Here" xml:space="preserve">
+    <value>یہاں</value>
+  </data>
+  <data name="ImageUpload" xml:space="preserve">
+    <value>تصویر اپ لوڈ کریں</value>
+  </data>
+  <data name="ImageViewForm" xml:space="preserve">
+    <value>فارم نمائش تصویر</value>
+  </data>
+  <data name="KeywordD" xml:space="preserve">
+    <value>آزمائشی الفاظ یہاں پر لکھیں</value>
+  </data>
+  <data name="Keyword" xml:space="preserve">
+    <value>آزمائشی الفاظ</value>
+  </data>
+  <data name="ListSizeD" xml:space="preserve">
+    <value>پیمائش صفحہ</value>
+  </data>
+  <data name="ListSize" xml:space="preserve">
+    <value>پیمائش</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>مرد</value>
+  </data>
+  <data name="NewD" xml:space="preserve">
+    <value>نیا</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>نیا</value>
+  </data>
+  <data name="NextPage" xml:space="preserve">
+    <value>آگے</value>
+  </data>
+  <data name="NoRecord" xml:space="preserve">
+    <value>کوئی ریکارڈ نہیں ملا</value>
+  </data>
+  <data name="Of" xml:space="preserve">
+    <value>دیکھ رہے ہیں۔ کل صفحات کی تعداد</value>
+  </data>
+  <data name="PageSize" xml:space="preserve">
+    <value>پیمائش صفحہ</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>فون</value>
+  </data>
+  <data name="PrevPage" xml:space="preserve">
+    <value>پیچھے</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>پرنٹ</value>
+  </data>
+  <data name="Records" xml:space="preserve">
+    <value>ریکارڈ ملے</value>
+  </data>
+  <data name="ReloadD" xml:space="preserve">
+    <value>کھاتے دوبارہ نکالیں</value>
+  </data>
+  <data name="Reload" xml:space="preserve">
+    <value>دوبارہ نکالیں</value>
+  </data>
+  <data name="ReportComputerGen" xml:space="preserve">
+    <value>یہ کمپیوٹر سے نکالی گئی رپورٹ ہے اور قانونی کاروائی کے لئے استعمال نہیں ہو سکتی</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>محفوظ کریں</value>
+  </data>
+  <data name="Saved" xml:space="preserve">
+    <value>محفوظ</value>
+  </data>
+  <data name="SearchD" xml:space="preserve">
+    <value>تلاش کرنے کے لئے دبائیں</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>تلاش کریں</value>
+  </data>
+  <data name="SelectD" xml:space="preserve">
+    <value>متعلقہ قیمت کا انتخاب کریں</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>منتخب کریں</value>
+  </data>
+  <data name="SonOrDaughterOf" xml:space="preserve">
+    <value>ولدیت</value>
+  </data>
+  <data name="StartDateD" xml:space="preserve">
+    <value>ابتدائی تاریخ</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>ابتدائی تاریخ</value>
+  </data>
+  <data name="StartTimeD" xml:space="preserve">
+    <value>ابتدائی وقت</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>ابتدائی وقت</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>بھیج دیں</value>
+  </data>
+  <data name="TotalPages" xml:space="preserve">
+    <value>ہے</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>محفوظ کریں</value>
+  </data>
+  <data name="UploadD" xml:space="preserve">
+    <value>تصویر،فائل اپ لوڈ کریں</value>
+  </data>
+  <data name="UploadFile" xml:space="preserve">
+    <value>فائل پسند کریں۔ یاد رکھیں صرف محدود سائز اور ایکسٹنشن والی تصاویر کی اجازت ہے</value>
+  </data>
+  <data name="UploadImage" xml:space="preserve">
+    <value>تصویر پسند کریں۔ صرف پی این جی اور جے پی جی ایکسٹنشن والی تصاویر کی اجازت ہے</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>اپ لوڈ کریں</value>
+  </data>
+  <data name="UsefulLinksD" xml:space="preserve">
+    <value>سہولت روابط</value>
+  </data>
+  <data name="UsefulLinks" xml:space="preserve">
+    <value>سہولت روابط</value>
+  </data>
+  <data name="VideoUpload" xml:space="preserve">
+    <value>ویڈیو اپ لوڈ کریں</value>
+  </data>
+  <data name="VideoViewForm" xml:space="preserve">
+    <value>فارم نمائش ویڈیو</value>
+  </data>
+  <data name="ViewImage" xml:space="preserve">
+    <value>تصویر ملاحظہ کریں</value>
+  </data>
+  <data name="ViewInWindow" xml:space="preserve">
+    <value>ملاحظہ کریں</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>ملاحظہ کریں</value>
+  </data>
+  <data name="ViewVideo" xml:space="preserve">
+    <value>ویڈیو ملاحظہ کریں</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>خوش آمدید، </value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>صحیح</value>
+  </data>
+  <data name="HideSearch" xml:space="preserve">
+    <value>تلاش کریں</value>
+  </data>
+  <data name="ShowSearch" xml:space="preserve">
+    <value>تلاش کریں</value>
+  </data>
+  <data name="RecordExists" xml:space="preserve">
+    <value>ریکارڈ پہلے سے موجود ہے</value>
+  </data>
+</root>

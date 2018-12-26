@@ -1,0 +1,437 @@
+1. Introduction
+1.1. COMPONENTS
+1.1.1 Views
+1.1.2. Resources
+1.1.3. Contents
+1.1.4. Observers
+1.1.5. CRUDS
+1.2. CRUDS APPLICATION
+
+2. CRUDS
+2.1. CRUDController
+2.2. CRUDProcessor
+2.3. Application Architecture
+2.3.1. CRUDSource
+2.3.2. CRUDController
+2.3.3. CRUDProcessor
+2.3.4. CRUDConsumer
+2.4. CONCLUSION
+
+3. OBSERVERS
+3.1. ActivityObserver
+3.2. ObjectObserver
+3.3. SearchObserver
+3.4. CRUDObserver
+3.5. DetailObserver
+3.6. Alternator
+3.7. CRUDSList
+3.8. CONCLUSION
+
+4. OBJECT VIEWS
+4.1. ObjectView
+4.2. NewView
+4.3. EditView
+4.4. SearchView
+4.5. CRUDView
+4.6. CRUDRelatedView
+4.7. SearchList
+4.8. Alternator
+4.9. CRUDSList
+4.10. CONCLUSION
+
+5. HTML VIEWS
+5.1. TextView
+5.2. ImageView
+5.3. AVView
+5.4. ContentList
+5.5. CONCLUSION
+
+1. INTRODUCTION
+WindnTrees CRUDS is a front-end http request, response and related content processing 
+javascript library that integrates with Observers to synchronize data between source
+and view objects. This follows the create, read, update and delete (CRUD) data 
+extraction, editing, deletion and saving design pattern.
+
+CRUDS utilize CRUDController to extract information from a data source or 
+CRUDSource and processes response with CRUDProcessor to produce typed objects 
+based on content information. Observers take these typed objects and present 
+them in their appropriate views.
+
+This simplifies the process of data extraction, processing and presentation.
+
+1.1. COMPONENTS
+CRUDS front-end application is composed of following components:
+
+1. Views (HTML, Thymeleaf, ASP .NET, PHP, etc. )
+2. Resources (Images, CSS etc.)
+3. Contents (Objects, Entities, Concepts etc. )
+4. Observers (ObjectObserver, ActivityObserver, SearchObserver, CRUDObserver, etc. )
+5. CRUDS (ObjectView, NewView, EditView, SearchView, CRUDView,  etc. )
+
+CRUDS separates views, content and content processing functionalities. Users
+can extract and process data without the information of how its going to be 
+presented by the view technology. 
+
+1.1.1. VIEWS
+Views are HTML pages produced either as a result of server side scripting language 
+or just static pages served by the HTTP WEB server.
+
+1.1.2. RESOURCES
+Resources are the views related documents, images, style sheets (css) etc.
+
+1.1.3. CONTENTS
+Contents are the typed objects that may represent a real world object, concept, 
+entities etc.
+
+1.1.4. OBSERVERS
+Observers are data synchronizing components that synchronize data between source and 
+related view objects. CRUDS provide technology independent observers that let users
+select between observer technologies.
+
+1.1.5. CRUDS
+WindnTrees CRUDS is a front-end http request, response and related content processing 
+javascript library that integrates with Observers to synchronize data between source
+and view objects.
+
+1.2. CRUDS APPLICATION
+A CRUD application will consist of all or any of the following components.
+
+1. CRUDSource
+2. CRUDController
+3. CRUDProcessor
+4. CRUDConsumer
+
+2. CRUDS
+WindnTrees CRUDS is a front-end http request, response and related content processing 
+javascript library that integrates with Observers to synchronize data between source
+and view objects. 
+
+CRUDS utilize CRUDController to extract information from a data source or 
+CRUDSource and processes response with CRUDProcessor to produce typed objects 
+based on content information. Observers take these typed objects and present 
+them in their appropriate views. This simplifies the process of data extraction, 
+processing and presentation.
+
+CRUDS extract and process information using objects and HTML views. Object views
+are useful where information is required to be presented in tabular format while
+HTML views are important when information has to be presented in HTML format. 
+
+Following is the list of CRUD enabled object views:
+
+1. ObjectView
+2. NewView
+3. EditView
+4. SearchView
+5. CRUDView
+6. CRUDRelatedView
+7. SearchList
+
+Following is the list of CRUD enabled HTML views:
+
+1. TextView
+2. ImageView
+3. AVView
+4. FlexView
+5. ContentList
+
+CRUDS with observers solves the problem of graphical user interface interactivity
+and processed information presentation. 
+
+Following is the list of Observers that are built on top of observer technologies:
+
+1. ActivityObserver
+2. ObjectObserver
+3. ListObserver
+4. SearchObserver
+5. CRUDObserver
+6. DetailObserver
+
+2.1. CRUDController
+CRUDController offers AJAX based create, read, update and delete requests functionality.
+All requests take a URI (address) and or related content object (or data entity object) 
+and produces response event notifications with resulting data or information.
+
+2.2. CRUDProcessor
+CRUDProcessor processes the response data and errors returned by CRUDController and 
+produces content and or error object(s). These objects are consumed by other components 
+for further processing. For example, views utilize these objects for presentation.
+
+2.3. FlexObject
+FlexObject represents information or typed objects in collection of items in a 
+type less manner. FlexObject in normal format is a collection (or array) of key,
+evaluator, result, content information and content objects composed in a format 
+as explained following sections.
+
+FlexObject in output format is composed of only one item with already processed 
+result.
+
+In normal format first 10 FlexObject items in array or collection defines configurational 
+and or content evaluation information while remaining items define content objects 
+that are processed to either form a view or yields in a function or object output.
+
+FlexObject {
+
+    items: [
+
+        items[0]: key / output  result object
+        items[1]: evaluator     function / string / html
+        items[2]: result        (html / string)[-output] / object-output 
+        items[3]: content       object[-output] / string
+        items[4]: reserved
+        items[5]: reserved
+        items[6]: reserved
+        items[7]: reserved
+        items[8]: reserved
+        items[9]: reserved
+
+        items[10]: object 1
+        items[11]: object 2
+        items[12]: object 3
+        items[13]: object 4
+        .
+        .
+        .
+        items[N]: object N
+    ]
+}               
+
+In normal format FlexObject first item contain key information. Second item is 
+the evaluator function or view information that consume content objects to produce 
+output result. Third item defines the expected result and fourth item defines 
+information about content objects. Fifth to tenth items are reserved for future 
+usage. From eleventh to onward items contain objects that are to be processed. 
+
+2.4. Application Scope
+A typical CRUDS application is about data extraction, processing and saving. A reference
+CRUD application will consist of all or any of the following components.
+
+1. CRUDSource
+2. CRUDController
+3. CRUDProcessor
+4. CRUDConsumer
+
+2.4.1. CRUDSource
+CRUDSource is CRUD (create, read, update and delete) interface compliant source
+of data or information that can listen to CRUD requests and respond with appropriate
+data or information in specific format. If a CRUDSource is extracting and processing
+information on behalf of other CRUDSource(s) then its both the CRUDSource and 
+CRUDConsumer at the same time.
+
+2.4.2. CRUDController
+CRUDController component operates on top of a CRUDSource and is responsible for
+data extraction and reporting to other components. Usually a CRUDController deals 
+with a CRUDSource and a CRUDProcessor.
+
+2.4.3. CRUDProcessor
+CRUDProcessor component operates on top of a CRUDController and is responsible for 
+data processing and reporting to other components. Usually a CRUDProcessor deals
+with a CRUDController and a CRUDSource or a CRUDConsumer.
+
+2.4.4. CRUDConsumer
+CRUDConsumer is the actual component that consumes data or information reported by
+either CRUDController or CRUDProcessor. If CRUDConsumer offer CRUD services to 
+other components then it also forms a CRUDSource of itinstance.
+
+2.5. CONCLUSION
+CRUD application forms a CRUD stack of data or information extraction with
+CRUDSource, CRUDController, CRUDProcessor and CRUDConsumer. Typically application
+extracts information from a CRUDSource using a CRUDController then processes it
+with CRUDProcessor and consumes processed information using CRUDConsumer.
+
+3. OBSERVERS
+Observers are data synchronizing components that synchronize data between source and 
+related view objects. CRUDS offer technology independent observers that let users
+select between observer technologies.
+
+CRUDS offer following observer objects.
+
+1. ActivityObserver
+2. ObjectObserver
+3. ListObserver
+4. SearchObserver
+5. CRUDObserver
+6. DetailObserver
+
+3.1. ActivityObserver
+ActivityObserver offers basic user interface interactive capabilities with status monitoring.
+
+3.2. ObjectObserver
+ObjectObserver offers source and target synchronization functionality for a particular 
+object source with related user interface interactive capabilities.
+
+3.3. ListObserver
+ListObserver offers list, list objects and their targets synchronization functionality 
+with related user interface interactive capabilities.
+
+3.4. SearchObserver
+SearchObserver offers records, record objects and their targets synchronization 
+functionality with related user interface interactive capabilities.
+
+3.5. CRUDObserver
+CRUDObserver offers CRUD (create, read, update and delete) enabled records, record 
+objects and their targets synchronization functionality with related user interface 
+interactive capabilities.
+
+3.6. DetailObserver
+DetailObserver offers two Observer interfaces one for original record and the other 
+for related or referential record or list of records.
+
+3.7. CONCLUSION
+Observers provide seamless interface for data or information synchronization between
+source and target objects. CRUDS with observers provide an elegant interface of data or
+processed information presentation.
+
+4. OBJECT VIEWS
+Object views are CRUDConsumer components that on behalf of CRUDController
+and CRUDProcessor are capable of data extraction, editing, deletion and saving 
+of content objects. In addition to data extraction and processing capability these 
+can integrate with observers to present data or processed information in textual, 
+form or grid (tabular) format.
+
+4.1. ObjectView
+ObjectView provides observer independent data handling and communication capability 
+using GET / POST calls to a hosted web service and is able to produce 
+typed objects (contents) based on provided content object.
+
+ObjectView is extract and present only CRUD component, this means that this 
+is useful when information or data is only required for extraction 
+and presentation in textual or form format.
+
+4.2. NewView
+NewView provides observer independent data handling and communication capability 
+using get, post and create calls to a hosted web service and is able 
+to produce typed objects (contents) based on provided content object. NewView extends 
+functionality from ObjectView. 
+
+NewView is extract, save and present only CRUD component, this means that this 
+is useful when information or data is required to be saved or extracted
+for presentation in textual or form format.
+
+4.3. EditView
+EditView provides observer independent data handling and communication capability 
+using get, post and update calls to a hosted web service and gets updated typed 
+content object. EditView extends functionality from ObjectView.
+
+EditView is extract, save and present only CRUD component, this means that this 
+is useful when information or data is required to be saved or extracted
+for presentation in textual or form format.
+
+4.4. SearchView
+SearchView provides observer independent data handling and communication capability 
+using get, post and find calls to a hosted web service and gets typed content objects. 
+SearchView extends functionality from ObjectView.
+
+SearchView is extract and present only CRUD component, this means that this 
+is useful when information or data is required for extraction and presentation 
+in textual or grid (tabular) format.
+
+4.5. CRUDView
+CRUDView provides observer independent data handling and communication capability 
+using get, post, find, create, update and delete calls to a hosted web service 
+and gets typed content objects. CRUDView extends functionality from SearchView.
+
+CRUDView is data or information  extraction, edition, deletion, saving and presentation 
+CRUD component, this means its useful when information or data is required 
+to be created, edited, saved, searched and presented in textual, form or grid (tabular) format.
+
+4.6. CRUDRelatedView
+CRUDRelatedView provides observer independent data handling and communication 
+capability using findDetail, selectDetailRecord, createDetail, updateDetail and 
+deleteDetail calls to a hosted web service and gets typed content objects. 
+CRUDRelatedView extends functionality from CRUDView.
+
+CRUDRelatedView is related or referential data or information extraction, edition, 
+deletion, saving and presentation CRUD component, this means its useful when 
+referential information or data is required to be created, edited, saved, searched 
+and presented in textual, form or grid (tabular) format.
+
+4.7. SearchList
+SearchList is a flexible list of lists composed of (SearchView or CRUDView) views 
+that can load related or non-related list of contents at run time. SearchList is 
+capable of extending its functionality based on provided views.
+
+4.8. Alternator
+Alternator alternates between Zero or One reference object in observer independent way based 
+on user interaction. This allows to share same or different views between reference objects
+to enable or limit different use cases.
+
+4.9. CRUDSList
+CRUDSList provides different CRUDS or Search sources for the same or different views.
+
+This takes list of reference objects and selects between them based on user
+interaction in observer independent way. This allows to share same or different 
+views between reference objects to enable or limit different use cases.
+
+4.10. CONCLUSION
+ObjectViews (or CRUDConsumers) on behalf of CRUDController, CRUDProcessor and 
+Observers offers data extraction, processing and presentation functionality in
+textual, form or grid format.
+
+5. HTML VIEWS
+HTMLViews are CRUDConsumer components that on behalf of CRUDController
+and CRUDProcessor are capable of data extraction and presentation of processed data 
+or information in HTML format using observer or by directly writing into node's 
+innerHTML content. In observer less scenario the type of content, content node 
+contentNode and error node errorNode must be defined.
+
+5.1. TextView
+TextView presents subject and description values in provided html format and css 
+styles. TextView is capable of extracting information from a remote web service 
+using GET / POST calls and display using observer or by directly writing into 
+node's innerHTML content. In observer less scenario the type of content content, 
+content node contentNode and error node errorNode must be defined.
+
+In case of GET / POST response the corresponding content result fields for subject, 
+description, url and urltitle must be mapped with options.subjectf, options.descriptionf, 
+options.urlf and options.urltitlef fields. If a response field results in null or 
+undefined value then this can be replaced by opted value, for example subject field 
+can be provided with a default value like options.subject. 
+
+5.2. ImageView
+ImageView presents image, subject and description values in provided html format 
+and css styles. ImageView is capable of extracting information from a remote web 
+service using GET / POST calls and display using observer or by directly writing 
+into node's innerHTML content. In observer less scenario the type of content content, 
+content node contentNode and error node errorNode must be defined.
+
+In case of GET / POST response the corresponding content result fields for imagename, 
+imagetitle and imagepath must be mapped with options.imagenamef, options.imagetitlef 
+and options.imagepathf fields. If a response field results in null or undefined 
+value then this can be replaced by opted value, for example imagetitle field can 
+be provided with a default value like options.imagetitle. 
+
+5.3. AVView
+AVView presents video, image, subject and description values in provided html 
+format and css styles. AVView is capable of extracting information from a remote
+web service using GET / POST calls and display using observer or by directly writing 
+into node's innerHTML content. In observer less scenario the type of content content, 
+content node contentNode and error node errorNode must be defined.
+
+In case of GET / POST response the corresponding content result fields for src, 
+crossorigin, poster, preload, autoplay, mediagroup, loop, muted, controls, width 
+and height must be mapped with options.videosrcf, options.crossoriginf, options.posterf, 
+options.preloadf, options.autoplayf, options.mediagroupf, options.loopf, options.mutedf, 
+options.controlsf, options.widthf and options.heightf fields. If a response field 
+results in null or undefined value then this can be replaced by opted value, 
+for example src field can be provided with a default value like options.videosrc 
+and crossorigin can be opted with options.crossorigin. 
+
+5.4. FlexView
+FlexView presents information contained in a FlexObject using key, evaluator, 
+result and content item objects. FlexView is capable of extracting information 
+from a remote web service using GET / POST calls and display using observer or 
+by directly writing into node's innerHTML content. In observer less scenario the 
+type of content content, content node contentNode and error node errorNode 
+must be defined.
+
+5.5. ContentList
+ContentList finds records based on input values and loads content video, image, 
+subject and description values in provided html format and css styles. ContentList 
+is capable of extracting information from a remote web service using GET / POST 
+calls and display using observer or by directly writing into node's innerHTML content. 
+In observer less scenario the type of content content, content node contentNode and 
+error node errorNode must be defined. 
+
+5.6. CONCLUSION
+HTMLViews (or CRUDConsumers) on behalf of CRUDController, CRUDProcessor and 
+Observers offers data extraction and presentation functionality in HTML format.

@@ -1,0 +1,55 @@
+﻿.list-attributes, .list-properties, .list-constructors, .list-functions {
+    list-style: none;
+}
+
+    .list-attributes li {
+    }
+
+        .list-attributes li a {
+        }
+
+    .list-attributes .description {
+        font-size: 0.9rem;
+    }
+
+    .list-properties li {
+    }
+
+        .list-properties li a {
+        }
+
+    .list-properties .description {
+        font-size: 0.9rem;
+    }
+
+    .list-constructors li {
+    }
+
+        .list-constructors li a {
+        }
+
+    .list-constructors .description {
+        font-size: 0.9rem;
+    }
+
+    .list-constructors li.constructor {
+    }
+
+        .list-constructors li.constructor .param {
+        }
+
+    .list-functions li {
+    }
+
+        .list-functions li a {
+        }
+
+    .list-functions .description {
+        font-size: 0.9rem;
+    }
+
+    .list-functions li.function {
+    }
+
+        .list-functions li.function .param {
+        }

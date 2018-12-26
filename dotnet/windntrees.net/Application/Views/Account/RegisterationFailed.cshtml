@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Registration Failed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Header
+{
+    <title>@LocaleResources.Views.Account.RegisterationFailed.Page</title>
+}
+
+<div id="webpage" class="row align-items-center login">
+    <div class="col-4 m-auto align-content-center">
+        <div class="card">
+            <div class="card-header">
+                <h3>
+                    @LocaleResources.Views.Account.RegisterationFailed.Title
+                </h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    @MvcHtmlString.Create(string.Format(LocaleResources.Views.Account.RegisterationFailed.Message, @Html.ActionLink(SharedLibrary.Resources.Global.FormMessages.Here, "register", "account"), Html.ActionLink(SharedLibrary.Resources.Global.FormMessages.Here, "login", "account")))
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

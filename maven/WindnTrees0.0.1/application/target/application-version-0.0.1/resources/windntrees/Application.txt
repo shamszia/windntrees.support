@@ -1,0 +1,425 @@
+Changes / Updates:
+
+1. CRUDController has extension for request target support to fine control request with server side controllers.
+2. CRUDProcessor has bug fix for .errors response field.
+3. CRUDProcessor's response content identification and processing ehnhanced based on the type of response.
+4. ObjectObserver has extension support for FormObject on behalf of input observable object.
+5. CRUDView has updates with CRUD functions.
+6. SearchView had bug fix for errors processing.
+
+
+
+
+Application:
+--------------------------------------------------------------------------------
+1. Resources (javascript, css etc)
+2. View Engine (Thymeleaf)
+3. Abstracting Views with Concrete Views
+4. Locale / Internationalization Implementation
+4.1 Need to implement data store based locale resource resolver. 
+5. Views Specific Resource Distribution
+6. Data Sharing with Views
+7. Database Connectivity, View Model and List Implementation
+8. Simple / Multipart Form Handling
+9. Securing Controllers and Views (Authentication and Authorization)
+10. Login (Account, Roles, Actions) Implementation
+
+Remainings:
+-----------
+8. Multipart Form Handling
+9. Securing Controllers and Views (Authentication and Authorization)
+10. Login (Account, Roles) Implementation
+11. Need to specify entity column names on standard database table column 
+conventions.
+--------------------------------------------------------------------------------
+
+CRUD2CRUD  APPLICATION:
+-----------------------
+
+CRUDSource(s) --- CRUDController(s) -- CRUDProcessor(s) --- CRUDService(s) (http/tcp/udp) --- 
+
+||| data / objects / entities / concepts ||| 
+
+CRUDSource(s) --- CRUDController(s) -- CRUDProcessor(s) --- CRUDConsumer(s) (Views / Presenters / Processors)
+
+
+
+Server Side
+----------------------------
+CRUDSource --- CRUDController -- CRUDProcessor -- CRUDService (CRUDConsumer / CRUDSource)
+
+||| data / objects / entities / concepts ||| 
+
+Client Side
+----------------------------
+CRUDSource --- CRUDController -- CRUDProcessor -- CURDView (CRUDConsumer)
+
+
+CRUDConsumer can also be a CRUDSource of exising CRUDSources with controlled and 
+processed CRUDSources or CRUDConsumer. CRUDSource (CRUDConsumer)
+
+
+CRUD2CRUD:
+
+CRUDSource(s) --- CRUDController(s) -- CRUDProcessor(s) --- CRUDService(s) (http/tcp/udp) --- 
+
+||| data / objects / entities / concepts ||| 
+
+CRUDSource(s) --- CRUDController(s) -- CRUDProcessor(s) --- CRUDConsumer(s) (CRUDViews / Views / Presenters / Processors)
+
+
+-----------------------------------------------------------------------
+No CRUD Code Repitition - Only Views / Workflows extension
+-----------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------
+Pool of controllers to avoid code repitition. (server side framework specific)
+--------------------------------------------------------------------------------
+
+
+
+CRUD To CRUD (CRUD2CRUD) OR (C2C):
+--------------------------------------------------------------------------------
+1. Introduction
+2. Architecture
+3. Reference Application 1
+4. Reference Application 2
+
+
+C2C Application Reference
+-------------------------
+
+CRUDSource --- CRUDController -- CRUDProcessor -- CRUDConsumer (CRUDService / CRUDSource)
+
+C2C TREE
+--------
+is a pool or list or tree of C2C Sources or Consumers either on client side or server 
+side. 
+
+
+Distributed Application Reference
+---------------------------------
+
+C2C SOURCE (SERVER SIDE)
+----------------------------
+is a CRUDConsumer composed of existing controlled and processed CRUDSources 
+or CRUDConsumers.
+
+
+CRUDSource --- CRUDController -- CRUDProcessor -- CRUDConsumer (CRUDService / CRUDSource)
+
+
+POOL/TREE OF CONTROLLERS
+------------------------
+requires controllers addition functionality at runtime or on startup.
+
+
+Reference Implementation
+--------------
+1. CRUDContoller (CRUDSource 1) / (CRUDSource --- CRUDController -- CRUDProcessor -- CRUDSource)
+2. CRUDContoller (CRUDSource 2) / (CRUDSource --- CRUDController -- CRUDProcessor -- CRUDSource)
+3. CRUDContoller (CRUDSource 3) / (CRUDSource --- CRUDController -- CRUDProcessor -- CRUDSource)
+4. CRUDContoller (CRUDSource 4) / (CRUDSource --- CRUDController -- CRUDProcessor -- CRUDSource)
+.
+
+Building Blocks
+----------------------------------------
+1. BaseController
+2. ContentController 
+3. CRUDController
+----------------------------------------
+
+
+
+                INPROCESS / CROSSPROCESS / NETWORK (CONTENTS)
+--------------------------------------------------------------------------------
+                ||| data / objects / entities / concepts ||| 
+--------------------------------------------------------------------------------
+
+
+
+C2C CLIENT
+----------
+is a CRUDConsumer that output or present data or information extracted from 
+single or multiple CRUDSources.
+
+
+CRUDSource --- CRUDController -- CRUDProcessor -- CRUDConsumer (CURDView)
+
+
+
+Events / Notifications
+----------------------------------------------------------------------------------------
+CRUDController || --produces response-- || CRUDProcessor || --produces processed response to view-- || CRUDView
+
+
+Communication
+-----------------------------------------
+
+Entities
+CRUD - to - CRUD
+
+DataStore - Entity - CRUDController ----------- || ---------- (CRUDView (CRUDController - DataProcessor)) - Entity
+
+CRUD2CRUD
+CRUDSource(s) --- CRUDController(s) -- CRUDProcessor(s) --- CRUDService(s) (http/tcp/udp) --- ||| data / objects / entities / concepts ||| --- CRUDCommunicator(s) (http/tcp/udp) --- CRUDProcessor(s) --- CRUDConsumer(s) (CRUDViews / Views / Presenters / Processors)
+
+
+
+
+--------------------------------------------------------------------------------
+CLIENT SIDE
+--------------------------------------------------------------------------------
+
+CRUDS
+1. Introduction
+2. CRUDController
+3. CRUDProcessor
+
+OBSERVERS
+1. ActivityObserver
+1. ObjectObserver
+2. ListObserver
+3. SearchObserver
+4. CRUDObserver
+
+
+VIEWS
+1. Introduction
+2. ObjectView 
+3. NewView 
+4. EditView
+5. SearchView
+6. CRUDView 
+7. CRUDRelatedView
+8. SearchList
+9. Alternator
+10. CRUDSList
+--------------------------------------------------------------------------------
+
+
+Front End Processing Libraries:
+----------------------------------------
+1. CRUDController HTTP request, response handler. Ajax Http CRUD Controller
+2. CRUDProcessor CRUD content processor. Record, List DataProcessor - to preprocess extracted data.
+3. Observer Independent Views
+4. Single Entity Specific Views (Form/Grid)
+5. Master-Detail Views (Extensibility)
+6. Master-Detail1-Detail2--------DetailN Views
+7. Master and Detail entities data members and member functions extension based on utilization at runtime.
+8. Inheritance extension application on RelatedView to extend actual views functionality.
+9. Events and notifications introduced at CRUDController, CRUDProcessor and CRUDView level.
+10. SearchList that takes on SearchView/CRUDView and generates either readonly or CRUD enabled heirachical list composed of other 
+SearchLists.
+11. Alternator takes on two observable objects and alter between them based on user input.
+12. CRUDSList takes on multiple observable objects and switch between them based on user input.
+13. Introduced FlexObject to communicate html[-output] or function information in typeless manner.
+14. Introduced FlexView based on FlexObject to produce type independent HTML views.
+
+------------------------------------------------------------------------------------------------
+
+Reference Tasks / Accomplished
+--------------------------------------
+1. Verify and demonstrate CRUDController code by writing example for select, find, 
+list, listall, get, post, create, update and delete functions. 
+
+2. Verify and demonstrate CRUDProcessor code by writing example for select, find, 
+list, listall, get, post, create, update and delete functions.
+
+3. Verify and demonstrate ObjectObserver by writing observer example.
+
+4. Verify and demonstrate ObjectView code by writing ObjectObserver integration example.
+
+5. Demonstrate ListObserver by writing observer example.
+
+6. Demonstrate SearchObserver by writing observer example.
+
+7. Verify and demonstrate SearchView code for fetching list of records and displaying
+their details using SearchObserver.
+
+8. Demonstrate CRUDObserver by writing observer example.
+
+9. Verify and demonstrate CRUDView code for fetching list of records and displaying
+their details and further integrate CRUD form functionality with list using CRUDObserver.
+
+10. Verify and demonstrate CRUDView and CRUDRelatedView for writing master and 
+related detail entity form.
+
+11. Verify and demonstrate SearchList code by writing example for level-1 list records.
+
+12. Verify and demonstrate SearchList code by writing example for multi-level list records.
+
+13. Verify and demonstrate Alternator code by writing alternating examples for view
+objects.
+
+14. Verify and demonstrate CRUDSList code by writing examples.
+
+-------------------------------------------------------------------------------
+
+1. Add workers (where possible) to process time consuming operations.
+2. Push/server sent events/notifications functionality
+3. Develop jQuery UI based views to improve user experience.
+
+-------------------------------------------------------------------------------
+
+1. Code Review and Improvements.
+2. Application Development
+
+-------------------------------------------------------------------------------
+
+Typed Application:
+
+View 1 [type1] / View 2 [type2] / View 3 [type3] / View 4 [type4]
+---------------------
+view binding in typed manner [requires type]
+---------------------
+Application
+---------------------
+data access in typed manner [requires type]
+---------
+DataStore
+
+--------------------------------------------------------------------------------
+
+Type-less Applications:
+
+Application 1
+------------
+View 1 -- View 2 -- -- -- -- View N (Typeless Object)
+-----------------------------------------------------
+view bindings in type-less manner
+---------------------
+Component 1 -- Component 2 -- -- -- -- Component N (Typeless Object)
+-------------------------------------------------------------------
+component bindings in type-less manner
+---------------------
+Typed to Type-less Conversion
+---------------------
+data access in typed / type-less manner [requires type]
+---------
+DataStore / Type-Less Storage [Design]
+
+
+-------------------------------------------------------------------------------
+Client Server Application:
+
+
+Client Application
+------------------
+
+View 1 -- View 2 -- -- -- -- View N (Typeless Object)
+-----------------------------------------------------
+view bindings in type-less manner
+---------------------------------
+
+Component 1 -- Component 2 -- -- -- -- Component N (Typeless Object)
+-------------------------------------------------------------------
+component bindings in type-less manner
+--------------------------------------
+
+Consumer 1 -- Consumer 2 -- -- -- -- Consumer N (Typeless Object)
+-----------------------------------------------------------------
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+Server Application
+------------
+Service 1 -- Service 2 -- -- -- -- Service N (Typeless Object)
+-----------------------------------------------------
+view bindings in type-less manner
+---------------------
+Component 1 -- Component 2 -- -- -- -- Component N (Typeless Object)
+-------------------------------------------------------------------
+component bindings in type-less manner
+---------------------
+Typed to Type-less Conversion
+---------------------
+data access in typed/type-less manner
+---------
+DataStore / Type-Less Storage [Design]
+
+
+Type-less Object:
+is intelligent but type-less object that maintain information and knows how to
+convert into typed object or remain type-less.
+
+
+--------------------------------------------------------------------------------
+
+Type-less Object
+
+
+Type-less Object A
+{
+    1:
+    2:
+}
+
+Type-less Object B
+{   
+    1: 
+    2:
+    3:
+    4:
+}
+
+Type-less Object C
+{
+    5:
+    6:
+    7:
+    8:
+    9:
+    10:
+}
+
+
+Context 1 (A,B) {
+
+    A is subset and B is superset of A.
+
+    A can be typed down to B with loss of information.
+
+    B can be typed up with A.
+    
+}
+
+Context 2 (A,B,C) {
+
+}
+
+
+Context will relate objects based on related information or features and then further this 
+should be able to form Object and Object Inheritance.
+
+
+Automated Object Inheritance with Type-less Objects
+
+Context1.getObjectInheritance () {
+
+    Class A, Class B
+    B is inherited from class A.
+}
+
+Scripted inheritance:
+
+if objects do not share features or related information but they can be related
+using scripted inheritance.
+
+Context1.inherit(C from A) {
+    
+    C is not super set of A but,
+
+    C is inheriting features from A and can be typed up with A.
+
+    but A can not be typed down in C.
+}
+
+
+Inherited object can be converted into a type less object and the type less object
+can be opted to maintain with inherited or non-inherited features or functions.
+--------------------------------------------------------------------------------
+Type-Less Context Based Object Oriented Programming

@@ -1,0 +1,44 @@
+﻿FlexObject
+FlexObject represents information or typed objects in collection of items in a 
+type less manner. FlexObject in normal format is a collection (or array) of key,
+evaluator, result, content information and content objects composed in a format 
+as explained following sections.
+
+FlexObject in output format is composed of only one item with already processed 
+result.
+
+In normal format first 10 FlexObject items in array or collection defines configurational 
+and or content evaluation information while remaining items define content objects 
+that are processed to either form a view or yields in a function or object output.
+
+FlexObject {
+
+    items: [
+
+        items[0]: key / output  result object
+        items[1]: evaluator     function / string / html
+        items[2]: result        (html / string)[-output] / object-output 
+        items[3]: content       object[-output] / string
+        items[4]: reserved
+        items[5]: reserved
+        items[6]: reserved
+        items[7]: reserved
+        items[8]: reserved
+        items[9]: reserved
+
+        items[10]: object 1
+        items[11]: object 2
+        items[12]: object 3
+        items[13]: object 4
+        .
+        .
+        .
+        items[N]: object N
+    ]
+}               
+
+In normal format FlexObject first item contain key information. Second item is 
+the evaluator function or view information that consume content objects to produce 
+output result. Third item defines the expected result and fourth item defines 
+information about content objects. Fifth to tenth items are reserved for future 
+usage. From eleventh to onward items contain objects that are to be processed. 

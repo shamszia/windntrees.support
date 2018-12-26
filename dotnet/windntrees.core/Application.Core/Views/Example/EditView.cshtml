@@ -1,0 +1,97 @@
+﻿<div name="HTMLCode">
+    @Html.AntiForgeryToken()
+    <section id="htmlcode-section">
+        <section id="observer-section" data-bind="with: getObserverObject()">
+            <section class="observer-section">
+                <div class="card">
+                    <div class="card-header">
+                        <span data-bind="visible: getProcessing()"><i class="fa fa-cog fa-spin fa-2x"></i></span>
+                        <span data-bind="if: getResultMessage().length > 0" class="alert"><span data-bind="text: getResultMessage()"></span></span>
+                        <div data-bind="if: getErrors().length > 0">
+                            <ul class="errorlist" data-bind="foreach: { data: getObservableErrors(), as: 'error' }">
+                                <li class="alert"><span data-bind="text: errField"></span> <span data-bind="text: errMessage"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <h4>Input Object</h4>
+                        <div class="form-group">
+                            <p class="clear-fix">Enter name, description values and result response will be displayed below.</p>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group" data-bind="with: getObservableInputObject()">
+                                <input class="form-control" type="text" data-bind="value: UID" placeholder="id (key)" />
+                                <input class="form-control" type="text" data-bind="value: Name" placeholder="name" />
+                                <input class="form-control" type="text" data-bind="value: Description" placeholder="description" />
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" data-bind="click: function(data,event) { $parents[0].update({ 'content':  getObservableInputObject(), 'validate': false }); }">UPDATE</button>
+                                </span>
+                            </div>
+                        </div>
+
+                        <h4>Output Object</h4>
+                        <p class="clear-fix">Output response extracted using observable output object.</p>
+                        <div class="form-group" data-bind="with: getObservableOutputObject()">
+                            <div class="input-group">
+                                <input class="form-control" type="text" data-bind="value: UID" readonly />
+                                <input class="form-control" type="text" data-bind="value: Name()" readonly />
+                                <input class="form-control" type="text" data-bind="value: Description()" readonly />
+                            </div>
+                        </div>
+
+                        <h4>Object Interface</h4>
+                        <p class="clear-fix">Output response extracted using observable object interface.</p>
+                        <div class="form-group" data-bind="with: getObservableObject()">
+                            <div class="input-group">
+                                <input class="form-control" type="text" data-bind="value: UID" readonly />
+                                <input class="form-control" type="text" data-bind="value: Name()" readonly />
+                                <input class="form-control" type="text" data-bind="value: Description()" readonly />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+</div>
+
+@section scripts {
+
+    <script src="~/lib/knockoutjs/knockout-3.4.2.js"></script>
+    <script src="~/lib/knockoutjs.validation/knockout.validation.min.js"></script>
+    <script src="~/lib/windntrees/windntrees.min.js"></script>
+
+    <script src="~/js/models/Color.js"></script>
+
+    <script type="text/javascript">
+        /**
+         * EditView reference program implementation.
+         *
+         */
+        var colors = new EditView({
+            'uri': '/color',
+            'observer': new ObjectObserver({ 'contentType': new Color({}), 'messages': new MessageRepository() })
+        });
+
+        $(function () {
+
+            ko.validation.init({
+                insertMessages: false,
+                decorateElement: true,
+                errorElementClass: 'error'
+            });
+
+            try {
+
+                ko.applyBindings(colors);
+            }
+            catch (e) {
+
+                console.log(e.message);
+            }
+        });
+    </script>
+}
