@@ -1,0 +1,382 @@
+{
+  "Id": "WindnTrees.JS",
+  "Title": "WindnTrees .JS",
+  "Description": "<p class=\"lead\">WindnTrees JS CRUDS is a front-end <code>http</code> request, response and related content processing javascript library that integrates with Observers to synchronize data between source and view objects. This follows create, read, update and delete (CRUD) design pattern for data extraction, edition, deletion and saving.</p><p>CRUDS utilize CRUDController to extract data from source CRUDSource and processes response with CRUDProcessor to produce typed objects based on extracted content. Observers take extracted typed objects and present them in their appropriate views.</p><p>This simplifies the process of data extraction, processing and presentation.</p><p>For software reference click <a href=\"/softwares/windntrees/windntrees120.js/index.html\">here</a></p><h5>Installation</h5><p>WindnTrees .JS (windntrees.js) installs in scripts (content) folder along with nuget packages and can be downloaded from GitHub repository <a href=\"https://github.com/shamszia/windntrees\">here</a>.</p><p>Recent stable version can also be downloaded from <a href=\"/reference/index\">here</a>.</p><p>Make sure that you install latest and compatible package of jQuery and KnockoutJs libraries.</p>",
+  "Url": "http://invincibletec.com/softwares/windntrees/windntrees120.js/index.html",
+  "Author": "Shams Zia",
+  "Company": "Invincible Technologies",
+  "Copyright": "Invincible Technologies",
+  "Namespaces": [
+    {
+      "Id": ".ArrayProcessor",
+      "Namespace": "",
+      "Name": "ArrayProcessor",
+      "Description": "Provides array processing functionality.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\ArrayProcessor.json",
+      "Path": "softwares\\windntrees\\windntrees120.js",
+      "Components": []
+    }
+  ],
+  "Components": [
+    {
+      "Id": ".ArrayProcessor",
+      "Namespace": "",
+      "Name": "ArrayProcessor",
+      "Description": "Provides array processing functionality.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\ArrayProcessor.json",
+      "Path": "softwares\\windntrees\\windntrees120.js",
+      "Components": []
+    },
+    {
+      "Id": ".reformUniCodeString",
+      "Namespace": "",
+      "Name": "reformUniCodeString",
+      "Description": "Reforms unicode character string with appropriate coding characters compatible for displaying.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\reformUniCodeString.json",
+      "Path": "softwares\\windntrees\\windntrees120.js",
+      "Components": []
+    },
+    {
+      "Id": ".CRUDController",
+      "Namespace": "",
+      "Name": "CRUDController",
+      "Description": "CRUDController offers AJAX based create, read, update and delete requests functionality. All requests take a URI (address) with or without resulting content type object information and produces response event notifications with resulting data or contents. CRUDController component operates on top of a CRUDSource and is responsible for data extraction and reporting to other components. Usually a CRUDController deals with a CRUDSource and a CRUDProcessor.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\CRUDController.json",
+      "Path": "softwares\\windntrees\\windntrees120.js",
+      "Components": []
+    },
+    {
+      "Id": ".CRUDProcessor",
+      "Namespace": "",
+      "Name": "CRUDProcessor",
+      "Description": "CRUDProcessor processes response data and errors returned by CRUDController and produces content and or error object(s). Returned objects are consumed by other components for further processing. For example, views utilize objects for presentation. Usually a CRUDProcessor deals with a CRUDController, a CRUDSource and or a CRUDConsumer.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\CRUDProcessor.json",
+      "Path": "softwares\\windntrees\\windntrees120.js",
+      "Components": []
+    },
+    {
+      "Id": ".DateParser",
+      "Namespace": "",
+      "Name": "DateParser",
+      "Description": "Adds support for localized date and time resolution.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\DateParser.json",
+      "Path": "softwares\\windntrees\\windntrees120.js",
+      "Components": []
+    },
+    {
+      "Id": ".FlexObject",
+      "Namespace": "",
+      "Name": "FlexObject",
+      "Description": "FlexObject represents information or typed objects in collection of items in a type less manner. FlexObject in normal format is a collection (or array) of key, evaluator, result, content information and content objects composed in a format as explained in following sections. FlexObject in output format is composed of only one item with already processed result. In normal format first 10 FlexObject items in array or collection defines configurational and or content evaluation information while remaining items are content objects that are processed either in a form view or yields in a function output.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\FlexObject.json",
+      "Path": "softwares\\windntrees\\windntrees120.js",
+      "Components": []
+    },
+    {
+      "Id": ".InstanceExtender",
+      "Namespace": "",
+      "Name": "InstanceExtender",
+      "Description": "InstanceExtender extends instances with common and useful functions.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\InstanceExtender.json",
+      "Path": "softwares\\windntrees\\windntrees120.js",
+      "Components": []
+    },
+    {
+      "Id": ".LocaleMessage",
+      "Namespace": "",
+      "Name": "LocaleMessage",
+      "Description": "Locale message represent localized messages in a key, value pair.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\LocaleMessage.json",
+      "Path": "softwares\\windntrees\\windntrees120.js",
+      "Components": []
+    },
+    {
+      "Id": ".MessageRepository",
+      "Namespace": "",
+      "Name": "MessageRepository",
+      "Description": "Locale messages repository.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\MessageRepository.json",
+      "Path": "softwares\\windntrees\\windntrees120.js",
+      "Components": []
+    },
+    {
+      "Id": ".Util",
+      "Namespace": "",
+      "Name": "Util",
+      "Description": "Utility methods for value extractions.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\Util.json",
+      "Path": "softwares\\windntrees\\windntrees120.js",
+      "Components": []
+    },
+    {
+      "Id": ".ActivityObserver",
+      "Namespace": "",
+      "Name": "ActivityObserver",
+      "Description": "ActivityObserver provides concrete observer independent basic user interface interactive capabilities with status monitoring.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\observers\\ActivityObserver.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\observers",
+      "Components": []
+    },
+    {
+      "Id": ".CRUDObserver",
+      "Namespace": "",
+      "Name": "CRUDObserver",
+      "Description": "CRUDObserver provides concrete observer independent CRUD (create, read, update and delete) enabled records, record objects and their targets synchronization functionality with related user interface interactive capabilities. CRUDObserver extends from SearchObserver and for information about extended functions refer here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\observers\\CRUDObserver.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\observers",
+      "Components": []
+    },
+    {
+      "Id": ".DetailObserver",
+      "Namespace": "",
+      "Name": "DetailObserver",
+      "Description": "Master detail records observer that stores record and related detail record objects.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\observers\\DetailObserver.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\observers",
+      "Components": []
+    },
+    {
+      "Id": ".ListObserver",
+      "Namespace": "",
+      "Name": "ListObserver",
+      "Description": "ListObserver provides concrete observer independent list, list objects and their targets synchronization functionality with related user interface interactive capabilities. ListObserver extends from ActivityObserver and for information about activity functions refer here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\observers\\ListObserver.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\observers",
+      "Components": []
+    },
+    {
+      "Id": ".ObjectObserver",
+      "Namespace": "",
+      "Name": "ObjectObserver",
+      "Description": "ObjectObserver provides concrete observer independent source and target synchronization functionality for a particular object source with related user interface interactive capabilities. ObjectObserver extends from ActivityObserver and for information about activity functions refer here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\observers\\ObjectObserver.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\observers",
+      "Components": []
+    },
+    {
+      "Id": ".SearchObserver",
+      "Namespace": "",
+      "Name": "SearchObserver",
+      "Description": "SearchObserver provides concrete observer independent records, record objects and their targets synchronization functionality with related user interface interactive capabilities. SearchObserver extends from ActivityObserver and for information about activity functions refer here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\observers\\SearchObserver.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\observers",
+      "Components": []
+    },
+    {
+      "Id": ".ActivityKNObserver",
+      "Namespace": "",
+      "Name": "ActivityKNObserver",
+      "Description": "ActivityKNObserver provides basic user interface interactive capabilities with status monitoring.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\observers\\kn\\ActivityKNObserver.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\observers\\kn",
+      "Components": []
+    },
+    {
+      "Id": ".CRUDKNObserver",
+      "Namespace": "",
+      "Name": "CRUDKNObserver",
+      "Description": "CRUDKNObserver provides CRUD (create, read, update and delete) enabled records, record objects and their targets synchronization functionality with related user interface interactive capabilities. CRUDKNObserver extends from SearchKNObserver and for information about extended data members refer here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\observers\\kn\\CRUDKNObserver.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\observers\\kn",
+      "Components": []
+    },
+    {
+      "Id": ".DetailKNObserver",
+      "Namespace": "",
+      "Name": "DetailKNObserver",
+      "Description": "Record detail observer that stores record and its detail list of objects.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\observers\\kn\\DetailKNObserver.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\observers\\kn",
+      "Components": []
+    },
+    {
+      "Id": ".ListKNObserver",
+      "Namespace": "",
+      "Name": "ListKNObserver",
+      "Description": "ListObserver provides list, list objects and their targets synchronization functionality with related user interface interactive capabilities. ListKNObserver extends from ActivityKNObserver and for information about activity functions refer here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\observers\\kn\\ListKNObserver.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\observers\\kn",
+      "Components": []
+    },
+    {
+      "Id": ".ObjectKNObserver",
+      "Namespace": "",
+      "Name": "ObjectKNObserver",
+      "Description": "ObjectKNObserver provides source and target synchronization functionality for a particular object source with related user interface interactive capabilities. ObjectObserver extends from ActivityObserver and for information about activity functions refer here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\observers\\kn\\ObjectKNObserver.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\observers\\kn",
+      "Components": []
+    },
+    {
+      "Id": ".SearchKNObserver",
+      "Namespace": "",
+      "Name": "SearchKNObserver",
+      "Description": "SearchKNObserver provides records, record objects and their targets synchronization functionality with related user interface interactive capabilities. SearchKNObserver extends from ActivityKNObserver and for information about activity functions refer here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\observers\\kn\\SearchKNObserver.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\observers\\kn",
+      "Components": []
+    },
+    {
+      "Id": ".Alternator",
+      "Namespace": "",
+      "Name": "Alternator",
+      "Description": "Alternator alternates between Zero or One reference object in observer independent way based on user interaction. This allows to share same or different views between reference objects to enable or limit different use cases.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\Alternator.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views",
+      "Components": []
+    },
+    {
+      "Id": ".OptionItem",
+      "Namespace": "",
+      "Name": "OptionItem",
+      "Description": "Key value pairs function construct definition.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\OptionItem.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views",
+      "Components": []
+    },
+    {
+      "Id": ".ErrorItem",
+      "Namespace": "",
+      "Name": "ErrorItem",
+      "Description": "Error object representation function construct definition.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\ErrorItem.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views",
+      "Components": []
+    },
+    {
+      "Id": ".CRUDSList",
+      "Namespace": "",
+      "Name": "CRUDSList",
+      "Description": "CRUDSList provides different CRUDS or search sources for a view that might takes list of reference objects and selects between them based on user interaction in observer independent way. This allows to share same or different views between reference objects to enable or limit different use cases.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\CRUDSList.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views",
+      "Components": []
+    },
+    {
+      "Id": ".NavLink",
+      "Namespace": "",
+      "Name": "NavLink",
+      "Description": "Navigation link represented by list (or page) number and list source.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\NavLink.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views",
+      "Components": []
+    },
+    {
+      "Id": ".ListNavigator",
+      "Namespace": "",
+      "Name": "ListNavigator",
+      "Description": "ListNavigator data structure used to render navigation (or paging) links with scrolling size support.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\ListNavigator.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views",
+      "Components": []
+    },
+    {
+      "Id": ".ObjectView",
+      "Namespace": "",
+      "Name": "ObjectView",
+      "Description": "ObjectView provides observer independent data handling and communication capability using GET or POST calls to a hosted web service and is able to produce typed content objects based on provided content type. ObjectView is extract and present only CRUD component that means its useful when information or data is only required for extraction and presentation in textual or form format.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\ObjectView.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views",
+      "Components": []
+    },
+    {
+      "Id": ".AVView",
+      "Namespace": "",
+      "Name": "AVView",
+      "Description": "AVView presents video, image, subject and description values in provided html format and css styles. AVView is capable of extracting information from a remote writing into node's innerHTML content. In observer less scenario the type of content content,content node contentNode and error node errorNode must be defined. crossorigin, poster, preload, autoplay, mediagroup, loop, muted, controls, width and height must be mapped with options.videosrcf, options.crossoriginf, options.posterf, options.preloadf, options.autoplayf, options.mediagroupf, options.loopf, options.mutedf, options.controlsf, options.widthf and options.heightf fields. If a response field results in null or undefined value then this can be replaced by opted value, for example src field can be provided with a default value like options.videosrc and crossorigin can be opted with options.crossorigin. AVView extends from ImageView and for information about ImageView visit here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\html\\AVView.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views\\html",
+      "Components": []
+    },
+    {
+      "Id": ".ContentList",
+      "Namespace": "",
+      "Name": "ContentList",
+      "Description": "ContentList finds records based on input values and loads content video, image, subject and description values in provided html format and css styles. ContentList is capable of extracting information from a remote web service node's innerHTML content. In observer less scenario the type of content content, content node contentNode and error node errorNode must be defined. ContentList extends from ObjectView and for information about ObjectView visit here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\html\\ContentList.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views\\html",
+      "Components": []
+    },
+    {
+      "Id": ".FlexHTML",
+      "Namespace": "",
+      "Name": "FlexHTML",
+      "Description": "FlexHTML forms flexible HTML view based on provided HTML format and list of FlexObjects. FlexHTML is capable of extracting information from a remote writing into node's innerHTML content. In case of observer less scenario the type of content, content node and error node must be defined.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\html\\FlexHTML.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views\\html",
+      "Components": []
+    },
+    {
+      "Id": ".ImageView",
+      "Namespace": "",
+      "Name": "ImageView",
+      "Description": "ImageView presents image, subject and description values in provided html format and css styles. ImageView is capable of extracting information from a remote writing into node's innerHTML content. In observer less scenario the type of content content, content node contentNode and error node errorNode must be defined. imagename, imagetitle and imagepath must be mapped with options.imagenamef, options.imagetitlef and options.imagepathf fields. If a response field results in null or undefined value then this can be replaced by opted value, for example imagetitle field can be provided with a default value like options.imagetitle. ImageView extends from TextView and for information about TextView visit here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\html\\ImageView.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views\\html",
+      "Components": []
+    },
+    {
+      "Id": ".TextView",
+      "Namespace": "",
+      "Name": "TextView",
+      "Description": "TextView presents subject and description values in provided html format and css styles. TextView is capable of extracting information from a remote web into node's innerHTML content. In observer less scenario the type of content content, content node contentNode and error node errorNode must be defined. subject, description, url and urltitle must be mapped with options.subjectf, options.descriptionf, options.urlf and options.urltitlef fields. If a response field results in null or undefined value then this can be replaced by opted value, for example subject field can be provided with a default value like options.subject. TextView extends from ObjectView and for information about ObjectView visit here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\html\\TextView.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views\\html",
+      "Components": []
+    },
+    {
+      "Id": ".CRUDRelatedView",
+      "Namespace": "",
+      "Name": "CRUDRelatedView",
+      "Description": "CRUDRelatedView extends from a view and form a master-detail relation that extends addition, editing and deletion functionality for detail records (Obsolete).",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\object\\CRUDRelatedView.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views\\object",
+      "Components": []
+    },
+    {
+      "Id": ".CRUDView",
+      "Namespace": "",
+      "Name": "CRUDView",
+      "Description": "CRUDView provides observer independent data handling and communication capability using get, post, find, create, update and delete calls to a hosted web service and gets typed content objects. CRUDView extends functionality from SearchView. CRUDView is data or information extraction, edition, deletion, saving and presentation CRUD component, this means its useful when information or data is required to be created, edited, saved, searched and presented in textual, form or grid (tabular) format. CRUDView extends from SearchView and for information about SearchView visit here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\object\\CRUDView.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views\\object",
+      "Components": []
+    },
+    {
+      "Id": ".EditView",
+      "Namespace": "",
+      "Name": "EditView",
+      "Description": "EditView provides observer independent data handling and communication capability using get, post and update calls to a hosted web service and gets updated typed content object. EditView extends functionality from ObjectView. EditView is extract, save and present only CRUD component, this means its useful when information or data is required to be saved or extracted for presentation in textual or form format. EditView extends from ObjectView and for information about ObjectView visit here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\object\\EditView.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views\\object",
+      "Components": []
+    },
+    {
+      "Id": ".NewView",
+      "Namespace": "",
+      "Name": "NewView",
+      "Description": "NewView provides observer independent data handling and communication capability using get, post and create calls to a hosted web service and is able to produce typed objects (contents) based on provided content object. NewView extends functionality from ObjectView. NewView is extract, save and present only CRUD component, this means its useful when information or data is required to be saved or extracted for presentation in textual or form format. NewView extends from ObjectView and for information about ObjectView visit here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\object\\NewView.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views\\object",
+      "Components": []
+    },
+    {
+      "Id": ".SearchList",
+      "Namespace": "",
+      "Name": "SearchList",
+      "Description": "SearchList is a flexible list of lists composed of (search or crud) views that can load related or non-related list of contents at run time. SearchList is capable of extending its functionality based on provided views.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\object\\SearchList.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views\\object",
+      "Components": []
+    },
+    {
+      "Id": ".SearchView",
+      "Namespace": "",
+      "Name": "SearchView",
+      "Description": "SearchView provides observer independent data handling and communication capability using get, post and find calls to a hosted web service and gets typed content objects SearchView extends functionality from ObjectView. SearchView is extract and present only CRUD component, this means its useful when information or data is required for extraction and presentation in textual or grid (tabular) format. SearchView extends from ObjectView and for information about ObjectView visit here.",
+      "Url": "\\softwares\\windntrees\\windntrees120.js\\views\\object\\SearchView.json",
+      "Path": "softwares\\windntrees\\windntrees120.js\\views\\object",
+      "Components": []
+    }
+  ]
+}
