@@ -1,5 +1,5 @@
 <h1>windntrees.support</h1>
-<p><a href="#">windntrees.support</a> is a reference projects repository implementing CRUD2CRUD application architecture.</p>
+<p><a href="#">windntrees.support</a> is a reference projects repository implementing CRUD=CRUD application architecture.</p>
 
 <pre>
 [Server Side]
