@@ -1,1 +1,0 @@
-{ "Namespace": { "Name":"Library.Parsers.Constructs", "Description":"" }, "Class": { "Scope":"public",  "Name":"Property", "Description":"" }, "Attributes": [  ], "Properties": [  ], "Constructors": [ { "Scope":"public",  "Name":"Property", "Arguments": [  ], "Description":"", "Params": [  ] } ], "Functions": [  ] }
