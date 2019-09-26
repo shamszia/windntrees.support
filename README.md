@@ -1,5 +1,5 @@
 <h1>windntrees.support</h1>
-<p><a href="#">windntrees.support</a> is a reference projects repository implementing CRUD=CRUD application architecture.</p>
+<p><a href="#">windntrees.support</a> is a reference projects repository implementing CRUD2CRUD (CRUDS) application architecture.</p>
 
 <pre>
 [Server Side]
@@ -12,7 +12,7 @@ CRUDSource(s) --- CRUDController(s) -- CRUDProcessor(s) --- CRUDConsumer(s)
 </pre>
 
 <h2>dotnet</h2>
-<p><a href="#">dotnet</a> repository contains two application projects one written in standard framework (asp .net) while other in .net core (asp.net core).</p>
+<p>For dotnet reference projects refer <a href="http://invincibletec.com/tutorial/index/windntrees">Tutorials</a>.</p>
 
 <h2>maven</h2>
 <p><a href="#">maven</a> repository is a reference project impmentation based on thymeleaf view engine and developed in netbeans IDE using java.</p>
