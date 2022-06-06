@@ -1,0 +1,18 @@
+C:\Users\Shams Zia\source\repos\SharedLibrary\bin\Debug\netstandard2.0\SharedLibrary.deps.json
+C:\Users\Shams Zia\source\repos\SharedLibrary\bin\Debug\netstandard2.0\SharedLibrary.dll
+C:\Users\Shams Zia\source\repos\SharedLibrary\bin\Debug\netstandard2.0\SharedLibrary.pdb
+C:\Users\Shams Zia\source\repos\SharedLibrary\obj\Debug\netstandard2.0\SharedLibrary.csprojAssemblyReference.cache
+C:\Users\Shams Zia\source\repos\SharedLibrary\obj\Debug\netstandard2.0\SharedLibrary.AssemblyInfoInputs.cache
+C:\Users\Shams Zia\source\repos\SharedLibrary\obj\Debug\netstandard2.0\SharedLibrary.AssemblyInfo.cs
+C:\Users\Shams Zia\source\repos\SharedLibrary\obj\Debug\netstandard2.0\SharedLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Shams Zia\source\repos\SharedLibrary\obj\Debug\netstandard2.0\SharedLibrary.dll
+C:\Users\Shams Zia\source\repos\SharedLibrary\obj\Debug\netstandard2.0\SharedLibrary.pdb
+D:\projects\softwares\windntrees\WcfSharedLibrary\bin\Debug\netstandard2.0\SharedLibrary.deps.json
+D:\projects\softwares\windntrees\WcfSharedLibrary\bin\Debug\netstandard2.0\SharedLibrary.dll
+D:\projects\softwares\windntrees\WcfSharedLibrary\bin\Debug\netstandard2.0\SharedLibrary.pdb
+D:\projects\softwares\windntrees\WcfSharedLibrary\obj\Debug\netstandard2.0\SharedLibrary.csprojAssemblyReference.cache
+D:\projects\softwares\windntrees\WcfSharedLibrary\obj\Debug\netstandard2.0\SharedLibrary.AssemblyInfoInputs.cache
+D:\projects\softwares\windntrees\WcfSharedLibrary\obj\Debug\netstandard2.0\SharedLibrary.AssemblyInfo.cs
+D:\projects\softwares\windntrees\WcfSharedLibrary\obj\Debug\netstandard2.0\SharedLibrary.csproj.CoreCompileInputs.cache
+D:\projects\softwares\windntrees\WcfSharedLibrary\obj\Debug\netstandard2.0\SharedLibrary.dll
+D:\projects\softwares\windntrees\WcfSharedLibrary\obj\Debug\netstandard2.0\SharedLibrary.pdb

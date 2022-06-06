@@ -1,0 +1,197 @@
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\appsettings.json
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\CoreWCF.machine.config
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\WcfCoreWebApplication.exe
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\WcfCoreWebApplication.deps.json
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\WcfCoreWebApplication.runtimeconfig.json
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\WcfCoreWebApplication.runtimeconfig.dev.json
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\WcfCoreWebApplication.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\ref\WcfCoreWebApplication.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\WcfCoreWebApplication.pdb
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\CoreWCF.ConfigurationManager.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\CoreWCF.Http.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\CoreWCF.NetTcp.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\CoreWCF.Primitives.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.WsFederation.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.Saml.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.Xml.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.DirectoryServices.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.DirectoryServices.Protocols.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.IO.Pipelines.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.Private.ServiceModel.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.Runtime.Caching.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.ServiceModel.Duplex.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.ServiceModel.Http.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.ServiceModel.NetTcp.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.ServiceModel.Primitives.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.ServiceModel.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.ServiceModel.Security.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\System.Web.Services.Description.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\WindnTrees.CRUDS5.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\WindnTrees.CRUDS.Repository.Core.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\WindnTrees.ICRUDS.Standard.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\cs\System.Web.Services.Description.resources.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\de\System.Web.Services.Description.resources.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\es\System.Web.Services.Description.resources.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\fr\System.Web.Services.Description.resources.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\it\System.Web.Services.Description.resources.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\ja\System.Web.Services.Description.resources.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\ko\System.Web.Services.Description.resources.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\pl\System.Web.Services.Description.resources.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\pt-BR\System.Web.Services.Description.resources.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\ru\System.Web.Services.Description.resources.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\tr\System.Web.Services.Description.resources.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\zh-Hans\System.Web.Services.Description.resources.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\zh-Hant\System.Web.Services.Description.resources.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\linux\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\osx\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\SharedLibrary.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\bin\Debug\net5.0\SharedLibrary.pdb
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.csprojAssemblyReference.cache
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.AssemblyInfoInputs.cache
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.AssemblyInfo.cs
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.csproj.CoreCompileInputs.cache
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\obj\Debug\net5.0\staticwebassets\WcfCoreWebApplication.StaticWebAssets.Manifest.cache
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\obj\Debug\net5.0\staticwebassets\WcfCoreWebApplication.StaticWebAssets.xml
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\obj\Debug\net5.0\scopedcss\bundle\WcfCoreWebApplication.styles.css
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.RazorTargetAssemblyInfo.cache
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.csproj.CopyComplete
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\obj\Debug\net5.0\ref\WcfCoreWebApplication.dll
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.pdb
+C:\Users\Shams Zia\source\repos\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.genruntimeconfig.cache
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\appsettings.Development.json
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\appsettings.json
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\CoreWCF.machine.config
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\WcfCoreWebApplication.exe
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\WcfCoreWebApplication.deps.json
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\WcfCoreWebApplication.runtimeconfig.json
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\WcfCoreWebApplication.runtimeconfig.dev.json
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\WcfCoreWebApplication.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\ref\WcfCoreWebApplication.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\WcfCoreWebApplication.pdb
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\CoreWCF.ConfigurationManager.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\CoreWCF.Http.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\CoreWCF.NetTcp.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\CoreWCF.Primitives.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.WsFederation.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.Saml.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Microsoft.IdentityModel.Xml.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.DirectoryServices.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.DirectoryServices.Protocols.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.IO.Pipelines.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.Private.ServiceModel.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.Runtime.Caching.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.ServiceModel.Duplex.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.ServiceModel.Http.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.ServiceModel.NetTcp.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.ServiceModel.Primitives.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.ServiceModel.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.ServiceModel.Security.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\System.Web.Services.Description.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\WindnTrees.CRUDS.Repository.Core.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\WindnTrees.ICRUDS.Standard.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\cs\System.Web.Services.Description.resources.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\de\System.Web.Services.Description.resources.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\es\System.Web.Services.Description.resources.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\fr\System.Web.Services.Description.resources.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\it\System.Web.Services.Description.resources.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\ja\System.Web.Services.Description.resources.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\ko\System.Web.Services.Description.resources.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\pl\System.Web.Services.Description.resources.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\pt-BR\System.Web.Services.Description.resources.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\ru\System.Web.Services.Description.resources.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\tr\System.Web.Services.Description.resources.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\zh-Hans\System.Web.Services.Description.resources.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\zh-Hant\System.Web.Services.Description.resources.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\linux\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\osx\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.Protocols.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\SharedLibrary.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\WindnTrees.CRUDS5.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\SharedLibrary.pdb
+D:\projects\softwares\windntrees\WcfCoreWebApplication\bin\Debug\net5.0\WindnTrees.CRUDS5.pdb
+D:\projects\softwares\windntrees\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.csprojAssemblyReference.cache
+D:\projects\softwares\windntrees\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\softwares\windntrees\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.AssemblyInfoInputs.cache
+D:\projects\softwares\windntrees\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.AssemblyInfo.cs
+D:\projects\softwares\windntrees\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.csproj.CoreCompileInputs.cache
+D:\projects\softwares\windntrees\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.MvcApplicationPartsAssemblyInfo.cache
+D:\projects\softwares\windntrees\WcfCoreWebApplication\obj\Debug\net5.0\staticwebassets\WcfCoreWebApplication.StaticWebAssets.Manifest.cache
+D:\projects\softwares\windntrees\WcfCoreWebApplication\obj\Debug\net5.0\staticwebassets\WcfCoreWebApplication.StaticWebAssets.xml
+D:\projects\softwares\windntrees\WcfCoreWebApplication\obj\Debug\net5.0\scopedcss\bundle\WcfCoreWebApplication.styles.css
+D:\projects\softwares\windntrees\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.RazorTargetAssemblyInfo.cache
+D:\projects\softwares\windntrees\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.csproj.CopyComplete
+D:\projects\softwares\windntrees\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\obj\Debug\net5.0\ref\WcfCoreWebApplication.dll
+D:\projects\softwares\windntrees\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.pdb
+D:\projects\softwares\windntrees\WcfCoreWebApplication\obj\Debug\net5.0\WcfCoreWebApplication.genruntimeconfig.cache

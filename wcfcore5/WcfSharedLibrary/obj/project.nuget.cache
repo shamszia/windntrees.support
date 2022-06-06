@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "LBp2kj83BFCxxfrPFAJvumZqidVAyl332dUH6v1PUBNII7of7M8ffVwtyu5tyMCTEoiX8zR2PsXRsQ5N0DfVeA==",
+  "success": true,
+  "projectFilePath": "D:\\projects\\softwares\\windntrees\\WcfSharedLibrary\\SharedLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
