@@ -1,0 +1,5 @@
+D:\projects\softwares\windntrees\Application.WPF.Core\obj\Debug\netcoreapp3.1\Application.WPF.Core.csprojAssemblyReference.cache
+D:\projects\softwares\windntrees\Application.WPF.Core\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+D:\projects\softwares\windntrees\Application.WPF.Core\obj\Debug\netcoreapp3.1\App.g.cs
+D:\projects\softwares\windntrees\Application.WPF.Core\obj\Debug\netcoreapp3.1\Application.WPF.Core_MarkupCompile.cache
+D:\projects\softwares\windntrees\Application.WPF.Core\obj\Debug\netcoreapp3.1\Application.WPF.Core_MarkupCompile.lref

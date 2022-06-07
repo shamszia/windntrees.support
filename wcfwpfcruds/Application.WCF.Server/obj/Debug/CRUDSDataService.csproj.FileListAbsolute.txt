@@ -1,0 +1,1 @@
+D:\projects\softwares\windntrees\CRUDSDataService\obj\Debug\CRUDSDataService.csproj.CoreCompileInputs.cache

@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>ApplicationWPFCore</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WindnTrees.CRUDS.Repository.Core" Version="1.0.7" />
+    <PackageReference Include="WindnTrees.ICRUDS.Standard" Version="0.0.20" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application.Models.Standard\ApplicationModels.Standard.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Product\CRUDViewListWindow.xaml.cs">
+      <DependentUpon>CRUDViewListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Product\EditWindow.xaml.cs">
+      <DependentUpon>EditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Product\ListWindow.xaml.cs">
+      <DependentUpon>ListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Product\NewWindow.xaml.cs">
+      <DependentUpon>NewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Product\ViewWindow.xaml.cs">
+      <DependentUpon>ViewWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Product\CRUDViewListWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Product\EditWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Product\ListWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Product\NewWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Product\ViewWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

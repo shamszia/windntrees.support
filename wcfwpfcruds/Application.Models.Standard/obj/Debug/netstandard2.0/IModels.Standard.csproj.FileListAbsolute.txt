@@ -1,0 +1,9 @@
+D:\projects\softwares\windntrees\IModels.Standard\bin\Debug\netstandard2.0\IModels.Standard.deps.json
+D:\projects\softwares\windntrees\IModels.Standard\bin\Debug\netstandard2.0\IModels.Standard.dll
+D:\projects\softwares\windntrees\IModels.Standard\bin\Debug\netstandard2.0\IModels.Standard.pdb
+D:\projects\softwares\windntrees\IModels.Standard\obj\Debug\netstandard2.0\IModels.Standard.csprojAssemblyReference.cache
+D:\projects\softwares\windntrees\IModels.Standard\obj\Debug\netstandard2.0\IModels.Standard.csproj.CoreCompileInputs.cache
+D:\projects\softwares\windntrees\IModels.Standard\obj\Debug\netstandard2.0\IModels.Standard.AssemblyInfoInputs.cache
+D:\projects\softwares\windntrees\IModels.Standard\obj\Debug\netstandard2.0\IModels.Standard.AssemblyInfo.cs
+D:\projects\softwares\windntrees\IModels.Standard\obj\Debug\netstandard2.0\IModels.Standard.dll
+D:\projects\softwares\windntrees\IModels.Standard\obj\Debug\netstandard2.0\IModels.Standard.pdb

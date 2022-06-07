@@ -1,0 +1,40 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ApplicationWPF"
+        x:Class="ApplicationWPF.MainWindow"
+        mc:Ignorable="d"
+        Title="WPF Application Form (CRUD2CRUD, CRUDS)" Height="500" Width="600" 
+        Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+
+    <DockPanel x:Name="DockApplicationForm" LastChildFill="True">
+        <ContentControl DockPanel.Dock="Top" Height="80" Width="Auto">
+            <DockPanel x:Name="DockApplicationFormTop" LastChildFill="True">
+                <Canvas DockPanel.Dock="Bottom" Height="1" Width="Auto" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"></Canvas>
+                <Canvas>
+                    <Label Content="WPF Application Forms (CRUD2CRUD, CRUDS)" Canvas.Top="10" FontSize="18" FontWeight="Bold"></Label>
+                    <Label Content="Application implements CRUD2CRUD (CRUDS) controller to controller communication architecture." Canvas.Top="40" FontSize="12"></Label>
+                </Canvas>
+            </DockPanel>
+        </ContentControl>
+        <ContentControl DockPanel.Dock="Bottom" Height="60" Width="Auto">
+            <DockPanel x:Name="DockApplicationFormBottom" LastChildFill="True">
+                <Canvas DockPanel.Dock="Top" Height="1" Width="Auto" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"></Canvas>
+                <Canvas>
+                    <Button x:Name="ButtonClose" Content="_Close" Canvas.Right="10" Canvas.Top="29" Width="75" Click="ButtonClose_Click"/>
+                    <Label Content="Visit wwww.invincibletec.com for learning CRUD2CRUD application programming." Canvas.Left="10" Canvas.Top="23" Width="462"/>
+                </Canvas>
+            </DockPanel>
+        </ContentControl>
+        <Canvas>
+            <Button x:Name="ButtonManageProducts" Content="Manage _Products" Canvas.Left="10" Canvas.Top="40" Width="140" Click="ButtonManageProducts_Click"/>
+            <Label Content="Press button to open products management form." Canvas.Left="155" Canvas.Top="37" Width="484"/>
+            <Button x:Name="ButtonManageCRUDViewProducts" Content="CRUD_View Products" Canvas.Left="10" Canvas.Top="80" Width="140" Click="ButtonManageCRUDViewProducts_Click"/>
+            <Label Content="Press button to open products management form." Canvas.Left="155" Canvas.Top="77" Width="484"/>
+            <Button x:Name="ButtonManageEmptyCRUDViewProducts" Content="EmptyCRUD_View Products" Canvas.Left="10" Canvas.Top="120" Width="140" Click="ButtonManageEmptyCRUDViewProducts_Click"/>
+            <Label Content="Press button to open products management form." Canvas.Left="155" Canvas.Top="117" Width="484"/>
+        </Canvas>
+    </DockPanel>
+</Window>
