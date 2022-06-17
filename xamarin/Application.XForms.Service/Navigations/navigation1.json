@@ -1,0 +1,150 @@
+﻿{
+  "authenticationMode": true,
+  "version": "4.0",
+  "cssClass": "container-fluid d-flex justify-content-start p-0",
+  "tag": "ul",
+  "attributes": [
+    {
+      "name": "class",
+      "value": "navbar-nav"
+    }
+  ],
+  "roles": [ "anonymous" ],
+  "items": [
+    {
+      "text": "Home1",
+      "linkUrl": "/home/index",
+      "linkAttributes": [
+        {
+          "name": "class",
+          "value": "nav-link"
+        }
+      ]
+    },
+    {
+      "text": "Home2",
+      "linkUrl": "/home/index",
+      "linkAttributes": [
+        {
+          "name": "class",
+          "value": "nav-link"
+        }
+      ]
+    },
+    {
+      "text": "Home",
+      "attributes": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "title",
+          "value": "Home page."
+        },
+        {
+          "name": "class",
+          "value": "nav-item"
+        }
+      ],
+      "linkUrl": "/home/index",
+      "linkAttributes": [
+        {
+          "name": "id",
+          "value": ""
+        },
+        {
+          "name": "title",
+          "value": ""
+        },
+        {
+          "name": "class",
+          "value": "nav-link"
+        }
+      ]
+    },
+    {
+      "text": "Products",
+      "attributes": [
+        {
+          "name": "title",
+          "value": "Products page."
+        },
+        {
+          "name": "class",
+          "value": "nav-item"
+        }
+      ],
+      "linkUrl": "/home/product",
+      "linkAttributes": [
+        {
+          "name": "class",
+          "value": "nav-link"
+        }
+      ]
+    },
+    {
+      "text": "Topics",
+      "attributes": [
+        {
+          "name": "title",
+          "value": "Topics page."
+        },
+        {
+          "name": "class",
+          "value": "nav-item"
+        }
+      ],
+      "linkUrl": "/home/topic",
+      "linkAttributes": [
+        {
+          "name": "class",
+          "value": "nav-link"
+        }
+      ],
+      "roles": [ "signin" ]
+    },
+    {
+      "text": "Distributed Views",
+      "attributes": [
+        {
+          "name": "title",
+          "value": "Topics page."
+        },
+        {
+          "name": "class",
+          "value": "nav-item"
+        }
+      ],
+      "linkUrl": "/home/CategoryTopics",
+      "linkAttributes": [
+        {
+          "name": "class",
+          "value": "nav-link"
+        }
+      ],
+      "roles": [ "signin" ]
+    },
+    {
+      "text": "CRUDS List",
+      "attributes": [
+        {
+          "name": "title",
+          "value": "Topics page."
+        },
+        {
+          "name": "class",
+          "value": "nav-item"
+        }
+      ],
+      "linkUrl": "/home/CRUDSList",
+      "linkAttributes": [
+        {
+          "name": "class",
+          "value": "nav-link"
+        }
+      ],
+      "roles": [ "signin" ]
+    }
+  ]
+}

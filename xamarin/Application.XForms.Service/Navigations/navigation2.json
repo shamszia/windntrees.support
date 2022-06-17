@@ -1,0 +1,84 @@
+﻿{
+  "authenticationMode": true,
+  "version": "4.0",
+  "cssClass": "container-fluid d-flex justify-content-end p-0",
+  "tag": "ul",
+  "attributes": [
+    {
+      "name": "class",
+      "value": "navbar-nav"
+    }
+  ],
+  "roles": [ "anonymous" ],
+  "items": [
+    {
+      "text": "My Account",
+      "attributes": [
+        {
+          "name": "title",
+          "value": "My account section menu."
+        },
+        {
+          "name": "class",
+          "value": "nav-item dropdown"
+        }
+      ],
+      "linkUrl": "#ACCOUNT",
+      "linkAttributes": [
+        {
+          "name": "class",
+          "value": "nav-link dropdown-toggle"
+        }
+      ],
+      "roles": [ "myaccount"],
+      "linkNavigationTemplate": "<a {0} href=\"#account-settings\" class=\"nav-link dropdown-toggle\" data-toggle=\"collapse\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">{1} <span class=\"{2}\"></span></a>",
+      "subNavigationTemplate": "<ul id=\"account-settings\" class=\"dropdown-menu\">{0}</ul>\n",
+      "items": [
+        {
+          "text": "My Profile",
+          "attributes": [
+            {
+              "name": "title",
+              "value": "My profile section."
+            }
+          ],
+          "roles": [ "myaccount" ],
+          "linkUrl": "/myaccount/home/index",
+          "linkAttributes": [
+            {
+              "name": "class",
+              "value": "dropdown-item d-flex align-content-start"
+            }
+          ]
+        },
+        {
+          "text": "",
+          "attributes": [
+            {
+              "name": "class",
+              "value": "dropdown-divider"
+            }
+          ],
+          "separator": true
+        },
+        {
+          "text": "Account History",
+          "attributes": [
+            {
+              "name": "title",
+              "value": "Account history section"
+            }
+          ],
+          "roles": [ "myaccount" ],
+          "linkUrl": "/myaccount/history/index",
+          "linkAttributes": [
+            {
+              "name": "class",
+              "value": "dropdown-item d-flex align-content-start"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

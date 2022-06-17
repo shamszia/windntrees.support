@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext "Server=.\sqlexpress01;Database=tutorials;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -DataAnnotations -OutputDir Models/Database -Tables "Category","Product","Rating","SkillLevel","Topic" -Context ApplicationContext -Force

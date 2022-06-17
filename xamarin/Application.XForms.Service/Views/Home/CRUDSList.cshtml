@@ -1,0 +1,301 @@
+﻿@{
+    ViewData["Title"] = "Home page";
+}
+
+<!--Results awaiting status message template-->
+<script type="text/html" id="results_processing">
+    <span class="d-flex justify-content-end">
+        <i class="fa fa-cog fa-spin" data-bind="visible: Processing()"></i>
+    </span>
+</script>
+
+<!--Result message template-->
+<script type="text/html" id="results_messages">
+    <span class="alert d-flex justify-content-start" data-bind="if: ResultMessage().length > 0">
+        <span data-bind="text: ResultMessage"></span>
+    </span>
+</script>
+
+<!--Server side error message template-->
+<script type="text/html" id="list_error_messages">
+    <li class="alert alert-danger"><span data-bind="text: errField"></span> <span data-bind="text: errMessage"></span></li>
+</script>
+
+<!--search actions-->
+<script type='text/html' id='actions'>
+    <div class='col-sm-12 col-md-12 col-lg-12'>
+        <div class='input-group'>
+            <span class='input-group-prepend'><button data-bind='click: function() { resetForm(); }' class='btn btn-primary' type='button' title='New' data-toggle='modal' data-target='#__form'><span>New</span></button></span>
+            <input class='form-control' data-bind='value: Keyword' type='text' placeholder='Keyword' />
+            <span class='input-group-append'>
+                <button data-bind='click: function() { list(1); }' class='btn btn-primary' type='button' title='Search'><span>Search</span></button>
+            </span>
+        </div>
+    </div>
+</script>
+
+<!--standard listing-->
+<script type='text/html' id='standard_listings'>
+    <div class='col-sm-12 col-md-6 col-lg-6 order-first'>
+        <div class='input-group justify-content-start'>
+            <span class='input-group-prepend'><span class='input-group-text'>Size</span></span>
+            <select class='form-control col-2' data-bind="value: ListSize, event: { change: function() { list(CurrentList()); } }" id='form-field-select-1' style='width:auto;'>
+                <option value='10'>10</option>
+                <option value='20'>20</option>
+                <option value='50'>50</option>
+                <option value='100'>100</option>
+            </select>
+        </div>
+    </div>
+    <div class='col-sm-12 col-md-6 col-lg-6 order-last'>
+        <nav class="d-flex justify-content-end" aria-label="Listings">
+            <ul class="pagination">
+                <li class="page-item" data-bind="css: {disabled: CurrentList() === 1 }"><a class="page-link" href="#" data-bind="click: function() { list(CurrentList() - 1); }">Prev</a></li>
+                <!-- ko foreach: ListNavigator().getLists() -->
+                <li class="page-item"><a class="page-link" href="#" data-bind="click: function() { list(CurrentList()); }"><span data-bind="text: Number"></span></a></li>
+                <!-- /ko -->
+                <li class="page-item" data-bind="css: {disabled: CurrentList() === ListNavigator().calculateTotalPages()}"><a class="page-link" href="#" data-bind="click: function() { list(CurrentList() + 1); }">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+</script>
+
+<!--Table headings template-->
+<script type="text/html" id="headings">
+    <tr>
+        <th class="col-sm-12 col-md-5 col-lg-5 order-0" scope="col">
+            <span class="d-flex align-content-start" title="Title">Title</span>
+        </th>
+        <th class="col-sm-12 col-md-5 col-lg-5 order-1" scope="col">
+            <span class="d-flex align-content-start" title="Description">Description</span>
+        </th>
+        <th class="col-sm-12 col-md-2 col-lg-2 order-2" scope="col">&nbsp;</th>
+    </tr>
+</script>
+
+<!--Table rows template-->
+<script type="text/html" id="rows">
+    <tr>
+        <td><span class="d-flex align-content-start" data-bind="text: Title()"></span></td>
+        <td><span class="d-flex align-content-start" data-bind="text: Description()"></span></td>
+        <td>
+            <div class="d-flex justify-content-end">
+                <a class="p-1" href="#" data-bind="click: function(data, event) { $parent.resetFormForEditing($index); }" data-toggle="modal" data-target="#__form" title="Edit"><i class="fa fa-edit text-success"></i>Edit</a>
+                <a class="p-1" href="#" data-bind="click: function(data, event) { $parent.delete($data); }" title="Delete"><i class="fa fa-times text-danger"></i>Delete</a>
+            </div>
+        </td>
+    </tr>
+</script>
+
+<!--Form template-->
+<script type="text/html" id="formcontent">
+    <div class="form-row form-group">
+        <div class="col-4 order-0">
+            <label class="control-label d-flex align-content-start" for="Title">
+                Title
+            </label>
+            <input class="form-control col-12" data-bind="value: $parent.EditMode() ? Title : Title" id="Title" type="text" title="Title"
+                   maxlength="100" placeholder="" /><span class="error"
+                                                          data-bind="validationMessage: Title"></span>
+        </div>
+        <div class="col-8 order-1">
+            <label class="control-label d-flex align-content-start" for="Description">
+                Description
+            </label>
+            <input class="form-control col-12" data-bind="value: $parent.EditMode() ? Description : Description" id="Description" type="text" title="Description"
+                   maxlength="200" placeholder="" /><span class="error"
+                                                          data-bind="validationMessage: Description"></span>
+        </div>
+    </div>
+</script>
+
+<!--CRUDS DOM Element-->
+<div id="cruds" class="container-fluid row">
+    <!--Display cruds list-->
+    <div class="col-sm-12 col-md-3 col-lg-3 order-0">
+        <h4 class="d-flex align-content-start p-2">CRUD LISTS</h4>
+        <!--Loop through each CRUDView stacked in CRUDSList-->
+        <ul class="p-0" data-bind="foreach: $root.getCRUDS()" style="list-style: none">
+            <!--Display current CRUDView name and integrate CRUDSList action events-->
+            <li class="d-flex align-content-start p-2"><a data-bind="click: function(data,event) { $root.selectCRUD({'crudindex': $index() }); list(1); }" href="#"><span data-bind="text: getTitle()"></span> </a></li>
+        </ul>
+    </div>
+
+    <!--Reference currently selected CRUDView-->
+    <div class="col-sm-12 col-md-9 col-lg-9 order-1" data-bind="with: getCurrent().getObserverObject()">
+        <div class="row align-items-center">
+            <div class="col-sm-12 col-md-6 col-lg-6 order-0">
+                <!--Display currently selected CRUDView title-->
+                <h1 class="d-flex justify-content-start" data-bind="text: getTitle()"></h1>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 order-1">
+                <nav class="d-flex justify-content-end" aria-label="">
+                    <!--Integrate CRUDView's navigating logic in CRUDSList view-->
+                    <ul class="pagination">
+                        <li class="order-first page-item"><a class="page-link" data-bind="click: function(data,event) { $root.prevCRUD(); }" href="#">Prev</a></li>
+                        <li class="order-last page-item"><a class="page-link" data-bind="click: function(data,event) { $root.nextCRUD(); }" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!--Reference currently selected CRUDView's observer object-->
+        <div id="row" data-bind="with: getObserverObject()">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <!-- Display action response result message. -->
+                        <span class="col-sm-12 col-md-10 col-lg-10 order-first" data-bind="template: {name: 'results_messages'}"></span>
+                        <!-- Display processing status. -->
+                        <span class="col-sm-12 col-md-2 col-lg-2 order-last" data-bind="template: {name: 'results_processing'}"></span>
+                    </div>
+                    <div class="row" data-bind="if: Errors().length > 0">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <!-- Display server-side validation errors list -->
+                            <ul class='errorlist' data-bind="template: {name: 'list_error_messages' , foreach: Errors}"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!-- Display action elements (new, search etc) -->
+                    <div class="row" data-bind="template: {name: 'actions'}"></div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <!-- Display data table heading columns -->
+                            <thead data-bind="template: {name: 'headings'}"></thead>
+                            <!-- Display data table rows -->
+                            <tbody data-bind="template: {name: 'rows', foreach: Records}"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <!-- Display table listing elements -->
+                    <div class="row" data-bind="template: {name: 'standard_listings' }"></div>
+                </div>
+            </div>
+
+            <!-- Modal form for saving input data -->
+            <div id="__form" class="modal fade" style="display: none;">
+                <div class="modal-dialog modal-dialog-centered" style="min-width: 800px;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="col order-0">
+                                <span class="d-flex justify-content-start" data-bind="text: getEditMode() ? getEditModeCaption() : getNewModeCaption()"></span>
+                            </h4>
+                            <div class="col order-1">
+                                <span class="d-flex justify-content-end">
+                                    <button type="button" data-dismiss="modal"><span>×</span></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <span class="col-sm-12 col-md-10 col-lg-10 order-first result" data-bind="template: {name: 'results_messages'}"></span>
+                                <span class="col-sm-12 col-md-2 col-lg-2 order-last status" data-bind="template: {name: 'results_processing'}"></span>
+                            </div>
+                            <div class="row" data-bind="if: Errors().length > 0">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <ul class='errorlist' data-bind="template: {name: 'list_error_messages' , foreach: Errors}"></ul>
+                                </div>
+                            </div>
+                            <div data-bind="with: getFormObject()">
+                                <div data-bind="template: {name: 'formcontent' }"></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <span class="d-flex justify-content-end">
+                                <span>
+                                    <button type="button" id="btnCloseAddForm" class="btn btn-primary" data-dismiss="modal"><span>Close</span></button>
+                                    <!-- invokes create, update method to save new and existing record. -->
+                                    <!-- create/update are CRUD methods that are integrated in View (CRUDView) and linked with Observer (CRUDObserver composed of observables). -->
+                                    <button type="button" data-bind="click: function() { getEditMode() ? update() : create(); }" id="btnAddEdit" class="btn btn-primary"><span>Save</span></button>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+
+    <script src="~/js/models/Category.js" type="text/javascript"></script>
+    <script src="~/js/models/Rating.js" type="text/javascript"></script>
+    <script src="~/js/models/SkillLevel.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        //Messages repository required to display action results.
+        //Note: You may remove following message repository initialization script,
+        //however, then you should update knockout HTML templates accordingly.
+        function intialize(repository) {
+
+            repository.clean();
+            repository.add(new LocaleMessage("form.new.text", "New"));
+            repository.add(new LocaleMessage("form.edit.text", "Edit"));
+            repository.add(new LocaleMessage("form.noRecord.text", "No record found."));
+            repository.add(new LocaleMessage("form.found.text", "Found"));
+            repository.add(new LocaleMessage("form.records.text", "Record(s)"));
+            repository.add(new LocaleMessage("form.saved.text", "Saved"));
+            repository.add(new LocaleMessage("form.failed.text", "Failed"));
+            repository.add(new LocaleMessage("form.displayingPage.text", "Displaying page"));
+            repository.add(new LocaleMessage("form.of.text", "of"));
+            repository.add(new LocaleMessage("form.totalPages.text", ""));
+            repository.add(new LocaleMessage("form.ok.text", "Ok"));
+            repository.add(new LocaleMessage("standard.alertSure.text", "Are you sure to delete record?"));
+            repository.add(new LocaleMessage("standard.processing.text", "Processing..."));
+            repository.add(new LocaleMessage("standard.err.text", "Requested operation failed, an error occured while processing your request."));
+            repository.add(new LocaleMessage("standard.ok.text", "Requested operation completed successfully."));
+            repository.add(new LocaleMessage("standard.listloadok.text", "List loaded successfully."));
+            repository.add(new LocaleMessage("standard.listloaderr.text", "List load failed."));
+
+            return repository;
+        }
+
+        var crudsList = CRUDSList({
+            'cruds': [
+                new CRUDView({
+                    'name': 'categories', 'title': 'Categories',
+                    'uri': '/category', 'observer': new CRUDObserver({ 'contentType': new Category({}), 'messages': intialize(new MessageRepository()) })
+                }),
+                new CRUDView({
+                    'name': 'ratings', 'title': 'Ratings',
+                    'uri': '/rating',
+                    'observer': new CRUDObserver({ 'contentType': new Rating({}), 'messages': intialize(new MessageRepository()) })
+                }),
+                new CRUDView({
+                    'name': 'skill-levels', 'title': 'Skill Levels',
+                    'uri': '/skilllevel',
+                    'observer': new CRUDObserver({ 'contentType': new SkillLevel({}), 'messages': intialize(new MessageRepository()) })
+                })
+            ],
+            'observer': new ObjectObserver({})
+        });
+
+
+        $(function () {
+
+            try {
+
+                ko.validation.init({ insertMessages: false, decorateElement: true, errorElementClass: 'error' });
+                ko.validation.registerExtenders();
+
+                //Binds knockout with WindnTrees view.
+                ko.applyBindings(crudsList, document.getElementById('cruds'));
+            }
+            catch (e) {
+
+                console.log(e.message);
+            }
+
+            //list(1) loads currently selected view's records.
+            //crudsList.getCurrent().getObject() selects currently selected CRUDView hosted in 'observer': new ObjectObserver({})
+            crudsList.getCurrent().getObject().list(1);
+        });
+
+    </script>
+}
