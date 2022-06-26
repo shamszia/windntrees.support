@@ -1,6 +1,7 @@
 D:\projects\softwares\windntrees\Application.Models.Standard\bin\Debug\netstandard2.0\Application.Models.Standard.deps.json
 D:\projects\softwares\windntrees\Application.Models.Standard\bin\Debug\netstandard2.0\Application.Models.Standard.dll
 D:\projects\softwares\windntrees\Application.Models.Standard\bin\Debug\netstandard2.0\Application.Models.Standard.pdb
+D:\projects\softwares\windntrees\Application.Models.Standard\obj\Debug\netstandard2.0\ApplicationModels.Standard.csprojAssemblyReference.cache
 D:\projects\softwares\windntrees\Application.Models.Standard\obj\Debug\netstandard2.0\ApplicationModels.Standard.AssemblyInfoInputs.cache
 D:\projects\softwares\windntrees\Application.Models.Standard\obj\Debug\netstandard2.0\ApplicationModels.Standard.AssemblyInfo.cs
 D:\projects\softwares\windntrees\Application.Models.Standard\obj\Debug\netstandard2.0\ApplicationModels.Standard.csproj.CoreCompileInputs.cache

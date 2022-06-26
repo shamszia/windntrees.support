@@ -15,8 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="WindnTrees.CRUDS.Repository.Core" Version="1.0.7" />
-    <PackageReference Include="WindnTrees.ICRUDS.Standard" Version="0.0.20" />
+    <PackageReference Include="WindnTrees.ICRUDS.Standard" Version="0.0.23" />
   </ItemGroup>
 
   <ItemGroup>

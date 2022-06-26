@@ -48,6 +48,7 @@ namespace ApplicationWPF.Products
                 {
                     var wcfServiceController = new WCFServiceController<Product>(ConfigurationManager.AppSettings["IPAddress"], ConfigurationManager.AppSettings["TCPTLSPort"], "/secure/adapter/product", "product", true, true);
                     m_CRUDView = new CRUDView<Product>(wcfServiceController, ControllerType.WCFServiceController, new ProductViewModel());
+
                 }
                 return m_CRUDView;
             }
@@ -58,7 +59,7 @@ namespace ApplicationWPF.Products
         {
             InitializeComponent();
 
-            CRUDView.CRUDViewModel.ViewInput = new ViewInput { keyword = "", page = 1, size = 10 };
+            CRUDView.CRUDViewModel.ViewInput = new ViewInput { Keyword = "", Page = 1, Size = 10 };
             CRUDView.OnViewModel += CRUDView_OnViewModel;
         }
 

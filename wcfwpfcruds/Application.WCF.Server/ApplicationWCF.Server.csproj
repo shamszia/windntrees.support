@@ -99,11 +99,11 @@
     <Reference Include="WindnTrees.CRUDS.Repository.Standard, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WindnTrees.CRUDS.Repository.Standard.1.0.3\lib\net472\WindnTrees.CRUDS.Repository.Standard.dll</HintPath>
     </Reference>
-    <Reference Include="WindnTrees.ICRUDS, Version=0.0.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindnTrees.ICRUDS.0.0.25\lib\net472\WindnTrees.ICRUDS.dll</HintPath>
+    <Reference Include="WindnTrees.ICRUDS, Version=0.0.28.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindnTrees.ICRUDS.0.0.28\lib\net472\WindnTrees.ICRUDS.dll</HintPath>
     </Reference>
-    <Reference Include="WindnTrees.ICRUDS.Standard, Version=0.0.20.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindnTrees.ICRUDS.Standard.0.0.20\lib\netstandard2.0\WindnTrees.ICRUDS.Standard.dll</HintPath>
+    <Reference Include="WindnTrees.ICRUDS.Standard, Version=0.0.23.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindnTrees.ICRUDS.Standard.0.0.23\lib\netstandard2.0\WindnTrees.ICRUDS.Standard.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -149,13 +149,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Application.Models.Standard\ApplicationModels.Standard.csproj">
-      <Project>{dcf204fa-bbad-461b-9e9d-5bf3d45b425b}</Project>
-      <Name>ApplicationModels.Standard</Name>
-    </ProjectReference>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <ProjectReference Include="..\Application.Models.Standard\ApplicationModels.Standard.csproj">
+      <Project>{19104e79-274c-407f-8db2-d8861f9e9fb5}</Project>
+      <Name>ApplicationModels.Standard</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

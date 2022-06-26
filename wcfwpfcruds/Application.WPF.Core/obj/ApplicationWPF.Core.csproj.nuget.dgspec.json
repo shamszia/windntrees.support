@@ -111,13 +111,9 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
-            "WindnTrees.CRUDS.Repository.Core": {
-              "target": "Package",
-              "version": "[1.0.7, )"
-            },
             "WindnTrees.ICRUDS.Standard": {
               "target": "Package",
-              "version": "[0.0.20, )"
+              "version": "[0.0.23, )"
             }
           },
           "imports": [

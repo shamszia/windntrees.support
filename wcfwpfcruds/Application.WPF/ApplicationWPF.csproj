@@ -56,8 +56,8 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="WindnTrees.ICRUDS, Version=0.0.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindnTrees.ICRUDS.0.0.25\lib\net472\WindnTrees.ICRUDS.dll</HintPath>
+    <Reference Include="WindnTrees.ICRUDS, Version=0.0.28.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindnTrees.ICRUDS.0.0.28\lib\net472\WindnTrees.ICRUDS.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -154,7 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application.Models.Standard\ApplicationModels.Standard.csproj">
-      <Project>{dcf204fa-bbad-461b-9e9d-5bf3d45b425b}</Project>
+      <Project>{19104e79-274c-407f-8db2-d8861f9e9fb5}</Project>
       <Name>ApplicationModels.Standard</Name>
     </ProjectReference>
   </ItemGroup>

@@ -58,7 +58,7 @@ namespace ApplicationWPFCore.Products
         {
             InitializeComponent();
 
-            CRUDView.CRUDViewModel.ViewInput = new ViewInput { keyword = "", page = 1, size = 10 };
+            CRUDView.CRUDViewModel.ViewInput = new ViewInput { Keyword = "", Page = 1, Size = 10 };
             CRUDView.OnViewModel += CRUDView_OnViewModel;
         }
 

@@ -6,16 +6,6 @@ D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\A
 D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\ApplicationWPF.Core.dll
 D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\ref\ApplicationWPF.Core.dll
 D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\ApplicationWPF.Core.pdb
-D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.dll
-D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
-D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\Microsoft.Extensions.Caching.Memory.dll
-D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\Microsoft.Extensions.DependencyInjection.dll
-D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\Microsoft.Extensions.Logging.dll
-D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
-D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\Microsoft.Extensions.Options.dll
-D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\Microsoft.Extensions.Primitives.dll
 D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
 D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\System.Private.ServiceModel.dll
 D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\System.ServiceModel.Duplex.dll
@@ -24,9 +14,8 @@ D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\S
 D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\System.ServiceModel.Primitives.dll
 D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\System.ServiceModel.dll
 D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\System.ServiceModel.Security.dll
-D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\WindnTrees.CRUDS.Repository.Core.dll
-D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\WindnTrees.ICRUDS.Standard.dll
 D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\Application.Models.Standard.dll
+D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\WindnTrees.ICRUDS.Standard.dll
 D:\projects\softwares\windntrees\Application.WPF.Core\bin\Debug\net5.0-windows\Application.Models.Standard.pdb
 D:\projects\softwares\windntrees\Application.WPF.Core\obj\Debug\net5.0-windows\ApplicationWPF.Core.csprojAssemblyReference.cache
 D:\projects\softwares\windntrees\Application.WPF.Core\obj\Debug\net5.0-windows\EmptyProduct\CRUDViewListWindow.g.cs
