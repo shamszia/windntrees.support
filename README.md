@@ -22,3 +22,9 @@ CRUDSource(s) --- CRUDController(s) -- CRUDProcessor(s) --- CRUDConsumer(s)
 
 <h2>issues</h2>
 <p>For issues and support contact me at <a href="https://github.com/shamszia/windntrees.support/issues">issues<a>.</p>
+
+<pre>2022-11-21</pre>
+<h2>CRUD2CRUD CB (Callback) Repository Example</h2>
+https://github.com/shamszia/windntrees.support/blob/master/windntrees-crud2crud-cb/server-netclient-coreclient.png
+https://github.com/shamszia/windntrees.support/blob/master/windntrees-crud2crud-cb/server-netclient-coreclient-3.png
+
