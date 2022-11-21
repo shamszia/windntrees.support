@@ -1,0 +1,8 @@
+D:\projects\documents\windntrees\tutorials\windows\application-cb\Application.Models.Standard\bin\Debug\netstandard2.0\Application.Models.Standard.deps.json
+D:\projects\documents\windntrees\tutorials\windows\application-cb\Application.Models.Standard\bin\Debug\netstandard2.0\Application.Models.Standard.dll
+D:\projects\documents\windntrees\tutorials\windows\application-cb\Application.Models.Standard\bin\Debug\netstandard2.0\Application.Models.Standard.pdb
+D:\projects\documents\windntrees\tutorials\windows\application-cb\Application.Models.Standard\obj\Debug\netstandard2.0\ApplicationModels.Standard.AssemblyInfoInputs.cache
+D:\projects\documents\windntrees\tutorials\windows\application-cb\Application.Models.Standard\obj\Debug\netstandard2.0\ApplicationModels.Standard.AssemblyInfo.cs
+D:\projects\documents\windntrees\tutorials\windows\application-cb\Application.Models.Standard\obj\Debug\netstandard2.0\ApplicationModels.Standard.csproj.CoreCompileInputs.cache
+D:\projects\documents\windntrees\tutorials\windows\application-cb\Application.Models.Standard\obj\Debug\netstandard2.0\Application.Models.Standard.dll
+D:\projects\documents\windntrees\tutorials\windows\application-cb\Application.Models.Standard\obj\Debug\netstandard2.0\Application.Models.Standard.pdb
