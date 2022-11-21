@@ -31,7 +31,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="WindnTrees.Controls.Standard" Version="0.0.3" />
     <PackageReference Include="WindnTrees.Core" Version="1.1.8" />
     <PackageReference Include="WindnTrees.CRUDS.Repository.Core" Version="1.0.7" />
