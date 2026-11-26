@@ -60,4 +60,5 @@ https://github.com/shamszia/windntrees.support/blob/master/windntrees-crud2crud-
 If you find this project helpful, consider supporting its development with a voluntary contribution:
 
 ### Local / Direct Transfers (Pakistan)
-* **IBAN:** `PK81MEZN0038010100554386`
+
+**IBAN:** `PK81MEZN0038010100554386`
