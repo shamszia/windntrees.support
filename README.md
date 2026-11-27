@@ -57,7 +57,7 @@ https://github.com/shamszia/windntrees.support/blob/master/windntrees-crud2crud-
 
 ## Make a Volunteer Payment
 
-If you find this project helpful, consider supporting its development with a voluntary contribution:
+If you find this project useful, you may make an optional development services payment.
 
 ### Local / Direct Transfers (Pakistan)
 
