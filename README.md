@@ -56,6 +56,6 @@ https://github.com/shamszia/windntrees.support/blob/master/windntrees-crud2crud-
 <div><img title="" src="https://github.com/shamszia/windntrees.support/blob/master/windntrees-crud2crud-cb/server-netclient-coreclient-3.png" /></div>
 
 ## Make a Volunteer Payment  
-If you find this crud2crud resource useful, you may make an optional development services payment.  
+If you find this crud2crud resource useful, you may make an optional support and development services payment.  
 **IBAN**: 'PK81MEZN0038010100554386'  
 **SWIFT/BIC**: 'MEZNPKKA' or 'MEZNPKKAGRD'  
